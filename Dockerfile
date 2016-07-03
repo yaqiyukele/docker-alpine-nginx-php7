@@ -8,7 +8,9 @@ RUN apk update && \
     php7-pdo php7-pdo_mysql php7-pdo_sqlite php7-pdo_pgsql php7-mbstring php7-session \
     php7-gd php7-mcrypt php7-openssl php7-sockets php7-posix php7-ldap php7-timezonedb && \
     rm -rf /var/cache/apk/* && \
-    ln -s /usr/bin/php7 /usr/bin/php
+    ln -s /usr/bin/php7 /usr/bin/php && \
+    rm -f /etc/php7/php-fpm.d/www.conf && \
+    touch /etc/php7/php-fpm.d/env.conf
 
 RUN curl -sS https://getcomposer.org/installer | php -- --filename=/usr/local/bin/composer
 
@@ -16,6 +18,7 @@ RUN rm -rf /var/www/* && mkdir /var/www/app
 
 COPY files/php/conf.d/local.ini /etc/php7/conf.d/
 COPY files/php/php-fpm.conf /etc/php7/
+COPY files/php/phpinfo.php /var/www/app/index.php
 COPY files/nginx/nginx.conf /etc/nginx/nginx.conf
 COPY files/services.d /etc/services.d
 
