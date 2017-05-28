@@ -1,4 +1,4 @@
-FROM alpine:3.5
+FROM alpine:3.6
 
 RUN apk update && \
     apk add nginx bash ca-certificates s6 curl ssmtp php7 php7-phar php7-curl \
@@ -6,7 +6,6 @@ RUN apk update && \
     php7-pdo php7-pdo_mysql php7-pdo_sqlite php7-pdo_pgsql php7-mbstring php7-session \
     php7-gd php7-mcrypt php7-openssl php7-sockets php7-posix php7-ldap && \
     rm -rf /var/cache/apk/* && \
-    ln -s /usr/bin/php7 /usr/bin/php && \
     rm -f /etc/php7/php-fpm.d/www.conf && \
     touch /etc/php7/php-fpm.d/env.conf
 
