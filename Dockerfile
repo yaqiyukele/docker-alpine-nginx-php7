@@ -18,6 +18,7 @@ COPY files/php/php-fpm.conf /etc/php7/
 COPY files/php/phpinfo.php /var/www/app/index.php
 COPY files/nginx/nginx.conf /etc/nginx/nginx.conf
 COPY files/services.d /etc/services.d
+COPY web/* /var/www/app/
 
 EXPOSE 80
 
