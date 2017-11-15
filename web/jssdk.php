@@ -1,18 +1,30 @@
 <?php
-
 class JSSDK {
+
         private $appId;
         private $appSecret;
+
+        // session_start();
 
         public function __construct($appId, $appSecret) {
           $this->appId = $appId;
           $this->appSecret = $appSecret;
         }
 
+/*
+        $protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
+        $url = "$protocol$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+
+        $protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
+        $url = "$protocol$_SERVER[SERVER_NAME]$_SERVER[REQUEST_URI]";*/
+
+
         public function getSignPackage() {
           $jsapiTicket = $this->getJsApiTicket();
           // print_r($jsapiTicket);die;
-          $url = "http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+          $protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
+          $url = "$protocol$_SERVER[SERVER_NAME]$_SERVER[REQUEST_URI]";
+          // print_r($url);die;
           $timestamp = time();
           $nonceStr = $this->createNonceStr();
 
@@ -96,10 +108,10 @@ class JSSDK {
           return $res;
         }
 
-        private function Getpicture(){
+        public function Getpicture(){
 
-         $news = array("Title" =>"微信公众平台开发实践", "Description"=>"本书共分10章，案例程序采用广泛流行的PHP、MySQL、XML、CSS、JavaScript、HTML5等程序语言及数据库实现。", "PicUrl" =>'http://images.cnitblog.com/i/340216/201404/301756448922305.jpg', "Url" =>'http://www.cnblogs.com/txw1958/p/weixin-development-best-practice.html'); 
-        return $news;
+         $news = array("Title" =>"微信公众平台开发实践", "Description"=>"本书共分10章，案例程序采用广泛流行的PHP、MySQL、XML、CSS、JavaScript、HTML5等程序语言及数据库实现。", "PicUrl" =>'http://images.cnitblog.com/i/340216/201404/301756448922305.jpg'); 
+         return $news;
 
         }
 
