@@ -9,7 +9,7 @@ $Getpicture = $jssdk->Getpicture();
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title>麦达数字技术部工作周报</title>
+    <title>maidashuzi技术部工作周报</title>
     <meta http-equiv="content-type" content="text/html;charset=utf-8">
     <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" name="viewport" id="viewport" />
     <link rel="stylesheet" href="css/normalize.min.css">
@@ -22,38 +22,13 @@ $Getpicture = $jssdk->Getpicture();
 
     <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
     <script src="js/wx/sha1.js"></script>
-   <!--  <script>
-        var access_token="SbGYinx7F3d-6mQELV3uDbsZEyZQ1GUh3HAPDukOB8wAyc6WwMJ1bjjtiRvkfkv9C07qJI-RYapqtAhXwMtaaUo-AkuGhHAE8B0Biuc0EN4JFQdAFAVRC";
-        var jsapi_ticket="HoagFKDcsGMVCIY2vOjf9ogvx13K3KT-uwCIQMi2DW0ubE6pjbvpJzt9z7Hlok9ACNp5Nm47ZoRPL8kcYMtL6w";
-        var timestamp=GetTimestamp();
-        var nonceStr="mindatatoolsweixin";
-        var url=window.location.href+"?from=singlemessage";
-        var signature= GetSignature();
-
-        function GetTimestamp(){
-            var timestamp=Math.round(new Date().getTime()/1000);
-            return timestamp;
-        }
-
-        function GetSignature(){
-            // 这里参数的顺序要按照 key 值 ASCII 码升序排序
-            var s = "jsapi_ticket=" + jsapi_ticket + "&noncestr=" + nonceStr + "&timestamp=" + timestamp + "&url=" + url;
-            return hex_sha1(s);
-        }
-
-        function GetInitInfo(){
-            console.log(timestamp);
-            console.log(nonceStr);
-            console.log(signature);
-        }
-    </script> -->
     <script>
         wx.config({
             debug: false,
-            appId: '<?php= $signPackage['appId'] ?>',
-            timestamp: '<?php=$signPackage['timestamp']  ?>',
-            nonceStr: '<?php=$signPackage['nonceStr']  ?>',
-            signature: '<?php=$signature['signature']  ?>',
+            appId: '<?php echo $signPackage['appId']; ?>',
+            timestamp: '<?php echo $signPackage['timestamp'];  ?>',
+            nonceStr: '<?php echo $signPackage['nonceStr'];  ?>',
+            signature: '<?php echo $signPackage['signature'];  ?>',
             jsApiList: [
                 // 所有要调用的 API 都要加到这个列表中
                 'checkJsApi',
