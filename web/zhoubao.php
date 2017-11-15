@@ -12,7 +12,7 @@ $news = array("Title" =>"微信公众平台开发实践", "Description"=>"本书
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title>maidashuzi技术部工作周报</title>
+    <title>麦达数字技术部工作周报</title>
     <meta http-equiv="content-type" content="text/html;charset=utf-8">
     <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" name="viewport" id="viewport" />
     <link rel="stylesheet" href="css/normalize.min.css">
@@ -26,9 +26,10 @@ $news = array("Title" =>"微信公众平台开发实践", "Description"=>"本书
     <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
     <script src="js/wx/sha1.js"></script>
     <script>
+
         wx.config({
             debug: false,
-            appId: '<?php echo $signPackage['appId']; ?>',
+            appId: 'wx80c487097b512789',
             timestamp: '<?php echo $signPackage['timestamp'];  ?>',
             nonceStr: '<?php echo $signPackage['nonceStr'];  ?>',
             signature: '<?php echo $signPackage['signature'];  ?>',
@@ -40,7 +41,7 @@ $news = array("Title" =>"微信公众平台开发实践", "Description"=>"本书
             ]
         });
 
-        wx.checkJsApi({
+        /*wx.checkJsApi({
             jsApiList: [
                 'getLocation',
                 'onMenuShareTimeline',
@@ -50,7 +51,7 @@ $news = array("Title" =>"微信公众平台开发实践", "Description"=>"本书
                 alert("失败");
                 alert(JSON.stringify(res));
             }
-        });
+        });*/
 
         wx.onMenuShareAppMessage({
           title: '<?php echo $news['Title'];?>',
@@ -79,6 +80,7 @@ $news = array("Title" =>"微信公众平台开发实践", "Description"=>"本书
     <div class="container">
         <!--首页-->
         <div class="page page0 cur" id="page0">
+            <input type="hidden" value="<?php echo $signPackage['rawString']; ?>" >
             <!--<button type="button" onclick="GetInitInfo()">获取基本信息</button>-->
         </div>
         <div class="page page1 group" id="page1">
