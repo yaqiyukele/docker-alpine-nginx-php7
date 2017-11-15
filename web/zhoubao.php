@@ -2,8 +2,11 @@
 require "jssdk.php";
 $jssdk = new JSSDK("wx80c487097b512789", "422d3a86338493d2f7b0e56507e5ac19");//你的appid,appsecret
 $signPackage = $jssdk->GetSignPackage();
-$Getpicture = $jssdk->Getpicture();
+// $Getpicture = $jssdk->Getpicture();
 // print_r($signPackage);die;
+
+$news = array("Title" =>"微信公众平台开发实践", "Description"=>"本书共分10章，案例程序采用广泛流行的PHP、MySQL、XML、CSS、JavaScript、HTML5等程序语言及数据库实现。", "PicUrl" =>'http://images.cnitblog.com/i/340216/201404/301756448922305.jpg', "Url" =>'http://www.cnblogs.com/txw1958/p/weixin-development-best-practice.html'); 
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -37,23 +40,23 @@ $Getpicture = $jssdk->Getpicture();
             ]
         });
 
-        wx.checkJsApi({
+        /*wx.checkJsApi({
             jsApiList: [
                 'getLocation',
                 'onMenuShareTimeline',
                 'onMenuShareAppMessage'
             ],
             success: function (res) {
+                alert("失败");
                 alert(JSON.stringify(res));
             }
-        });
-
+        });*/
 
         wx.onMenuShareAppMessage({
-          title: '<?php echo $Getpicture['Title'];?>',
-          desc: '<?php echo $Getpicture['Description'];?>',
-          link: '<?php echo $Getpicture['Url'];?>',
-          imgUrl: '<?php echo $Getpicture['PicUrl'];?>',
+          title: '<?php echo $news['Title'];?>',
+          desc: '<?php echo $news['Description'];?>',
+          link: '<?php echo $signPackage['url'];?>',
+          imgUrl: '<?php echo $news['PicUrl'];?>',
           trigger: function (res) {
             // 不要尝试在trigger中使用ajax异步请求修改本次分享的内容，因为客户端分享操作是一个同步操作，这时候使用ajax的回包会还没有返回
             alert('用户点击发送给朋友');
@@ -65,7 +68,8 @@ $Getpicture = $jssdk->Getpicture();
             alert('已取消');
           },
           fail: function (res) {
-            alert(JSON.stringify(res));
+            alert("失败");
+            // alert(JSON.stringify(res));
           }
         });
 
