@@ -12,7 +12,7 @@ $news = array("Title" =>"微信公众平台开发实践", "Description"=>"本书
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title>麦达数字技术部工作周报</title>
+    <title>maidashuzi技术部工作周报</title>
     <meta http-equiv="content-type" content="text/html;charset=utf-8">
     <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" name="viewport" id="viewport" />
     <link rel="stylesheet" href="css/normalize.min.css">
