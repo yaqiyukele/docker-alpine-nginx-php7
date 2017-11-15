@@ -21,8 +21,7 @@ class JSSDK {
           $jsapiTicket = $this->getJsApiTicket();
           // print_r($jsapiTicket);die;
           $protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
-          $url = "$protocol$_SERVER[SERVER_NAME]$_SERVER[REQUEST_URI]";
-          // print_r($url);die;
+          $url = "$protocol$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
           $timestamp = time();
           $nonceStr = $this->createNonceStr();
 
