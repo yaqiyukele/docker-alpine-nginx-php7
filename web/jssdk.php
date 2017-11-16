@@ -52,7 +52,9 @@ class JSSDK {
 
           // 将JsApiTicket 存入到数据库中
           // 先查一下库里是否有access_token ,
-          $mydabase=new \linkMysql("172.26.249.246","md","maida6868","zhoubao");
+          // $mydabase=new \linkMysql("172.26.249.246","md","maida6868","zhoubao");
+          $mydabase=new linkMysql("localhost","md","maida6868","zhoubao");
+
           
           $sql = "SELECT access_token,expire_time_access_token,jsapi_ticket,expire_time_jsapi_ticket FROM cache";
           $result = $mydabase->mysql_query_rest($sql);  
@@ -85,7 +87,9 @@ class JSSDK {
 
           // 将access_token 存入到数据库中
           // 先查一下库里是否有access_token ,
-         $mydabase=new \linkMysql("172.26.249.246","md","maida6868","zhoubao");
+         // $mydabase=new \linkMysql("172.26.249.246","md","maida6868","zhoubao");
+         $mydabase=new linkMysql("localhost","md","maida6868","zhoubao");
+
           
           
           $sql = "SELECT access_token,expire_time_access_token,jsapi_ticket,expire_time_jsapi_ticket FROM cache";
