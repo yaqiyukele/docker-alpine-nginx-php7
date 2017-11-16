@@ -9,18 +9,14 @@ class JSSDK {
         public function __construct($appId, $appSecret) {
 
           include 'database.class.php';
-          // require QY_ROOT.'include/database.class.php';
-
+          //eg: an example for operate select  
+      
+          $mydabase=new linkMysql("172.26.249.246","md","maida6868","zhoubao");
+          
+         
           $this->appId = $appId;
           $this->appSecret = $appSecret;
         }
-
-
-        public function aa(){
-          $db=ConnectMysqli::getIntance();
-          print_r($db);die;
-        }
-
 
         public function getSignPackage() {
           $jsapiTicket = $this->getJsApiTicket();
@@ -60,11 +56,11 @@ class JSSDK {
 
           // 将JsApiTicket 存入到数据库中
           // 先查一下库里是否有access_token ,
-          $db=ConnectMysqli::getIntance();
-          $sql = "SELECT access_token,expire_time_access_token,jsapi_ticket,expire_time_jsapi_ticket FROM cache ";
-          $result=$db->getRow($sql);
-          // $data = json_encode($result);
+          $mydabase=new linkMysql("172.26.249.246","md","maida6868","zhoubao");
+          $sql = "SELECT access_token,expire_time_access_token,jsapi_ticket,expire_time_jsapi_ticket FROM cache";
+          $result = $mydabase->mysql_query_rest($sql);  
           // print_r($result);die;
+
           if ($result['expire_time_jsapi_ticket'] < time()) {//
 
               $accessToken = $this->getAccessToken();  
@@ -74,10 +70,9 @@ class JSSDK {
               if ($ticket) {
                 $arr['expire_time_jsapi_ticket'] = time() + 7000;//
                 $arr['jsapi_ticket'] = $ticket;
-                // print_r($arr);die;
-                $where = "id=1";
-                // 修改后存入数据库
-                $res = $db->update('cache',$arr,$where);
+                $sql = "UPDATE cache SET jsapi_ticket=".$arr['jsapi_ticket'].", expire_time_jsapi_ticket=".$arr['expire_time_jsapi_ticket']."WHERE id=1";
+               // 修改后存入数据库
+                $res = $mydabase->actionsql($sql);
               }
 
           }else{
@@ -93,10 +88,12 @@ class JSSDK {
 
           // 将access_token 存入到数据库中
           // 先查一下库里是否有access_token ,
-          $db=\ConnectMysqli::getIntance();
-          $sql = "SELECT access_token,expire_time_access_token,jsapi_ticket,expire_time_jsapi_ticket FROM cache ";
-          $result=$db->getRow($sql);
-          // $data = json_encode($result);
+          $mydabase=new linkMysql("172.26.249.246","md","maida6868","zhoubao");
+          
+          $sql = "SELECT access_token,expire_time_access_token,jsapi_ticket,expire_time_jsapi_ticket FROM cache";
+          $result = $mydabase->mysql_query_rest($sql);  
+          // print_r($result);die; 
+
           if ($result['expire_time_access_token'] < time()) {//
               
               $url = "https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=$this->appId&secret=$this->appSecret";
@@ -105,9 +102,10 @@ class JSSDK {
               if ($access_token) {
                 $arr['expire_time_access_token'] = time() + 7000;//
                 $arr['access_token'] = $access_token;
-                $where = "id=1";
                 // 修改后存入数据库
-                $res = $db->update('cache',$arr,$where);
+                $sql = "UPDATE cache SET access_token=".$arr['access_token'].", expire_time_access_token=".$arr['expire_time_access_token']."WHERE id=1";
+               // 修改后存入数据库
+                $res = $mydabase->actionsql($sql);
               }
 
           }else{
