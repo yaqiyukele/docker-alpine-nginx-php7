@@ -53,7 +53,7 @@ class JSSDK {
 
           // 将JsApiTicket 存入到数据库中
           // 先查一下库里是否有access_token ,
-          $db=\ConnectMysqli::getIntance();
+          $db=ConnectMysqli::getIntance();
           $sql = "SELECT access_token,expire_time_access_token,jsapi_ticket,expire_time_jsapi_ticket FROM cache ";
           $result=$db->getRow($sql);
           // $data = json_encode($result);
