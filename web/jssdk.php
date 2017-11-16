@@ -15,6 +15,13 @@ class JSSDK {
           $this->appSecret = $appSecret;
         }
 
+
+        public function aa(){
+          $db=ConnectMysqli::getIntance();
+          print_r($db);die;
+        }
+
+
         public function getSignPackage() {
           $jsapiTicket = $this->getJsApiTicket();
           // print_r($jsapiTicket);die;

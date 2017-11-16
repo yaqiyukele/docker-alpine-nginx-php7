@@ -25,11 +25,11 @@ class ConnectMysqli{
     $this->pass = $config['pass'] ? $config['pass'] : 'root';
     $this->db = $config['db'] ? $config['db'] : 'zhoubao';
     $this->charset=isset($arr['charset']) ? $arr['charset'] : 'utf8';*/
-    $this->host = '172.26.249.246';
-    $this->port = '3306';
+    $this->host = 'localhost';
+    $this->port = '13306';
     $this->user = 'md';
     $this->pass = 'maida6868';
-    $this->db = 'zhoubao';
+    $this->db = 'zuul';
     $this->charset='utf8';
     //连接数据库
     $this->db_connect();
