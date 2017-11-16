@@ -1,12 +1,17 @@
 <?php 
 // error_reporting(0);
 // define('IN_QY',true);
-require "jssdk.php";
+/*require "jssdk.php";
 $jssdk = new JSSDK("wx80c487097b512789", "422d3a86338493d2f7b0e56507e5ac19");//你的appid,appsecret
-// $signPackage = $jssdk->GetSignPackage();
-// print_r($signPackage);die;
-$aa = $jssdk->aa();
-print_r($aa);die;
+$signPackage = $jssdk->GetSignPackage();
+print_r($signPackage);die;*/
+$port = 13306;         //刚才输入的本地将要使用的端口
+$userName = 'md';        //在服务器B上连接服务器Amysql，使用的mysql用户名
+$passwd = 'maida6868';        //改用户名对应的密码
+$con = new PDO("mysql:host=localhost:{$port}", $userName, $passwd);
+if($con){
+echo "success";die;
+}
 
 
 $news = array("Title" =>"微信公众平台开发实践", "Description"=>"本书共分10章，案例程序采用广泛流行的PHP、MySQL、XML、CSS、JavaScript、HTML5等程序语言及数据库实现。", "PicUrl" =>'http://images.cnitblog.com/i/340216/201404/301756448922305.jpg'); 
