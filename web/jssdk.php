@@ -8,7 +8,7 @@ class JSSDK {
 
         public function __construct($appId, $appSecret) {
 
-          include 'include/database.class.php';
+          include 'database.class.php';
           // require QY_ROOT.'include/database.class.php';
 
           $this->appId = $appId;
