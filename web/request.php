@@ -7,12 +7,14 @@ if($con){
 echo "success";die;
 }*/
 include 'database.class.php';
+include 'test.class.php';
 $mydabase=new linkMysql("127.0.0.1","md","maida6868","zhoubao");
-/*$sql = "SELECT access_token,expire_time_access_token,jsapi_ticket,expire_time_jsapi_ticket FROM cache";
+
+$sql = "SELECT access_token,expire_time_access_token,jsapi_ticket,expire_time_jsapi_ticket FROM cache";
 $result = $mydabase->mysql_query_rest($sql); 
-print_r($result);die;*/
-$sql = "UPDATE cache SET access_token='9fQ9yCPJVA7IASWde9lb4k1_GYJauNIb02IHVqxrAdVgV5pweD3GKRVMZPFMHsMBFYLMgACABOP', expire_time_access_token='uwCIQMi2DW1teKeeMfGimLrXrsTTgAkXipjIalYv334H6AutZnzt5A' WHERE id=1";
-// 修改后存入数据库
-$res = $mydabase->actionsql($sql);
-print_r($res);die;
+print_r($result);
+
+$test = new Test();
+$aa = $test->index();
+print_r($aa);
 ?>
