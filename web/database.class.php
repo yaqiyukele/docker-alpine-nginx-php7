@@ -29,7 +29,7 @@ class ConnectMysqli{
     $this->port = '13306';
     $this->user = 'md';
     $this->pass = 'maida6868';
-    $this->db = 'zuul';
+    $this->db = 'zhoubao';
     $this->charset='utf8';
     //连接数据库
     $this->db_connect();
