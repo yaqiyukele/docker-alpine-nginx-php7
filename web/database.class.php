@@ -21,7 +21,7 @@ class PDO{
         $type=$this->dbms;
         $dbname=$this->Basename;
         $host=$this->host;
-        $port= "13306";
+        $port= "3306";
         $dsn="$type:host=$host:{$port}; dbname=$dbname";
         $this->pdo=new PDO($dsn,$this->name,$this->pwd);
         try{ 
