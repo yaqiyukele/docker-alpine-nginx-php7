@@ -1,6 +1,6 @@
 <?php 
 // error_reporting(0);
-define('IN_QY',true);
+// define('IN_QY',true);
 require "jssdk.php";
 $jssdk = new JSSDK("wx80c487097b512789", "422d3a86338493d2f7b0e56507e5ac19");//你的appid,appsecret
 $signPackage = $jssdk->GetSignPackage();
