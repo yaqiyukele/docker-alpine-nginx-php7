@@ -9,11 +9,7 @@ class JSSDK {
         public function __construct($appId, $appSecret) {
 
           include 'database.class.php';
-          //eg: an example for operate select  
-      
-          $mydabase=new linkMysql("172.26.249.246","md","maida6868","zhoubao");
-          
-         
+          //eg: an example for operate select 
           $this->appId = $appId;
           $this->appSecret = $appSecret;
         }
@@ -56,7 +52,8 @@ class JSSDK {
 
           // 将JsApiTicket 存入到数据库中
           // 先查一下库里是否有access_token ,
-          $mydabase=new linkMysql("172.26.249.246","md","maida6868","zhoubao");
+          $mydabase=new \linkMysql("172.26.249.246","md","maida6868","zhoubao");
+          
           $sql = "SELECT access_token,expire_time_access_token,jsapi_ticket,expire_time_jsapi_ticket FROM cache";
           $result = $mydabase->mysql_query_rest($sql);  
           // print_r($result);die;
@@ -88,7 +85,8 @@ class JSSDK {
 
           // 将access_token 存入到数据库中
           // 先查一下库里是否有access_token ,
-          $mydabase=new linkMysql("172.26.249.246","md","maida6868","zhoubao");
+         $mydabase=new \linkMysql("172.26.249.246","md","maida6868","zhoubao");
+          
           
           $sql = "SELECT access_token,expire_time_access_token,jsapi_ticket,expire_time_jsapi_ticket FROM cache";
           $result = $mydabase->mysql_query_rest($sql);  
