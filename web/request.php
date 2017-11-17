@@ -52,10 +52,12 @@ class DB{
     */
     public function actionsql($sql){
         if ($sql!='') {
-        if ($this->pdo->exec($sql) )
-        return true;
-        else
-        return false;
+        if ($this->pdo->exec($sql) ){
+        	return 1;
+        }else{
+        	return 0;
+        }
+        
         }
     }
 }
