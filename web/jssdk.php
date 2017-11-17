@@ -18,14 +18,15 @@ class JSSDK {
         public function getSignPackage() {
           $jsapiTicket = $this->getJsApiTicket();
           // print_r($jsapiTicket);die;
-          $protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
-          $url = "$protocol$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+          /*$protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
+          $url = "$protocol$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";*/
+          $url = "http://www.i2137.com/php/zhoubao.php";
 
           $timestamp = time();
           $nonceStr = $this->createNonceStr();
 
           // 这里参数的顺序要按照 key 值 ASCII 码升序排序
-          $string = "jsapi_ticket={$jsapiTicket}&noncestr={$nonceStr}&timestamp={$timestamp}&url={$url}";
+          $string = "jsapi_ticket=".$jsapiTicket."&noncestr=".$nonceStr."&timestamp=".$timestamp."&url=".$url;
 
           $signature = sha1($string);
 
@@ -53,9 +54,9 @@ class JSSDK {
 
           // 将JsApiTicket 存入到数据库中
           // 先查一下库里是否有access_token ,
-          $mydabase=new DB("172.26.249.246","md","maida6868","zhoubao");
+          // $mydabase=new DB("172.26.249.246","md","maida6868","zhoubao");
 
-          // $mydabase=new DB("localhost","md","maida6868","zhoubao");
+          $mydabase=new DB("localhost","md","maida6868","zhoubao");
 
           
           $sql = "SELECT access_token,expire_time_access_token,jsapi_ticket,expire_time_jsapi_ticket FROM cache";
@@ -90,8 +91,8 @@ class JSSDK {
 
           // 将access_token 存入到数据库中
           // 先查一下库里是否有access_token ,
-          $mydabase=new DB("172.26.249.246","md","maida6868","zhoubao");
-         // $mydabase=new DB("localhost","md","maida6868","zhoubao");
+          // $mydabase=new DB("172.26.249.246","md","maida6868","zhoubao");
+         $mydabase=new DB("localhost","md","maida6868","zhoubao");
 
           
           
