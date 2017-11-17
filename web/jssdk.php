@@ -65,8 +65,8 @@ class JSSDK {
 
           if ($result['expire_time_jsapi_ticket'] <  time()-7000) {//
 
-              $accessToken = $this->getAccessToken();  
-              $url = "https://api.weixin.qq.com/cgi-bin/ticket/getticket?type=jsapi&access_token=$accessToken";
+              $accessToken = $this->getAccessToken();die; 
+              $url = "https://api.weixin.qq.com/cgi-bin/ticket/getticket?type=jsapi&access_token=".$accessToken;
               $res = json_decode($this->httpGet($url));
               $ticket = $res->ticket;
               if ($ticket) {
@@ -77,7 +77,7 @@ class JSSDK {
                // 修改后存入数据库
                 $res = $mydabase->actionsql($sql);
                 if ($res==0) {
-                  echo "jsapi_ticket修改出错";
+                  echo "jsapi_ticket修改出错";die;
                 }
 
               }
@@ -106,9 +106,10 @@ class JSSDK {
 
           if ($result['expire_time_access_token']  <  time()-7000) {
 
-              $url = "https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=$this->appId&secret=$this->appSecret";
+              $url = "https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=".$this->appId."&secret=".$this->appSecret;
               $res = json_decode($this->httpGet($url));
               $access_token = $res->access_token;
+              echo $access_token;
               if ($access_token) {
                 $arr['expire_time_access_token'] = time() + 7000;//
                 $arr['access_token'] = $access_token;
@@ -118,7 +119,7 @@ class JSSDK {
                // 修改后存入数据库
                 $res = $mydabase->actionsql($sql);
                 if ($res==0) {
-                  echo "access_token修改出错";
+                  echo "access_token修改出错";die;
                 }
               }
 
