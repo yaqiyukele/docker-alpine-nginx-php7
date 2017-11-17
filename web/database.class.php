@@ -2,7 +2,7 @@
 /**
 * 连接数据库及操作
 */
-class PDO{
+class PDOEE{
     private $pdo=null;
     private $dbms="mysql"; //数据库类型
     private $host="localhost"; //服务器地址

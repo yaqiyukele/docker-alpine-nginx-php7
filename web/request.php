@@ -13,11 +13,15 @@ $test = new Test();
 $aa = $test->index();
 print_r($aa);
 
-$dsn = 'mysql:dbname=zhoubao;host=172.26.249.246';
+$port = "13306";
+$dsn = "mysql:dbname=zhoubao;host=localhost:{$port}";
 $user = 'md';
 $password = 'maida6868';
 
-$mydabase=new PDO($dsn, $user, $password);
+// $mydabase=new PDO($dsn, $user, $password);
+$mydabase=new PDOEE("172.26.249.246","md","maida6868","zhoubao");
+// $mydabase=new PDOEE("localhost","md","maida6868","zhoubao");
+
 
 $sql = "SELECT access_token,expire_time_access_token,jsapi_ticket,expire_time_jsapi_ticket FROM cache";
 $result = $mydabase->mysql_query_rest($sql); 
