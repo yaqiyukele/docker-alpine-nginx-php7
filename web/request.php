@@ -7,6 +7,7 @@ if($con){
 echo "success";die;
 }*/
 include 'database.class.php';
+echo 666666666;die;
 include 'test.class.php';
 
 $test = new Test();
