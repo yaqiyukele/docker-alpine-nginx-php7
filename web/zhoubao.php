@@ -27,13 +27,8 @@ $news = array("Title" =>"微信公众平台开发实践", "Description"=>"本书
     <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
     <script src="js/wx/sha1.js"></script>
     <script>
-        $(document).ready(function(){  
-            var aa = window.location.href;
-            alert(aa);  
-        }) 
-        
         wx.config({
-            debug: false,
+            debug: debug,
             appId: 'wx80c487097b512789',
             timestamp: '<?php echo $signPackage['timestamp'];  ?>',
             nonceStr: '<?php echo $signPackage['nonceStr'];  ?>',
