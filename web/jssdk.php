@@ -20,7 +20,7 @@ class JSSDK {
           // print_r($jsapiTicket);die;
           /*$protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
           $url = "$protocol$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";*/
-          $url = "http://www.i2137.com/php/zhoubao.php?from=singlemessage";
+          $url = "http://www.i2137.com/php/zhoubao.php";
 
           $timestamp = time();
           $nonceStr = $this->createNonceStr();
@@ -63,7 +63,7 @@ class JSSDK {
           $result = $mydabase->mysql_query_rest($sql);  
           // print_r($result);die;
 
-          if ($result['expire_time_jsapi_ticket'] < time()) {//
+          if ($result['expire_time_jsapi_ticket'] <  time()-7000) {//
 
               $accessToken = $this->getAccessToken();  
               $url = "https://api.weixin.qq.com/cgi-bin/ticket/getticket?type=jsapi&access_token=$accessToken";
@@ -100,8 +100,8 @@ class JSSDK {
           $result = $mydabase->mysql_query_rest($sql);  
           // print_r($result);die; 
 
-          if ($result['expire_time_access_token'] < time()) {//
-              
+          if ($result['expire_time_access_token']  <  time()-7000) {
+
               $url = "https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=$this->appId&secret=$this->appSecret";
               $res = json_decode($this->httpGet($url));
               $access_token = $res->access_token;
