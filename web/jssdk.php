@@ -18,14 +18,15 @@ class JSSDK {
         public function getSignPackage() {
           $jsapiTicket = $this->getJsApiTicket();
           // print_r($jsapiTicket);die;
-          $protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
-          $url = "$protocol$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+          /*$protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
+          $url = "$protocol$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";*/
+          $url = "http://www.i2137.com/php/zhoubao.php";
 
           $timestamp = time();
           $nonceStr = $this->createNonceStr();
 
           // 这里参数的顺序要按照 key 值 ASCII 码升序排序
-          $string = "jsapi_ticket={$jsapiTicket}&noncestr={$nonceStr}&timestamp={$timestamp}&url={$url}";
+          $string = "jsapi_ticket=".$jsapiTicket."&noncestr=".$nonceStr."&timestamp=".$timestamp."&url=".$url;
 
           $signature = sha1($string);
 
