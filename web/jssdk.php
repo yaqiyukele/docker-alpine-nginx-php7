@@ -20,7 +20,7 @@ class JSSDK {
           // print_r($jsapiTicket);die;
           /*$protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
           $url = "$protocol$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";*/
-          $url = "http://www.i2137.com/php/zhoubao.php?from=singlemessage";
+          $url = "http://www.i2137.com/php/zhoubao.php";
 
           $timestamp = time();
           $nonceStr = $this->createNonceStr();
@@ -76,6 +76,10 @@ class JSSDK {
                 // echo $sql;die;
                // 修改后存入数据库
                 $res = $mydabase->actionsql($sql);
+                if ($res==0) {
+                  echo "jsapi_ticket修改出错";
+                }
+
               }
 
           }else{
@@ -113,6 +117,9 @@ class JSSDK {
                 // echo $sql;die;
                // 修改后存入数据库
                 $res = $mydabase->actionsql($sql);
+                if ($res==0) {
+                  echo "access_token修改出错";
+                }
               }
 
           }else{
