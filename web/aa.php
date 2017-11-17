@@ -20,3 +20,14 @@ $sql = "UPDATE cache SET access_token='uwCIQMi2DW1teKeeMfGimLrXrsTTgAkXipjIalYv3
  HoagFKDcsGMVCIY2vOjf9ogvx13K3KT-uwCIQMi2DW0QDO7z7g0ak7y1OPiib5Nk9xysy4KlNNH_R2K8jtgo9w
  y8YFxmKdcDOy7BCb
  1510890417
+
+
+ Array
+(
+    [appId] =&gt; wx80c487097b512789
+    [nonceStr] =&gt; KtQwdOgY5wIg2s5K
+    [timestamp] =&gt; 1510892468
+    [url] =&gt; http://www.i2137.com/php/zhoubao.php
+    [signature] =&gt; 0fb643663de3d01d81f6568b8370f108e95d1c89
+    [rawString] =&gt; jsapi_ticket=HoagFKDcsGMVCIY2vOjf9ogvx13K3KT-uwCIQMi2DW0QDO7z7g0ak7y1OPiib5Nk9xysy4KlNNH_R2K8jtgo9w&amp;noncestr=KtQwdOgY5wIg2s5K×tamp=1510892468&amp;url=http://www.i2137.com/php/zhoubao.php
+)
