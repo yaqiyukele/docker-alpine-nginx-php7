@@ -17,7 +17,7 @@ class DB{
 		$type=$this->dbms;
 		$dbname=$this->Basename;
 		$host=$this->host;
-		$port= "3306";
+		$port= "13306";
 		$dsn="$type:host=$host:{$port}; dbname=$Basename";
 		$this->pdo=new PDO($dsn,$name,$pwd);
 		try{ 
