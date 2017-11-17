@@ -90,7 +90,7 @@ $news = array("Title" =>"微信公众平台开发实践", "Description"=>"本书
           },
           fail: function (res) {
             alert("失败");
-            // alert(JSON.stringify(res));
+            alert(JSON.stringify(res));
           }
         });
         wx.error(function(res){
