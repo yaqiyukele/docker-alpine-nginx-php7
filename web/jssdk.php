@@ -1,4 +1,6 @@
 <?php
+include 'request.php';
+
 class JSSDK {
 
         private $appId;
@@ -8,8 +10,7 @@ class JSSDK {
 
         public function __construct($appId, $appSecret) {
 
-          include 'database.class.php';
-          //eg: an example for operate select 
+          
           $this->appId = $appId;
           $this->appSecret = $appSecret;
         }
@@ -52,9 +53,9 @@ class JSSDK {
 
           // 将JsApiTicket 存入到数据库中
           // 先查一下库里是否有access_token ,
-          $mydabase=new PDOEE("172.26.249.246","md","maida6868","zhoubao");
+          $mydabase=new DB("172.26.249.246","md","maida6868","zhoubao");
 
-          // $mydabase=new PDOEE("localhost","md","maida6868","zhoubao");
+          // $mydabase=new DB("localhost","md","maida6868","zhoubao");
 
           
           $sql = "SELECT access_token,expire_time_access_token,jsapi_ticket,expire_time_jsapi_ticket FROM cache";
@@ -88,9 +89,8 @@ class JSSDK {
 
           // 将access_token 存入到数据库中
           // 先查一下库里是否有access_token ,
-         // $mydabase=new \linkMysql("172.26.249.246","md","maida6868","zhoubao");
-          $mydabase=new PDOEE("172.26.249.246","md","maida6868","zhoubao");
-         // $mydabase=new PDOEE("localhost","md","maida6868","zhoubao");
+          $mydabase=new DB("172.26.249.246","md","maida6868","zhoubao");
+         // $mydabase=new DB("localhost","md","maida6868","zhoubao");
 
           
           
