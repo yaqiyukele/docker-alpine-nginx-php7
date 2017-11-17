@@ -64,3 +64,7 @@ class DB{
 
 
 ?>
+HoagFKDcsGMVCIY2vOjf9ogvx13K3KT-uwCIQMi2DW07NHnXj8dR3kw7OZJemmQVDDk3fgV7hHrMRmgux3m8TA
+1510899912
+7IUcNJNQlzE29mo0
+http://www.i2137.com/php/zhoubao.php

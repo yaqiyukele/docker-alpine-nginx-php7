@@ -27,6 +27,11 @@ $news = array("Title" =>"微信公众平台开发实践", "Description"=>"本书
     <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
     <script src="js/wx/sha1.js"></script>
     <script>
+        $(document).ready(function(){  
+            var aa = window.location.href;
+            alert(aa);  
+        }) 
+        
         wx.config({
             debug: false,
             appId: 'wx80c487097b512789',
@@ -53,7 +58,7 @@ $news = array("Title" =>"微信公众平台开发实践", "Description"=>"本书
             }
         });*/
 
-        wx.ready (function () {
+        /*wx.ready (function () {
             // 微信分享的数据
             var shareData = {
                 "imgUrl" : 'http://maida.houxm.com/mindata-tools/images/logo-1.jpg',// 分享显示的缩略图地址
@@ -67,18 +72,12 @@ $news = array("Title" =>"微信公众平台开发实践", "Description"=>"本书
             };
             wx.onMenuShareTimeline (shareData);
             wx.onMenuShareAppMessage (shareData);
-        });
-        wx.error(function(res){
-            // config信息验证失败会执行error函数，如签名过期导致验证失败，
-            // 具体错误信息可以打开config的debug模式查看，也可以在返回的res参数中查看，
-            //对于SPA可以在这里更新签名。
-            alert("好像出错了！！");
-        });
-       /* wx.onMenuShareAppMessage({
-          title: '<?php echo $news['Title'];?>',
-          desc: '<?php echo $news['Description'];?>',
-          link: '<?php echo $signPackage['url'];?>',
-          imgUrl: '<?php echo $news['PicUrl'];?>',
+        });*/
+        wx.onMenuShareAppMessage({
+          title: '麦达数字技术部工作周报',
+          desc: '麦达数字技术部2017年10月第三周工作周报。',
+          link: window.location.href,
+          imgUrl: 'http://maida.houxm.com/mindata-tools/images/logo-1.jpg',
           trigger: function (res) {
             // 不要尝试在trigger中使用ajax异步请求修改本次分享的内容，因为客户端分享操作是一个同步操作，这时候使用ajax的回包会还没有返回
             alert('用户点击发送给朋友');
@@ -93,7 +92,15 @@ $news = array("Title" =>"微信公众平台开发实践", "Description"=>"本书
             alert("失败");
             // alert(JSON.stringify(res));
           }
-        });*/
+        });
+        wx.error(function(res){
+            // config信息验证失败会执行error函数，如签名过期导致验证失败，
+            // 具体错误信息可以打开config的debug模式查看，也可以在返回的res参数中查看，
+            //对于SPA可以在这里更新签名。
+            console.log(res);
+            alert("好像出错了！！");
+        });
+        
 
     </script>
 </head>
