@@ -28,7 +28,7 @@ $news = array("Title" =>"微信公众平台开发实践", "Description"=>"本书
     <script src="js/wx/sha1.js"></script>
     <script>
         wx.config({
-            debug: debug,
+            debug: true,
             appId: 'wx80c487097b512789',
             timestamp: '<?php echo $signPackage['timestamp'];  ?>',
             nonceStr: '<?php echo $signPackage['nonceStr'];  ?>',
