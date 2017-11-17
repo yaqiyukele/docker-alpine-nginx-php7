@@ -71,7 +71,8 @@ class JSSDK {
               if ($ticket) {
                 $arr['expire_time_jsapi_ticket'] = time() + 7000;//
                 $arr['jsapi_ticket'] = $ticket;
-                $sql = "UPDATE cache SET jsapi_ticket=".$arr['jsapi_ticket'].", expire_time_jsapi_ticket=".$arr['expire_time_jsapi_ticket']."WHERE id=1";
+                $sql = "UPDATE cache SET jsapi_ticket='".$arr['jsapi_ticket']."', expire_time_jsapi_ticket=".$arr['expire_time_jsapi_ticket']." WHERE id=1";
+                // echo $sql;die;
                // 修改后存入数据库
                 $res = $mydabase->actionsql($sql);
               }
@@ -107,7 +108,8 @@ class JSSDK {
                 $arr['expire_time_access_token'] = time() + 7000;//
                 $arr['access_token'] = $access_token;
                 // 修改后存入数据库
-                $sql = "UPDATE cache SET access_token=".$arr['access_token'].", expire_time_access_token=".$arr['expire_time_access_token']."WHERE id=1";
+                $sql = "UPDATE cache SET access_token='".$arr['access_token']."', expire_time_access_token=".$arr['expire_time_access_token']." WHERE id=1";
+                // echo $sql;die;
                // 修改后存入数据库
                 $res = $mydabase->actionsql($sql);
               }
