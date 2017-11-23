@@ -1,14 +1,3 @@
-<?php 
-// error_reporting(0);
-// define('IN_QY',true);
-require "jssdk.php";
-$jssdk = new JSSDK("wx80c487097b512789", "422d3a86338493d2f7b0e56507e5ac19");//你的appid,appsecret
-$signPackage = $jssdk->GetSignPackage();
-// print_r($signPackage);die;
-
-$news = array("Title" =>"微信公众平台开发实践", "Description"=>"本书共分10章，案例程序采用广泛流行的PHP、MySQL、XML、CSS、JavaScript、HTML5等程序语言及数据库实现。", "PicUrl" =>'http://images.cnitblog.com/i/340216/201404/301756448922305.jpg'); 
-
-?>
 <!DOCTYPE html>
 <html>
 <head lang="en">
@@ -27,6 +16,23 @@ $news = array("Title" =>"微信公众平台开发实践", "Description"=>"本书
     <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
     <script src="js/wx/sha1.js"></script>
     <script>
+        $.ajax({
+            type: 'POST',
+            url: 'http://127.0.0.1/share/index.php',
+            data:{
+                 'url': window.location.href.split('#')[0]
+            },
+            dataType: 'json',
+            success: function(data){
+                console.log(data.code);
+                
+            },
+            error: function(xhr){
+                alert("请求失败，请联系管理员")
+               // console.log(xhr);
+            }
+        });
+/*
         wx.config({
             debug: true,
             appId: 'wx80c487097b512789',
@@ -40,34 +46,6 @@ $news = array("Title" =>"微信公众平台开发实践", "Description"=>"本书
                 'onMenuShareAppMessage'
             ]
         });
-
-        /*wx.checkJsApi({
-            jsApiList: [
-                'getLocation',
-                'onMenuShareTimeline',
-                'onMenuShareAppMessage'
-            ],
-            success: function (res) {
-                alert("失败");
-                alert(JSON.stringify(res));
-            }
-        });*/
-
-        /*wx.ready (function () {
-            // 微信分享的数据
-            var shareData = {
-                "imgUrl" : 'http://maida.houxm.com/mindata-tools/images/logo-1.jpg',// 分享显示的缩略图地址
-                "link" : window.location.href,// 分享地址
-                "desc" : '麦达数字技术部2017年10月第三周工作周报。',// 分享描述
-                "title" : '麦达数字技术部工作周报',// 分享标题
-                success : function () {
-                    // 分享成功可以做相应的数据处理
-                    alert("分享成功");
-                }
-            };
-            wx.onMenuShareTimeline (shareData);
-            wx.onMenuShareAppMessage (shareData);
-        });*/
         wx.onMenuShareAppMessage({
           title: '麦达数字技术部工作周报',
           desc: '麦达数字技术部2017年10月第三周工作周报。',
@@ -95,7 +73,7 @@ $news = array("Title" =>"微信公众平台开发实践", "Description"=>"本书
             console.log(res);
             alert("好像出错了！！");
         });
-        
+        */
 
     </script>
 </head>
