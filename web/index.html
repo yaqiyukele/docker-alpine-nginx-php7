@@ -3,7 +3,6 @@
 <meta charset='utf-8'>
 <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
 <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
-<script src="index.js"></script>
 </head>
 <body>
 微信自定义，动态修改分享内容;
@@ -40,7 +39,7 @@
 				     wx.onMenuShareAppMessage({
 				          title: '麦达数字技术部工作周报',
 				          desc: '麦达数字技术部2017年10月第三周工作周报。',
-				          link: window.location.href,
+				          link: 'http://i2137.com/php/index.html',
 				          imgUrl: 'http://maida.houxm.com/mindata-tools/images/logo-1.jpg',
 				          trigger: function (res) {
 				            // 不要尝试在trigger中使用ajax异步请求修改本次分享的内容，因为客户端分享操作是一个同步操作，这时候使用ajax的回包会还没有返回
@@ -57,7 +56,7 @@
 				            alert(JSON.stringify(res));
 				          }
 				       });
-				     
+
 				});
                
 		        wx.error(function(res){
