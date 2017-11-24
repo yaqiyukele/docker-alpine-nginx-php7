@@ -2,6 +2,7 @@ CONTAINER = alpine-nginx-php7
 IMAGE = fguillot/alpine-nginx-php7
 TAG = latest
 
+
 image:
 	@ docker build -t $(IMAGE):$(TAG) .
 
