@@ -62,6 +62,7 @@ class JSSDK {
       if ($result['expire_time_jsapi_ticket'] <  time()) {//
 
           $accessToken = $this->getAccessToken(); 
+          return $access_token;
           $url = "https://api.weixin.qq.com/cgi-bin/ticket/getticket?type=jsapi&access_token=".$accessToken;
           $res = json_decode($this->httpGet($url));
           $ticket = $res->ticket;

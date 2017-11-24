@@ -15,7 +15,8 @@ $sql = "UPDATE cache SET access_token='uwCIQMi2DW1teKeeMfGimLrXrsTTgAkXipjIalYv3
     $res = $mydabase->actionsql($sql);
 
     print_r($res);die;*/
-
+	$this->appId = 'wx80c487097b512789';
+    $this->appSecret = '422d3a86338493d2f7b0e56507e5ac19';
 
 
 // 将access_token 存入到数据库中，先查一下库里是否有access_token ,
@@ -28,7 +29,7 @@ $sql = "UPDATE cache SET access_token='uwCIQMi2DW1teKeeMfGimLrXrsTTgAkXipjIalYv3
       if ($result['expire_time_access_token']  <  time()) {
 
           $url = "https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=".$this->appId."&secret=".$this->appSecret;
-          $res = json_decode($this->httpGet($url));
+          $res = json_decode(file_get_contents($url));
           $access_token = $res->access_token;
           // echo $access_token;
           if ($access_token) {
@@ -36,7 +37,7 @@ $sql = "UPDATE cache SET access_token='uwCIQMi2DW1teKeeMfGimLrXrsTTgAkXipjIalYv3
             $arr['access_token'] = $access_token;
             // 修改后存入数据库
             $sql = "UPDATE cache SET access_token='".$arr['access_token']."', expire_time_access_token=".$arr['expire_time_access_token']." WHERE id=1";
-            // echo $sql;die;
+            echo $sql;
            // 修改后存入数据库
             $res = $mydabase->actionsql($sql);
             if ($res==0) {
@@ -49,6 +50,6 @@ $sql = "UPDATE cache SET access_token='uwCIQMi2DW1teKeeMfGimLrXrsTTgAkXipjIalYv3
         $access_token = $result['access_token'];
       }
 
-      return $access_token;
+      print_r($access_token);
 
  ?>
