@@ -21,7 +21,7 @@
             	// 获取信息成功
                 console.log(data)
                  wx.config({
-		            debug: true,
+		            debug: false,
 		            appId: data.result.appId,
 		            timestamp: data.result.timestamp,
 		            nonceStr: data.result.nonceStr,
@@ -68,9 +68,11 @@
 				        "title" : '麦达数字技术部工作周报',//分享卡片标题
 				        "link": window.location.href,//分享出去后的链接，这里可以将链接设置为另一个页面。
 				        "success":function(){//分享成功后的回调函数
+				        	alert('已分享');
 				        },
 				        'cancel': function () { 
 				            // 用户取消分享后执行的回调函数
+				            alert('已取消');
 				        }
 				    }
 				};  
