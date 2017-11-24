@@ -39,7 +39,7 @@
 				     wx.onMenuShareAppMessage({
 				          title: '麦达数字技术部工作周报',
 				          desc: '麦达数字技术部2017年10月第三周工作周报。',
-				          link: 'http://i2137.com/php/index.html',
+				          link: window.location.href,
 				          imgUrl: 'http://maida.houxm.com/mindata-tools/images/logo-1.jpg',
 				          trigger: function (res) {
 				            // 不要尝试在trigger中使用ajax异步请求修改本次分享的内容，因为客户端分享操作是一个同步操作，这时候使用ajax的回包会还没有返回
