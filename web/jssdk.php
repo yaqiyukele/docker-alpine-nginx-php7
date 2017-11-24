@@ -15,7 +15,7 @@ class JSSDK {
  
   public function getSignPackage() {
     $jsapiTicket = $this->getJsApiTicket();
-    print_r($jsapiTicket);die;
+    return $jsapiTicket;
     $url = $this->url;
  
     $timestamp = time();
