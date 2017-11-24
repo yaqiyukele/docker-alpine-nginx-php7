@@ -15,7 +15,7 @@ class JSSDK {
  
   public function getSignPackage() {
     $jsapiTicket = $this->getJsApiTicket();
-
+    print_r($jsapiTicket);die;
     $url = $this->url;
  
     $timestamp = time();
@@ -59,7 +59,7 @@ class JSSDK {
       $result = $mydabase->mysql_query_rest($sql);  
       // print_r($result);die;
 
-      if ($result['expire_time_jsapi_ticket'] <  time()-7000) {//
+      if ($result['expire_time_jsapi_ticket'] <  time()) {//
 
           $accessToken = $this->getAccessToken(); 
           $url = "https://api.weixin.qq.com/cgi-bin/ticket/getticket?type=jsapi&access_token=".$accessToken;
@@ -95,7 +95,7 @@ class JSSDK {
       $sql = "SELECT access_token,expire_time_access_token,jsapi_ticket,expire_time_jsapi_ticket FROM cache";
       $result = $mydabase->mysql_query_rest($sql);
 
-      if ($result['expire_time_access_token']  <  time()-7000) {
+      if ($result['expire_time_access_token']  <  time()) {
 
           $url = "https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=".$this->appId."&secret=".$this->appSecret;
           $res = json_decode($this->httpGet($url));
