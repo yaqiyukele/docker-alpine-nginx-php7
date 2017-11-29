@@ -1,4 +1,5 @@
 <?php
+echo 123;die;
 error_reporting(0);
 // define('IN_QY',true);
 session_start();
