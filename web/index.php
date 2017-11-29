@@ -1,7 +1,8 @@
 <?php
-echo 123;die;
 error_reporting(0);
-// define('IN_QY',true);
+
+echo 123;die;
+define('IN_QY',true);
 session_start();
 require("include/common.inc.php");
 echo 1111;die;
