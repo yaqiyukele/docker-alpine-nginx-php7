@@ -33,7 +33,7 @@ foreach ($result4 as $key => $value) {
 
 if ($result1&&$result3&&$result5) {
 	// 如果复制成功则进入到复制的页面中来进行修改,同时把id传过去
-	$url = "http://127.0.0.1/zhoubao1/index-5-show.php?essen_id=".$result3;  
+	$url = "http://i2137.com/php/index-5-show.php?essen_id=".$result3;  
 	header( "Location: $url" );
 
 }
