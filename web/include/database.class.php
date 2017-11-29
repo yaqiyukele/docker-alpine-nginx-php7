@@ -26,9 +26,9 @@ class ConnectMysqli{
     $this->db = $config['db'] ? $config['db'] : 'zhoubao';
     $this->charset=isset($arr['charset']) ? $arr['charset'] : 'utf8';*/
     $this->host = 'localhost';
-    $this->port = '13306';
-    $this->user = 'md';
-    $this->pass = 'maida6868';
+    $this->port = '3306';
+    $this->user = 'root';
+    $this->pass = 'root';
     $this->db = 'zhoubao';
     $this->charset='utf8';
     //连接数据库
@@ -80,12 +80,12 @@ class ConnectMysqli{
    //打印数据
     public function p($arr){
       echo "<pre>";
-      print_r($arr);die;
+      print_r($arr);
       echo "</pre>";
     }
     public function v($arr){
     echo "<pre>";
-      var_dump($arr);die;
+      var_dump($arr);
       echo "</pre>";
     }
     //获得最后一条记录id
@@ -214,5 +214,22 @@ class ConnectMysqli{
     //返回受影响的行数
     return mysqli_affected_rows($this->link);
    }
+
+
+   // 开启事务
+   public function begin(){
+    $this->link->autocommit(false);
+   }
+
+   // 提交事务
+  public function commit(){
+    $this->link->commit();
+  }
+
+  // 事务回滚
+  public function rollback(){
+    $this->link->rollback();
+  }
+
 }
 ?>

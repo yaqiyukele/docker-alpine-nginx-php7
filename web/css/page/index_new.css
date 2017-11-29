@@ -43,7 +43,7 @@ a {
     text-decoration: none;
 }
 a:hover {
-    text-decoration: none;
+    text-decoration: none;       
 }
 a:focus {
     text-decoration: none;
@@ -66,23 +66,24 @@ body {
     /*background: transparent url(../../images/page_new_1.jpg);
     background-size: 100% 100%;*/
     /*-moz-background-size:100% 100%;
-    background-size:100% 100%;*/
+    background-size:100% 100%;*/ 
 
     background-image: url("../../images/bottom@1x.png"), url("../../images/maida@1x.png"), url("../../images/zhoubao@1x.png"),url(../../images/page_new_1.jpg);
     background-repeat: no-repeat, no-repeat, no-repeat,no-repeat;  
-    background-position: 195px 430px,269px 34px,210px 138px,0 0; 
-
+    background-position: 175px 430px,269px 34px,210px 138px,0 0; 
+    /*background-size:100% 100%;*/
+    /*background-position: 45px 430px,120px 34px,60px 138px,0 0; */
     
 }
-#page0 p{
+#page0 h2{
     font-size: 30px;
     padding-top: 315px;
 }
 #page1,#page2,#page3,#page4,#page5,#page6,#page7,#page8{
     background: transparent url("../../images/page_new_1.jpg");
     /*background-image:url("../../images/page-2.jpg");*/
-   /* -moz-background-size:100% 100%;
-    background-size:100% 100%;*/
+    -moz-background-size:100% 100%;
+    background-size:100% 100%;
 }
 .group .title{
     width: 80%;
@@ -92,7 +93,10 @@ body {
     margin: 0 auto;
 }
 .title1{
-    background: transparent url(../../images/title-bg@2x.png);
+    background: transparent url(../../images/title-bg@3x.png);
+    -moz-background-size:40% 20%;
+    background-size:63px 20px;
+    background-repeat:no-repeat;
 }
 .group .title h3{
     font-size: 2em;
@@ -251,4 +255,7 @@ body {
     height: 45%;
     margin: 1em auto 0;
     background-color: rgba(225, 225, 225, .3);
+}
+.big{
+    background: url('../../images/时间轴@1x.png') no-repeat 120px 8px;
 }
