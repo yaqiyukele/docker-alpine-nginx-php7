@@ -1,3 +1,86 @@
+<?php
+error_reporting(0);
+define('IN_QY',true);
+session_start();
+require("include/common.inc.php");
+$db=\ConnectMysqli::getIntance();
+$sql = "SELECT * FROM essential_information WHERE weekly_newspaper_ctime=(SELECT MAX(weekly_newspaper_ctime) FROM essential_information WHERE weekly_newspaper_type=1)";
+$result=$db->getRow($sql);
+// $db->p($result);die;
+$sql = "SELECT * FROM content WHERE relevance_id=".$result['essen_id'];
+$res=$db->getAll($sql);
+// $db->p($res);
+// 循环处理数组
+foreach ($res as $key => $value) {
+    // 键值为0的是正文第一页的内容
+    $Title1 = $res[0]['title'];
+    $Content1 = explode('@#$',$res[0]['content']);
+    $page1 = $res['page'];
+    // print_r($Content1);die;
+
+    // 键值为1的是分项进展总结的第一条
+    $Title2 = $res[1]['title'];
+    $Content2 = explode('@#$%',$res[1]['content']);
+    // print_r($Content2);die;
+    $Title2_1 = $Content2[0];
+    $Content2_1 = explode('@#$', $Content2[1]);
+    $page2 = $res['page'];
+    // print_r($content2_1);die;
+
+    // 键值为2的是分项进展总结的第二条
+    $Title3 = $res[2]['title'];
+    $Content3 = explode('@#$%',$res[2]['content']);
+    // print_r($Content3);die;
+    $Title3_1 = $Content3[0];
+    $Content3_1 = explode('@#$', $Content3[1]);
+    $page3 = $res['page'];
+    // print_r($content2_1);die;
+
+
+    // 键值为3的是分项进展总结的第三条
+    $Title4 = $res[3]['title'];
+    $Content4 = explode('@#$%',$res[3]['content']);
+    // print_r($Content3);die;
+    $Title4_1 = $Content4[0];
+    $Content4_1 = explode('@#$', $Content4[1]);
+    $page4 = $res['page'];
+    // print_r($content2_1);die;
+
+
+
+    // 键值为4的是分项进展总结的第四条
+    $Title5 = $res[4]['title'];
+    $Content5 = explode('@#$%',$res[4]['content']);
+    // print_r($Content3);die;
+    $Title5_1 = $Content5[0];
+    $Content5_1 = explode('@#$', $Content5[1]);
+    $page5 = $res['page'];
+    // print_r($content2_1);die;
+
+
+    // 键值为5的是分项进展总结的第五条
+    $Title6 = $res[5]['title'];
+    $Content6 = explode('@#$%',$res[5]['content']);
+    // print_r($Content6);die;
+    $Title6_1 = $Content6[0];
+    $content6_1 = $Content6[1];
+    $page6 = $res['page'];
+
+
+    // 键值为6的是团队情况
+    $Title7 = $res[6]['title'];
+    $Content7 = explode('@#$',$res[6]['content']);
+    $page7 = $res['page'];
+
+
+    // 键值为7的是分项进展总结的第八条
+    // $Title8 = $res[7]['title'];
+
+
+}
+// $db->p($res);
+// die;
+?>
 <!DOCTYPE html>
 <html>
 <head lang="en">
