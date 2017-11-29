@@ -1,9 +1,9 @@
 <?php
 error_reporting(0);
-define('IN_QY',true);
+// define('IN_QY',true);
 session_start();
 require("include/common.inc.php");
-echo 1111;
+echo 1111;die;
 $db=\ConnectMysqli::getIntance();
 $sql = "SELECT * FROM essential_information WHERE weekly_newspaper_ctime=(SELECT MAX(weekly_newspaper_ctime) FROM essential_information WHERE weekly_newspaper_type=1)";
 $result=$db->getRow($sql);
