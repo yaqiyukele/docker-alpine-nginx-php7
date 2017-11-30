@@ -4,8 +4,8 @@ define('IN_QY',true);
 session_start();
 include("./include/common.inc.php");
 include("./include/pdo.class.php");
-// $mydabase=new DB("172.26.249.246","md","maida6868","zhoubao");
-$mydabase=new DB("127.0.0.1","root","root","zhoubao");
+$mydabase=new DB("172.26.249.246","md","maida6868","zhoubao");
+// $mydabase=new DB("127.0.0.1","root","root","zhoubao");
 $sql = "SELECT weekly_newspaper_date, essen_id FROM essential_information WHERE weekly_newspaper_type=1";
 $result=$mydabase->mysql_query_fetchAll($sql);
 
