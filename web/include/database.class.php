@@ -1,5 +1,4 @@
 <?php
-header('content-type:text/html;charset=utf-8');
 /*
 掌握满足单例模式的必要条件
 (1)私有的构造方法-为了防止在类外使用new关键字实例化对象
