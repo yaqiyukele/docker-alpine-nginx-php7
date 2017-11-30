@@ -169,7 +169,7 @@ foreach ($res as $key => $value) {
             }
         });
 </script>
-    
+
 </head>
 <body onmousewheel="return false;">
     <div class="container">
@@ -343,7 +343,7 @@ foreach ($res as $key => $value) {
     <script src="js/page/index-5-echarts-config.js"></script>
     <script type="text/javascript">
         $("#page0 img").bind("click",function(){
-           window.location.href='index-5.php?essen_id=<?php echo $essen_id;?>';
+           window.location.href="index-5.php?essen_id=<?php echo $result['essen_id'];?>";
         })
     </script>
 </body>
