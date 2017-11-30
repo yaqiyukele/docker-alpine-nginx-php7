@@ -101,8 +101,8 @@ $res7 = $db->update('content',$data7,$WHERE7);
 */
 
 
-$mydabase=new DB("172.26.249.246","md","maida6868","zhoubao");
-// $mydabase=new DB("127.0.0.1","root","root","zhoubao");
+// $mydabase=new DB("172.26.249.246","md","maida6868","zhoubao");
+$mydabase=new DB("127.0.0.1","root","root","zhoubao");
 
 
 $WHERE0 = "essen_id='".$infoid."'";

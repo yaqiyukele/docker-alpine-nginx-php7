@@ -2,12 +2,12 @@
 error_reporting(0);
 define('IN_QY',true);
 session_start();
-require("include/common.inc.php");
-$db=\ConnectMysqli::getIntance();
+include("./include/common.inc.php");
+include("./include/pdo.class.php");
+// $mydabase=new DB("172.26.249.246","md","maida6868","zhoubao");
+$mydabase=new DB("127.0.0.1","root","root","zhoubao");
 $sql = "SELECT weekly_newspaper_date, essen_id FROM essential_information WHERE weekly_newspaper_type=1";
-$result=$db->getAll($sql);
-// $db->p($result);
-
+$result=$mydabase->mysql_query_fetchAll($sql);
 
 ?>
 <!DOCTYPE html>
@@ -21,7 +21,5 @@ $result=$db->getAll($sql);
 <?php  foreach ($result as $key => $value) { ?>
 	<?=$value['weekly_newspaper_date']?><a href="index-5-copy.php?essen_id=<?=$value['essen_id'] ?>">复制</a><br>
 <?php }?>
-
-
 </body>
 </html>

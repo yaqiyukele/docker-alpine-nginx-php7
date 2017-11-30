@@ -70,6 +70,55 @@ class DB{
         
         }
     }
+
+
+
+    /*
+	添加数据
+    */
+    public function insert($table,$arrData) {
+	    $name = $values = '';
+	    $flag = $flagV = 1;
+	    $true = is_array(current($arrData) );//判断是否一次插入多条数据
+	    if($true) {
+	        //构建插入多条数据的sql语句
+	        foreach($arrData as $arr) {
+	            $values .= $flag ? '(' : ',(';
+	            foreach($arr as $key => $value) {
+	                if($flagV) {
+	                    if($flag) $name .= "$key";
+	                    $values .= "'$value'";
+	                    $flagV = 0;
+	                } else {
+	                    if($flag) $name .= ",$key";
+	                    $values .= ",'$value'";
+	                }
+	            }
+	            $values .= ') ';
+	            $flag = 0;
+	            $flagV = 1;
+	        }
+	    } else {
+	        //构建插入单条数据的sql语句
+	        foreach($arrData as $key => $value) {
+	            if($flagV) {
+	                $name = "$key";
+	                $values = "('$value'";
+	                $flagV = 0;
+	            } else {
+	                $name .= ",$key";
+	                $values .= ",'$value'";
+	            }
+	        }
+	        $values .= ") ";
+	    }
+	     
+	    $this->sql = $strSql = "insert into $table ($name) values $values";
+	    if( ($this->result = $this->pdo->exec($strSql) ) > 0 ) {
+	        return $this->result;
+	    }
+	    return false;
+	}
 }
 
 
