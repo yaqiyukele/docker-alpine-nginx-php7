@@ -10,7 +10,7 @@ $mydabase=new DB("172.26.249.246","md","maida6868","zhoubao");
 // $mydabase=new DB("127.0.0.1","root","root","zhoubao");
 $sql = "SELECT * FROM essential_information WHERE weekly_newspaper_ctime=(SELECT MAX(weekly_newspaper_ctime) FROM essential_information WHERE weekly_newspaper_type=1)";
 // $essen_id = $_GET['essen_id'];
-$sql = "SELECT * FROM content WHERE relevance_id=".$essen_id;
+// $sql = "SELECT * FROM content WHERE relevance_id=".$essen_id;
 $result=$mydabase->mysql_query_rest($sql);
 // print_r($result);die;
 $sql = "SELECT * FROM content WHERE relevance_id=".$result['essen_id'];
