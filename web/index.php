@@ -2,16 +2,18 @@
 // error_reporting(0);
 define('IN_QY',true);
 session_start();
-include("common.inc.php");
-include("request.php");
-include("Image.class.php");
-include("database.class.php");
-$db=\ConnectMysqli::getIntance();
+include("./include/common.inc.php");
+include("./include/database.class.php");
+include("./include/pdo.class.php");
+
+$mydabase=new DB("172.26.249.246","md","maida6868","zhoubao");
+// $mydabase=new DB("127.0.0.1","root","root","zhoubao");
 $sql = "SELECT * FROM essential_information WHERE weekly_newspaper_ctime=(SELECT MAX(weekly_newspaper_ctime) FROM essential_information WHERE weekly_newspaper_type=1)";
-$result=$db->getRow($sql);
+$result=$mydabase->mysql_query_rest($sql);
+// print_r($result);die;
 $sql = "SELECT * FROM content WHERE relevance_id=".$result['essen_id'];
-$res=$db->getAll($sql);
-// $db->p($res);
+$res=$mydabase->mysql_query_fetchAll($sql);
+// print_r($res);die;
 // 循环处理数组
 foreach ($res as $key => $value) {
     // 键值为0的是正文第一页的内容
