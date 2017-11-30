@@ -97,6 +97,11 @@ foreach ($res as $key => $value) {
     <!--javascript-->
     <script src="js/jquery-1.11.3.min.js"></script>
     <script src="libs/echarts/echarts.min.js"></script>
+
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script src="js/wx/sha1.js"></script>
+
     <script type="text/javascript">
     $.ajax({
             type: 'POST',
