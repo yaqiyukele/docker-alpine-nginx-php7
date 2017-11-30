@@ -1,22 +1,25 @@
 <?php
-error_reporting(0);
+// error_reporting(0);
 define('IN_QY',true);
 session_start();
-require("include/common.inc.php");
-$db=\ConnectMysqli::getIntance();
-/*$sql = "SELECT * FROM essential_information WHERE weekly_newspaper_ctime=(SELECT MAX(weekly_newspaper_ctime) FROM essential_information)";
-$result=$db->getRow($sql);*/
-// $db->p($result);
-$essen_id = $_GET['essen_id'];
-$sql = "SELECT * FROM content WHERE relevance_id=".$essen_id;
-$res=$db->getAll($sql);
-// $db->p($res);
+
+include("./include/common.inc.php");
+include("./include/pdo.class.php");
+
+// $mydabase=new DB("172.26.249.246","md","maida6868","zhoubao");
+$mydabase=new DB("127.0.0.1","root","root","zhoubao");
+$sql = "SELECT * FROM essential_information WHERE weekly_newspaper_ctime=(SELECT MAX(weekly_newspaper_ctime) FROM essential_information WHERE weekly_newspaper_type=1)";
+$result=$mydabase->mysql_query_rest($sql);
+// print_r($result);die;
+$sql = "SELECT * FROM content WHERE relevance_id=".$result['essen_id'];
+$res=$mydabase->mysql_query_fetchAll($sql);
+// print_r($res);die;
 // 循环处理数组
 foreach ($res as $key => $value) {
     // 键值为0的是正文第一页的内容
     $Title1 = $res[0]['title'];
     $Content1 = explode('@#$',$res[0]['content']);
-    $page1 = $res['page'];
+    $page1 = $res[0]['page'];
     // print_r($Content1);die;
 
     // 键值为1的是分项进展总结的第一条
@@ -25,7 +28,7 @@ foreach ($res as $key => $value) {
     // print_r($Content2);die;
     $Title2_1 = $Content2[0];
     $Content2_1 = explode('@#$', $Content2[1]);
-    $page2 = $res['page'];
+    $page2 = $res[1]['page'];
     // print_r($content2_1);die;
 
     // 键值为2的是分项进展总结的第二条
@@ -34,7 +37,7 @@ foreach ($res as $key => $value) {
     // print_r($Content3);die;
     $Title3_1 = $Content3[0];
     $Content3_1 = explode('@#$', $Content3[1]);
-    $page3 = $res['page'];
+    $page3 = $res[2]['page'];
     // print_r($content2_1);die;
 
 
@@ -44,7 +47,7 @@ foreach ($res as $key => $value) {
     // print_r($Content3);die;
     $Title4_1 = $Content4[0];
     $Content4_1 = explode('@#$', $Content4[1]);
-    $page4 = $res['page'];
+    $page4 = $res[3]['page'];
     // print_r($content2_1);die;
 
 
@@ -55,7 +58,7 @@ foreach ($res as $key => $value) {
     // print_r($Content3);die;
     $Title5_1 = $Content5[0];
     $Content5_1 = explode('@#$', $Content5[1]);
-    $page5 = $res['page'];
+    $page5 = $res[4]['page'];
     // print_r($content2_1);die;
 
 
@@ -65,13 +68,13 @@ foreach ($res as $key => $value) {
     // print_r($Content6);die;
     $Title6_1 = $Content6[0];
     $content6_1 = $Content6[1];
-    $page6 = $res['page'];
+    $page6 = $res[5]['page'];
 
 
     // 键值为6的是团队情况
     $Title7 = $res[6]['title'];
     $Content7 = explode('@#$',$res[6]['content']);
-    $page7 = $res['page'];
+    $page7 = $res[6]['page'];
 
 
     // 键值为7的是分项进展总结的第八条
@@ -79,8 +82,7 @@ foreach ($res as $key => $value) {
 
 
 }
-// $db->p($res);
-// die;
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -97,75 +99,82 @@ foreach ($res as $key => $value) {
     <script src="js/jquery-1.11.3.min.js"></script>
     <script src="libs/echarts/echarts.min.js"></script>
 
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
     <script src="js/wx/sha1.js"></script>
-    <!--<script>
-        var access_token="-Lpo8jh1423TePEW0tAXPoQ7yibCgyaW-o-u5ySMygfQSoROjHirBjcYAxlDy1FUDA3jYbL1sbwocxV53Gu-5Dl9w1r4TM1k3xly1WfA_LBqjGpr9El__Squ_6mzXSkHDBAbAAAVTS";
-        var jsapi_ticket="HoagFKDcsGMVCIY2vOjf9ogvx13K3KT-uwCIQMi2DW1Vlo0XP2R7sgXoQPyK8HWe9Mhdac1B-OaFZv5hnH_V2w";
-        var timestamp=GetTimestamp();
-        var nonceStr="mindatatoolsweixin";
-        var url=window.location.href+"?from=singlemessage";
-        var signature= GetSignature();
 
-        function GetTimestamp(){
-            var timestamp=Math.round(new Date().getTime()/1000);
-            return timestamp;
-        }
+    <script type="text/javascript">
+    $.ajax({
+            type: 'POST',
+            // url: 'http://127.0.0.1/share/index.php',
+            url:'http://i2137.com/php/sign.php',
+            data:{
+                 'url': window.location.href.split('#')[0]
+            },
+            dataType: 'json',
+            success: function(data){ 
+                // 获取信息成功
+                console.log(data)
+                 wx.config({
+                    debug: false,
+                    appId: data.result.appId,
+                    timestamp: data.result.timestamp,
+                    nonceStr: data.result.nonceStr,
+                    signature: data.result.signature,
+                    jsApiList: [
+                        // 所有要调用的 API 都要加到这个列表中
+                        'checkJsApi',
+                        'onMenuShareTimeline',
+                        'onMenuShareAppMessage',
+                        'onMenuShareQQ'
+                    ]
+                });
 
-        function GetSignature(){
-            // 这里参数的顺序要按照 key 值 ASCII 码升序排序
-            var s = "jsapi_ticket=" + jsapi_ticket + "&noncestr=" + nonceStr + "&timestamp=" + timestamp + "&url=" + url;
-            return hex_sha1(s);
-        }
+            window.share_config = {
+                     "share": {
+                        "imgUrl": "http://i2137.com/php/progress-2.png",//分享图，默认当相对路径处理，所以使用绝对路径的的话，“http://”协议  前缀必须在。
+                        "desc" : "麦达数字技术部2017年11月第三周工作周报",//摘要,如果分享到朋友圈的话，不显示摘要。
+                        "title" : '麦达数字技术部工作周报',//分享卡片标题
+                        "link": window.location.href,//分享出去后的链接，这里可以将链接设置为另一个页面。
+                        "success":function(){//分享成功后的回调函数
+                            alert('已分享');
+                        },
+                        'cancel': function () { 
+                            // 用户取消分享后执行的回调函数
+                            alert('已取消');
+                        }
+                    }
+                };  
+                    wx.ready(function () {
+                    wx.onMenuShareAppMessage(share_config.share);//分享给好友
+                    wx.onMenuShareTimeline(share_config.share);//分享到朋友圈
+                    wx.onMenuShareQQ(share_config.share);//分享给手机QQ
+                });
+                wx.error(function(res){
+                    // config信息验证失败会执行error函数，如签名过期导致验证失败，
+                    // 具体错误信息可以打开config的debug模式查看，也可以在返回的res参数中查看，
+                    //对于SPA可以在这里更新签名。
+                    alert("好像出错了！！");
+                    alert("errorMSG:"+res);
+                    // console.log(res);                    
+                });
 
-        function GetInitInfo(){
-            console.log(timestamp);
-            console.log(nonceStr);
-            console.log(signature);
-        }
-    </script>-->
-    <!--<script>
-        wx.config({
-            debug: false,
-            appId: 'wx80c487097b512789',
-            timestamp: '1510455689',
-            nonceStr: 'mindatatoolsweixin',
-            signature: '4afaa158e04f639eab14f77632bb7238eb02351b',
-            jsApiList: [
-                // 所有要调用的 API 都要加到这个列表中
-                'checkJsApi',
-                'onMenuShareTimeline',
-                'onMenuShareAppMessage'
-            ]
+                
+            },
+            error: function(xhr){
+                alert("请求失败，请联系管理员")
+               // console.log(xhr);
+            }
         });
-        wx.ready (function () {
-            // 微信分享的数据
-            var shareData = {
-                "imgUrl" : 'http://www.monicasite.com/images/logo-1.jpg',// 分享显示的缩略图地址
-                "link" : window.location.href,// 分享地址
-                "desc" : '麦达数字技术部2017年11月第一周工作周报。',// 分享描述
-                "title" : '麦达数字技术部工作周报',// 分享标题
-                success : function () {
-                    // 分享成功可以做相应的数据处理
-                    //alert("分享成功");
-                }
-            };
-            wx.onMenuShareTimeline (shareData);
-            wx.onMenuShareAppMessage (shareData);
-        });
-        wx.error(function(res){
-            // config信息验证失败会执行error函数，如签名过期导致验证失败，
-            // 具体错误信息可以打开config的debug模式查看，也可以在返回的res参数中查看，
-            //对于SPA可以在这里更新签名。
-            //alert("好像出错了！！");
-        });
-    </script>-->
+</script>
+
 </head>
 <body onmousewheel="return false;">
     <div class="container">
         <!--首页-->
         <div class="page page0 cur" id="page0">
             <!--<button type="button" onclick="GetInitInfo()">获取基本信息</button>-->
+             <img src="http://i2137.com/php/images/edit.jpg" style="float: right;width: 10%;height: 10%;margin:0 auto;">
         </div>
         <div class="page page1 group" id="page1">
             <div class="title title1">
@@ -335,7 +344,7 @@ foreach ($res as $key => $value) {
     <script src="js/page/index-9-echars-config.js"></script>
     <script type="text/javascript">
         $("#page0 img").bind("click",function(){
-           window.location.href='index-9.php?fid=<?php echo $essen_id;?>';
+           window.location.href='index-9.php?essen_id=<?php echo $result['essen_id'];?>';
         })
     </script>
 </body>

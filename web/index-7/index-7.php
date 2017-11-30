@@ -102,69 +102,75 @@ foreach ($res as $key => $value) {
     <script src="js/jquery-1.11.3.min.js"></script>
     <script src="libs/echarts/echarts.min.js"></script>
 
-    <!--<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
     <script src="js/wx/sha1.js"></script>
-    <script>
-        var access_token="2958I0z5uxF53HklGofRuX0AIdj7CQJZEIcH8yfiC7DgsqOYKnSkKhztlX0qu9yN1xGY-yEAY7_O4avo4pPDdiSZehzU5z6Vt-P79fynuDuiRbXL7jaVEN9LCkMTS25LBOMeAJAREC";
-        var jsapi_ticket="HoagFKDcsGMVCIY2vOjf9ogvx13K3KT-uwCIQMi2DW0GJb7kA2P_jiF4sYXvNkA7c1L8MA7Ff_CiaTcgJMqQBw";
-        var timestamp=GetTimestamp();
-        var nonceStr="mindatatoolsweixin";
-        var url=window.location.href+"?from=singlemessage";
-        var signature= GetSignature();
 
-        function GetTimestamp(){
-            var timestamp=Math.round(new Date().getTime()/1000);
-            return timestamp;
-        }
+    <script type="text/javascript">
+    $.ajax({
+            type: 'POST',
+            // url: 'http://127.0.0.1/share/index.php',
+            url:'http://i2137.com/php/sign.php',
+            data:{
+                 'url': window.location.href.split('#')[0]
+            },
+            dataType: 'json',
+            success: function(data){ 
+                // 获取信息成功
+                console.log(data)
+                 wx.config({
+                    debug: false,
+                    appId: data.result.appId,
+                    timestamp: data.result.timestamp,
+                    nonceStr: data.result.nonceStr,
+                    signature: data.result.signature,
+                    jsApiList: [
+                        // 所有要调用的 API 都要加到这个列表中
+                        'checkJsApi',
+                        'onMenuShareTimeline',
+                        'onMenuShareAppMessage',
+                        'onMenuShareQQ'
+                    ]
+                });
 
-        function GetSignature(){
-            // 这里参数的顺序要按照 key 值 ASCII 码升序排序
-            var s = "jsapi_ticket=" + jsapi_ticket + "&noncestr=" + nonceStr + "&timestamp=" + timestamp + "&url=" + url;
-            return hex_sha1(s);
-        }
+            window.share_config = {
+                     "share": {
+                        "imgUrl": "http://i2137.com/php/progress-2.png",//分享图，默认当相对路径处理，所以使用绝对路径的的话，“http://”协议  前缀必须在。
+                        "desc" : "麦达数字技术部2017年11月第三周工作周报",//摘要,如果分享到朋友圈的话，不显示摘要。
+                        "title" : '麦达数字技术部工作周报',//分享卡片标题
+                        "link": window.location.href,//分享出去后的链接，这里可以将链接设置为另一个页面。
+                        "success":function(){//分享成功后的回调函数
+                            alert('已分享');
+                        },
+                        'cancel': function () { 
+                            // 用户取消分享后执行的回调函数
+                            alert('已取消');
+                        }
+                    }
+                };  
+                    wx.ready(function () {
+                    wx.onMenuShareAppMessage(share_config.share);//分享给好友
+                    wx.onMenuShareTimeline(share_config.share);//分享到朋友圈
+                    wx.onMenuShareQQ(share_config.share);//分享给手机QQ
+                });
+                wx.error(function(res){
+                    // config信息验证失败会执行error函数，如签名过期导致验证失败，
+                    // 具体错误信息可以打开config的debug模式查看，也可以在返回的res参数中查看，
+                    //对于SPA可以在这里更新签名。
+                    alert("好像出错了！！");
+                    alert("errorMSG:"+res);
+                    // console.log(res);                    
+                });
 
-        function GetInitInfo(){
-            console.log(timestamp);
-            console.log(nonceStr);
-            console.log(signature);
-        }
-    </script>
-    <script>
-        wx.config({
-            debug: false,
-            appId: 'wx80c487097b512789',
-            timestamp: '1508640191',
-            nonceStr: 'mindatatoolsweixin',
-            signature: '',
-            jsApiList: [
-                // 所有要调用的 API 都要加到这个列表中
-                'checkJsApi',
-                'onMenuShareTimeline',
-                'onMenuShareAppMessage'
-            ]
+                
+            },
+            error: function(xhr){
+                alert("请求失败，请联系管理员")
+               // console.log(xhr);
+            }
         });
-        wx.ready (function () {
-            // 微信分享的数据
-            var shareData = {
-                "imgUrl" : 'http://maida.houxm.com/mindata-tools/images/logo-1.jpg',// 分享显示的缩略图地址
-                "link" : window.location.href,// 分享地址
-                "desc" : '麦达数字技术部2017年10月第三周工作周报。',// 分享描述
-                "title" : '麦达数字技术部工作周报',// 分享标题
-                success : function () {
-                    // 分享成功可以做相应的数据处理
-                    alert("分享成功");
-                }
-            };
-            wx.onMenuShareTimeline (shareData);
-            wx.onMenuShareAppMessage (shareData);
-        });
-        wx.error(function(res){
-            // config信息验证失败会执行error函数，如签名过期导致验证失败，
-            // 具体错误信息可以打开config的debug模式查看，也可以在返回的res参数中查看，
-            //对于SPA可以在这里更新签名。
-            alert("好像出错了！！");
-        });
-    </script>-->
+</script>
+
 </head>
 <body onmousewheel="return false;">
     <div class="container">
@@ -385,7 +391,7 @@ function ok8spost() {
                 success: function(msg){
                     if (msg.code=200) {
                         alert('修改成功');
-                        window.location.href='index-5-show.php';
+                        window.location.href='index-7-show.php';
                    }else{
                         alert('修改失败');
                    }
