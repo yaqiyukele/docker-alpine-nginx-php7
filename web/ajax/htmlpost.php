@@ -1,6 +1,6 @@
 <?php 
 define('IN_QY',true);
-require("../include/common.inc.php");
+include("./include/pdo.class.php");
 
 $arr['page0']=$_POST['page0'];
 $arr['pageT1']=$_POST['pageT1'];
