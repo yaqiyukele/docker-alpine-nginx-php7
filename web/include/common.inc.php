@@ -13,7 +13,7 @@ if(PHP_VERSION<'4.1.0'){
 	exit('Version is to Low!');
 }
 
-require QY_ROOT.'include/database.class.php';
+require QY_ROOT.'web/include/database.class.php';
 /*require QY_ROOT.'include/mysql.func.php';
 //连接数据库
 define('DB_HOST','localhost');//数据库连接地址,数据库接口（默认：3306）
