@@ -84,7 +84,7 @@ foreach ($res as $key => $value) {
 
 
 }
-print_r($res);die;
+// print_r($res);die;
 ?>
 
 <!DOCTYPE html>
