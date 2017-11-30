@@ -132,11 +132,13 @@ $res4 = $mydabase->actionsql($sql4);
 $res5 = $mydabase->actionsql($sql5);
 $res6 = $mydabase->actionsql($sql6);
 $res7 = $mydabase->actionsql($sql7);
-
 if($res0&$res1&$res2&$res3&$res4&$res5&$res6&$res7){
 	
-	header("Content-type:text/html;charset=utf-8");
-	echo "<script>alert('编辑成功');location.href='index-5-show.php?essen_id=<?php echo $infoid?>';</script>";
+	exit(json_encode(array("code"=>200,"msg"=>"修改成功")));
+
+}else{
+
+	exit(json_encode(array("code"=>500,"msg"=>"修改失败")));
 
 }
 

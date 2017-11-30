@@ -398,8 +398,12 @@ function ok8spost() {
                   $("#savenews").attr({ disabled: "disabled" });
                 },
                 success: function(msg){
-                    console.log(msg);
-                    // toas();
+                   if (msg.code=200) {
+                        alert('修改成功');
+                        window.location.href='index-5-show.php';
+                   }else{
+                        alert('修改失败');
+                   }
                 }
             });      
 }

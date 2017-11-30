@@ -177,7 +177,7 @@ foreach ($res as $key => $value) {
         <div class="page page0 cur" id="page0">
             <!--<button type="button" onclick="GetInitInfo()">获取基本信息</button>-->
             <img src="http://i2137.com/php/images/edit.jpg" style="float: right;width: 10%;height: 10%;margin:0 auto;">
-            <a href="" style="float: right;width: 10%;height: 10%;margin:0 auto;">编辑</a>
+            <!-- <a href="" style="float: right;width: 10%;height: 10%;margin:0 auto;">编辑</a> -->
         </div>
         <div class="page page1 group" id="page1">
             <div class="title title1">
