@@ -2,9 +2,9 @@
 // error_reporting(0);
 define('IN_QY',true);
 session_start();
-require_once("../web/include/common.inc.php");
+include("../include/common.inc.php");
+include("request.php");
 require_once(dirname(__FILE__)."/web/include/database.class.php");
-require_once(dirname(__FILE__)."request.php");
 $ConnectMysqli = new ConnectMysqli();
 print_r($ConnectMysqli);
 $res = $ConnectMysqli->getIntance();
