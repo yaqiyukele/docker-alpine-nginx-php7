@@ -2,8 +2,8 @@
 // error_reporting(0);
 define('IN_QY',true);
 session_start();
-include("include/common.inc.php");
-include("include/database.class.php");
+include("./include/common.inc.php");
+include("./include/database.class.php");
 $ConnectMysqli = new ConnectMysqli();
 print_r($ConnectMysqli);
 $res = $ConnectMysqli->getIntance();
