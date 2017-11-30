@@ -48,12 +48,12 @@ class DB{
         }
     }
     /*
-	 查询所有
+	 查询所有结果集
     */
 	public function mysql_query_fetchAll($sql){
 		if ($sql!='') {
 	        $this->result=$this->pdo->query($sql);
-	        $this->res = $this->result->fetchAll();
+	        $this->res = $this->result->fetchAll(PDO::FETCH_ASSOC);
 	        return $this->res;
         }
 	}

@@ -3,7 +3,6 @@
 define('IN_QY',true);
 session_start();
 include("./include/common.inc.php");
-include("./include/database.class.php");
 include("./include/pdo.class.php");
 
 $mydabase=new DB("172.26.249.246","md","maida6868","zhoubao");
@@ -19,7 +18,7 @@ foreach ($res as $key => $value) {
     // 键值为0的是正文第一页的内容
     $Title1 = $res[0]['title'];
     $Content1 = explode('@#$',$res[0]['content']);
-    $page1 = $res['page'];
+    $page1 = $res[0]['page'];
     // print_r($Content1);die;
 
     // 键值为1的是分项进展总结的第一条
@@ -28,7 +27,7 @@ foreach ($res as $key => $value) {
     // print_r($Content2);die;
     $Title2_1 = $Content2[0];
     $Content2_1 = explode('@#$', $Content2[1]);
-    $page2 = $res['page'];
+    $page2 = $res[1]['page'];
     // print_r($content2_1);die;
 
     // 键值为2的是分项进展总结的第二条
@@ -37,7 +36,7 @@ foreach ($res as $key => $value) {
     // print_r($Content3);die;
     $Title3_1 = $Content3[0];
     $Content3_1 = explode('@#$', $Content3[1]);
-    $page3 = $res['page'];
+    $page3 = $res[2]['page'];
     // print_r($content2_1);die;
 
 
@@ -47,7 +46,7 @@ foreach ($res as $key => $value) {
     // print_r($Content3);die;
     $Title4_1 = $Content4[0];
     $Content4_1 = explode('@#$', $Content4[1]);
-    $page4 = $res['page'];
+    $page4 = $res[3]['page'];
     // print_r($content2_1);die;
 
 
@@ -58,7 +57,7 @@ foreach ($res as $key => $value) {
     // print_r($Content3);die;
     $Title5_1 = $Content5[0];
     $Content5_1 = explode('@#$', $Content5[1]);
-    $page5 = $res['page'];
+    $page5 = $res[4]['page'];
     // print_r($content2_1);die;
 
 
@@ -68,13 +67,13 @@ foreach ($res as $key => $value) {
     // print_r($Content6);die;
     $Title6_1 = $Content6[0];
     $content6_1 = $Content6[1];
-    $page6 = $res['page'];
+    $page6 = $res[5]['page'];
 
 
     // 键值为6的是团队情况
     $Title7 = $res[6]['title'];
     $Content7 = explode('@#$',$res[6]['content']);
-    $page7 = $res['page'];
+    $page7 = $res[6]['page'];
 
 
     // 键值为7的是分项进展总结的第八条
@@ -82,8 +81,7 @@ foreach ($res as $key => $value) {
 
 
 }
-// $db->p($res);
-// die;
+// print_r($res);die;
 ?>
 <!DOCTYPE html>
 <html>

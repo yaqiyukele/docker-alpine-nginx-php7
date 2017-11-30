@@ -1,6 +1,6 @@
 <?php 
 define('IN_QY',true);
-include("./include/pdo.class.php");
+include("../include/pdo.class.php");
 
 $arr['page0']=$_POST['page0'];
 $arr['pageT1']=$_POST['pageT1'];
@@ -81,7 +81,7 @@ $sql3 ="UPDATE content SET title='".$arr['pageT3']."', content='".$result['pageC
 $sql4 ="UPDATE content SET title='".$arr['pageT4']."', content='".$result['pageC4']."' WHERE relevance_id='".$infoid."' AND page=4"; 
 $sql5 ="UPDATE content SET title='".$arr['pageT5']."', content='".$result['pageC5']."' WHERE relevance_id='".$infoid."' AND page=5"; 
 $sql6 ="UPDATE content SET title='".$arr['pageT6']."', content='".$result['pageC6']."' WHERE relevance_id='".$infoid."' AND page=6"; 
-echo $sql1;die;*/
+echo $sql1;die;
 $data0 = array('weekly_newspaper_date'=>$arr['page0']);
 $data1 = array('title'=>$arr['pageT1'],'content'=>$result['pageC1']);
 $data2 = array('title'=>$arr['pageT2'],'content'=>$result['pageC2']);
@@ -90,7 +90,19 @@ $data4 = array('title'=>$arr['pageT4'],'content'=>$result['pageC4']);
 $data5 = array('title'=>$arr['pageT5'],'content'=>$result['pageC5']);
 $data6 = array('title'=>$arr['pageT6'],'content'=>$result['pageC6']);
 $data7 = array('title'=>$arr['pageT7'],'content'=>$result['pageC7']);
+$res0 = $db->update('essential_information',$data0,$WHERE0);
+$res1 = $db->update('content',$data1,$WHERE1);
+$res2 = $db->update('content',$data2,$WHERE2);
+$res3 = $db->update('content',$data3,$WHERE3);
+$res4 = $db->update('content',$data4,$WHERE4);
+$res5 = $db->update('content',$data5,$WHERE5);
+$res6 = $db->update('content',$data6,$WHERE6);
+$res7 = $db->update('content',$data7,$WHERE7);
+*/
 
+
+$mydabase=new DB("172.26.249.246","md","maida6868","zhoubao");
+// $mydabase=new DB("127.0.0.1","root","root","zhoubao");
 
 
 $WHERE0 = "essen_id='".$infoid."'";
@@ -103,16 +115,23 @@ $WHERE6 = "relevance_id='".$infoid."' AND page=6";
 $WHERE7 = "relevance_id='".$infoid."' AND page=7";
 
 
-$db=\ConnectMysqli::getIntance();
-$res0 = $db->update('essential_information',$data0,$WHERE0);
-$res1 = $db->update('content',$data1,$WHERE1);
-$res2 = $db->update('content',$data2,$WHERE2);
-$res3 = $db->update('content',$data3,$WHERE3);
-$res4 = $db->update('content',$data4,$WHERE4);
-$res5 = $db->update('content',$data5,$WHERE5);
-$res6 = $db->update('content',$data6,$WHERE6);
-$res7 = $db->update('content',$data7,$WHERE7);
+$sql0 = "UPDATE essential_information SET weekly_newspaper_date='".$arr['page0']."WHERE ".$WHERE0;
+$sql1 = "UPDATE content SET title='".$arr['pageT1']."' , content='".$result['pageC1']."' WHERE ".$WHERE1;
+$sql2 = "UPDATE content SET title='".$arr['pageT2']."' , content='".$result['pageC2']."' WHERE ".$WHERE2;
+$sql3 = "UPDATE content SET title='".$arr['pageT3']."' , content='".$result['pageC3']."' WHERE ".$WHERE3;
+$sql4 = "UPDATE content SET title='".$arr['pageT4']."' , content='".$result['pageC4']."' WHERE ".$WHERE4;
+$sql5 = "UPDATE content SET title='".$arr['pageT5']."' , content='".$result['pageC5']."' WHERE ".$WHERE5;
+$sql6 = "UPDATE content SET title='".$arr['pageT6']."' , content='".$result['pageC6']."' WHERE ".$WHERE6;
+$sql7 = "UPDATE content SET title='".$arr['pageT7']."' , content='".$result['pageC7']."' WHERE ".$WHERE7;
 
+$res0 = $mydabase->actionsql($sql0);
+$res1 = $mydabase->actionsql($sql1);
+$res2 = $mydabase->actionsql($sql2);
+$res3 = $mydabase->actionsql($sql3);
+$res4 = $mydabase->actionsql($sql4);
+$res5 = $mydabase->actionsql($sql5);
+$res6 = $mydabase->actionsql($sql6);
+$res7 = $mydabase->actionsql($sql7);
 
 if($res0&$res1&$res2&$res3&$res4&$res5&$res6&$res7){
 	
@@ -121,23 +140,8 @@ if($res0&$res1&$res2&$res3&$res4&$res5&$res6&$res7){
 
 }
 
-//mysql_query("insert into test1(title,infoid) values ('".$title."',".$infoid)");
-
-
-//file_put_contents('gyplog.txt',var_export($_POST,true));
-//file_put_contents('gyplog.txt',$sql);
-
 header("Content-type:text/html;charset=utf-8");
 echo "编辑成功";exit;
 
 
-
-//file_put_contents('gyplog.txt',"abc");
-//file_put_contents('/data/wwwroot/web.weizhiru.com/ajax/gyplog.txt',var_export($_POST,true));
-//不会终止程序的执行，会将每次获取的$_POST输出到当前目录的log.txt文件中
-
-
-//echo 'save{{}}alert{}修改成功！'.$sql.'{}'.$aid.'|'.$ad_type.'|'.$ad_flowtype.'{{}}ok';
-//echo 'save{{}}alert{}修改成功！';
-//echo "<script type='text/javascript'>alert('".$sql."');</script>";
 ?>
