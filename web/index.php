@@ -2,9 +2,10 @@
 // error_reporting(0);
 define('IN_QY',true);
 session_start();
-include("include/common.inc.php");
+include("common.inc.php");
 include("request.php");
-include("include/Image.class.php");
+include("Image.class.php");
+include("database.class.php");
 require_once(dirname(__FILE__)."/web/include/database.class.php");
 $ConnectMysqli = new ConnectMysqli();
 print_r($ConnectMysqli);
