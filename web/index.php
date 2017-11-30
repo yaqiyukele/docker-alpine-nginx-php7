@@ -2,9 +2,10 @@
 error_reporting(0);
 define('IN_QY',true);
 session_start();
-require("include/common.inc.php");
-require("include/database.class.php");
-$db=ConnectMysqli::getIntance();
+include("include/common.inc.php");
+include("include/database.class.php");
+echo 123;
+$db=\ConnectMysqli::getIntance();
 echo "222222";die;
 $sql = "SELECT * FROM essential_information WHERE weekly_newspaper_ctime=(SELECT MAX(weekly_newspaper_ctime) FROM essential_information WHERE weekly_newspaper_type=1)";
 $result=$db->getRow($sql);
