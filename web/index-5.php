@@ -399,8 +399,7 @@ function ok8spost() {
                 },
                 success: function(msg){
                    if (msg.code=200) {
-                        alert('修改成功');
-                        window.location.href='index-5-show.php';
+                        window.location.href='index-5-show.php?essen_id='+<?php echo $result['essen_id']; ?>;
                    }else{
                         alert('修改失败');
                    }
@@ -480,7 +479,7 @@ function toas(){
 
         $(".layui-layer-btn0").click(function(){   
 
-            window.location.href='show.php?fid=<?php echo $result['essen_id']?>';
+            window.location.href='index-5-show.php?essen_id=<?php echo $result['essen_id']?>';
            
         });
 
@@ -865,5 +864,5 @@ function toas(){
     <div style="max-width:680px;margin:0 auto;background:#FF9000;color:#fff;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <a href="javascript:;" id="savenews" style="border:2px solid #fff;color:#fff;padding:5px 20px;border-radius:5px;"onclick="ok8spost()">保存文章</a>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <a  id="closeeditbtn" style="border:2px solid #fff;color:#fff;padding:5px 20px;border-radius:5px;" onclick="javascript:window.location.href='index-5-show.php?fid=<?php echo $result['essen_id']?>'">退出编辑</a>
+    <a  id="closeeditbtn" style="border:2px solid #fff;color:#fff;padding:5px 20px;border-radius:5px;" onclick="javascript:window.location.href='index-5-show.php?essen_id=<?php echo $result['essen_id']?>'">退出编辑</a>
     </div></div>
