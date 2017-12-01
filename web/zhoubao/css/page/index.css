@@ -35,7 +35,7 @@ html, body{
 .containers .page .title h3{
     color: #d3fffe;
     font-size: 28px;
-    font-family: "Î¢ÈíÑÅºÚ";
+    font-family: "å¾®è½¯é›…é»‘";
     text-align: left;
     line-height: 1.2rem;
     margin-left: 2.133333rem;
@@ -216,6 +216,7 @@ html, body{
     font-size: 15px;
     text-align: center;
     line-height: 0.6rem;
+    height: 0.6rem;
 }
 .containers .page .tables table{
     color: #d3fffe;
@@ -234,7 +235,16 @@ html, body{
 .containers .page .tables table tr:first-child td{
     background-color: rgba(255, 255, 255, .2);
 }
-.containers .page .tables table tr:last-child td{
+/*.containers .page .tables table tr:last-child td{
     color: #ff4040;
     font-weight: 600;
+}*/
+
+.containers .page .images-0{
+    width: 9.746667rem;
+    height: 24rem;
+    margin: 0.25rem auto 0;
+}
+.containers .page .images-0 img{
+    width: 100%;
 }
