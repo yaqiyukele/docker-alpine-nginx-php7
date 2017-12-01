@@ -28,10 +28,10 @@
             <div class="list-border">
                 <p></p>
                 <ul>
-                    <li>1）EC营销线索算法模型，本周重点是对第一次迭代模型进行验证和分析，并对特征工程进行优化。下周对企业简介、经营范围等信息进行文本分层特征挖掘，并用来完成模型优化，完成第二次建模迭代；</li>
-                    <li>2）投资数据库方面，由于人力资源问题，初版应用产品的研发工作稍往后延，目前先推进数据模型设计，数据采集、清洗、积累等工作；</li>
-                    <li>3）爬虫系统本周完成EC系统客户信息采集、IT桔子网站数据动态采集、以及营销线索采集优化等工作，centos系统下浏览器渲染方案调研和试验完成；</li>
-                    <li>4）营销线索平台发布后，按收集反馈的意见进行用户搜索体验提升相关方面分析，并完成了检索和布局部分调整迭代。完成了平台移动版的初版开发，后续重点进行数据统计和分析方面的优化和迭代工作；</li>
+                    <li>1）EC营销线索算法模型，本周完成第二次模型迭代，经验证和分析较初版特征工程效果提升30%，并已完成模型算法API封装，正在进行内部试用对采集的EC线索进行评测。这版模型的文本特征太多，下周优化模型降维，开始第三次迭代优化；</li>
+                    <li>2）投资数据库方面，由于人力资源问题，初版应用产品的研发工作先暂停，重点先推进企业数据仓库的数据采集、清洗和入库等工作，以3个月内积累4000万企业信息为目标；</li>
+                    <li>3）爬虫系统OCR电话号码图片识别、简单验证码识别功能研发进展顺利，后续重点是进行图片样本的训练积累。4000万企业数据采集工程已经开始准备，初步数据源确认，研发布隆过滤器、深度爬虫器研发进展50%；</li>
+                    <li>4）营销线索平台本周完成主体布局调整、销售个人相关等功能的迭代和发布，目前正在重点进行数据统计和分析功能，优先移动版开发实现。</li>
                 </ul>
             </div>
         </div>
@@ -48,18 +48,6 @@
                 </ul>
             </div>
         </div>
-        <!-- <div class="page">
-            <div class="title title-2">
-                <h3>分项进展总结</h3>
-            </div>
-            <div class="list-border">
-                <p>标的DB</p>
-                <ul>
-                    <li>1）继续对标的数据库已爬取数据进行分析，并进行数据建模，包括公司信息、信息变更记录、竞争对手信息、投融资信息、投资机构、公司新闻、公司产品、公司注册信息、公司股东信息等；</li>
-                    <li>2）继续标的数据维度属性整理，相关属性维度包括公司类型、公司阶段、投资领域、投资机构类型、投融资轮次等，创建维度元数据模型；</li>
-                </ul>
-            </div>
-        </div> -->
         <div class="page">
             <div class="title title-2">
                 <h3>分项进展总结</h3>
@@ -90,15 +78,18 @@
                     <li>3）营销线索平台功能迭代：主体布局调整、整合相关功能并测试、发布；</li>
                     <li>4）营销线索平台移动端线索数据统计功能开发进行中。</li>
                 </ul>
-                <!-- <p>前端应用</p>
-                <ul>
-                    <li>1）营销线索平台移动版-统计功能完善；</li>
-                    <li>2）营销线索平台-顶部及左侧菜单布局调整100%、推送历史记录功能开发100%；</li>
-                </ul>
- -->            </div>
+           </div>
         </div>
         <div class="page">
             <div class="title title-3">
+                <h3>成&nbsp;果&nbsp;展&nbsp;示</h3>
+            </div>
+            <div class="images-0">
+                <img src="temp/0.png" width="100%" height="60%">
+            </div>
+        </div>
+        <div class="page">
+            <div class="title title-4">
                 <h3>线索池数据分布</h3>
             </div>
             <div class="charts" style="height: 8rem;">
@@ -106,38 +97,91 @@
                 <div class="chart" id="chart-0" style="width: 9.6rem;height: 7.5rem;"></div>
             </div>
             <div class="tables">
-                <div class="table-title">11月至今销售数据统计</div>
+                <div class="table-title"></div>
                 <table cellpadding="0" cellspacing="0" border="0">
                     <tr>
-                        <td>分类</td><td>线索量</td><td>接通量</td><td>接通率</td>
+                        <td>城市</td><td>线索量</td>
                     </tr>
                     <tr>
-                        <td>其他渠道</td><td>22872</td><td>12935</td><td>56.55%</td>
+                        <td>北京</td><td>27764</td>
                     </tr>
                     <tr>
-                        <td>技术渠道</td><td>5515</td><td>3757</td><td>68.12%</td>
+                        <td>天津</td><td>1969</td>
                     </tr>
                     <tr>
-                        <td>合计</td><td>28387</td><td>16692</td><td>58.80%</td>
+                        <td>上海</td><td>4485</td>
                     </tr>
                 </table>
             </div>
         </div>
         <div class="page">
-            <div class="title title-4">
+            <div class="title title-5">
+                <h3>销售数据统计</h3>
+            </div>
+            <div class="tables">
+                <table cellpadding="0" cellspacing="0" border="0">
+                    <tr>
+                        <td>科目</td><td>技术渠道</td><td>其他渠道</td><td>合计</td>
+                    </tr>
+                    <tr>
+                        <td>动态线索量</td><td>12031</td><td>14520</td><td>266551</td>
+                    </tr>
+                    <tr>
+                        <td>本月新增量</td><td>6569</td><td>7385</td><td>13954</td>
+                    </tr>
+                    <tr>
+                        <td>拨打线索量</td><td>6315</td><td>7745</td><td>14060</td>
+                    </tr>
+                    <tr>
+                        <td>接通数量</td><td>4052</td><td>4499</td><td>8551</td>
+                    </tr>
+                    <tr>
+                        <td>未接通数量</td><td>2263</td><td>3246</td><td>5509</td>
+                    </tr>
+                    <tr>
+                        <td>拨打次数</td><td>4695</td><td>5079</td><td>9774</td>
+                    </tr>
+                    <tr>
+                        <td>有效沟通量</td><td>1872</td><td>1978</td><td>3850</td>
+                    </tr><tr>
+                        <td>沟通时长（秒）</td><td>203576</td><td>229084</td><td>432660</td>
+                    </tr>
+                    <tr>
+                        <td>有效沟通时长（秒）</td><td>155096</td><td>178553</td><td>333649</td>
+                    </tr> 
+                    <tr>
+                        <td>意向线索量</td><td>218</td><td>128</td><td>346</td>
+                    </tr>                    
+                    <tr>
+                        <td>接通率</td><td>64.16%</td><td>58.09%</td><td>60.82%</td>
+                    </tr> 
+                    <tr>
+                        <td>意向率</td><td>5.38%</td><td>2.85%</td><td>4.05%</td>
+                    </tr>
+                    <tr>
+                        <td>有效沟通率</td><td>39.87%</td><td>38.94%</td><td>39.39%</td>
+                    </tr>  
+                    <tr>
+                        <td>成单量</td><td>2</td><td>33</td><td>35</td>
+                    </tr> 
+                </table>
+            </div>
+        </div>
+        <div class="page">
+            <div class="title title-6">
                 <h3>团队人员情况</h3>
             </div>
             <div class="list">
                 <ul>
                     <li><span class="list-icon"></span><p>目前在职：<span>14</span>人</p></li>
                     <li><span class="list-icon"></span><p>计划入职：无</p></li>
-                    <li><span class="list-icon"></span><p>本周面试：<span>3</span>人</p></li>
+                    <li><span class="list-icon"></span><p>本周面试：<span>5</span>人</p></li>
                     <li><span class="list-icon"></span><p>人员缺口：产品经理、数据分析、JAVA开发、测试</p></li>
                 </ul>
             </div>
         </div>
         <div class="page">
-            <div class="title title-5">
+            <div class="title title-7">
                 <h3>总体阶段进展</h3>
             </div>
             <div class="progress"></div>
@@ -147,7 +191,7 @@
             </div>
         </div>
         <div class="page">
-            <div class="title title-6">
+            <div class="title title-8">
                 <h3>关键子项目进展</h3>
             </div>
             <div class="images">
@@ -155,32 +199,32 @@
                 <img src="temp/1.jpg">
             </div>
             <div class="images">
-                <p><span class="icon"></span>标的数据库项目</p>
+                <p><span class="icon"></span>爬虫系统-研发</p>
                 <img src="temp/2.jpg">
+            </div>
+            <div class="images">
+                <p><span class="icon"></span>4000万企业数据采集</p>
+                <img src="temp/3.jpg">
             </div>
         </div>
         <div class="page">
-            <div class="title title-6">
+            <div class="title title-8">
                 <h3>关键子项目进展</h3>
             </div>
             <div class="images">
-                <p><span class="icon"></span>爬虫系统-研发</p>
-                <img src="temp/3.jpg">
-            </div>
-            <div class="images">
-                <p><span class="icon"></span>营销线索源拓展</p>
+                <p><span class="icon"></span>标的IT桔子数据采集</p>
                 <img src="temp/4.jpg">
             </div>
             <div class="images">
-                <p><span class="icon"></span>EC销售动态信息采集</p>
+                <p><span class="icon"></span>营销线索平台迭代</p>
                 <img src="temp/5.jpg">
             </div>
-            <div class="images">
+          <!--   <div class="images">
                 <p><span class="icon"></span>标的IT桔子数据采集</p>
                 <img src="temp/6.jpg">
-            </div>
+            </div> -->
         </div>
-        <div class="page">
+        <!-- <div class="page">
             <div class="title title-6">
                 <h3>关键子项目进展</h3>
             </div>
@@ -188,7 +232,7 @@
                 <p><span class="icon"></span>前端应用第二阶段迭代计划</p>
                 <img src="temp/7.jpg">
             </div>
-        </div>
+        </div> -->
     </div>
     <!--script-->
     <script src="js/islider.min.js"></script>
