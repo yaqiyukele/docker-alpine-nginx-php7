@@ -8,13 +8,18 @@ include("./include/pdo.class.php");
 
 $mydabase=new DB("172.26.249.246","md","maida6868","zhoubao");
 // $mydabase=new DB("127.0.0.1","root","root","zhoubao");
-$sql = "SELECT * FROM essential_information WHERE weekly_newspaper_ctime=(SELECT MAX(weekly_newspaper_ctime) FROM essential_information WHERE weekly_newspaper_type=1)";
-$result=$mydabase->mysql_query_rest($sql);
+if (empty($_GET)) {
+   $sql = "SELECT * FROM essential_information WHERE weekly_newspaper_ctime=(SELECT MAX(weekly_newspaper_ctime) FROM essential_information WHERE weekly_newspaper_type=3)";
+   $result=$mydabase->mysql_query_rest($sql);
+}else{
+    $sql = "SELECT * FROM essential_information WHERE essen_id=".$_GET['essen_id'];
+    $result=$mydabase->mysql_query_rest($sql);
+}
+
 // print_r($result);die;
-$sql = "SELECT * FROM content WHERE relevance_id=".$result['essen_id'];
+$sql = "SELECT * FROM content WHERE relevance_id=".$result['essen_id']." ORDER BY page";
 $res=$mydabase->mysql_query_fetchAll($sql);
 // print_r($res);die;
-// 循环处理数组
 foreach ($res as $key => $value) {
     // 键值为0的是正文第一页的内容
     $Title1 = $res[0]['title'];
@@ -24,12 +29,8 @@ foreach ($res as $key => $value) {
 
     // 键值为1的是分项进展总结的第一条
     $Title2 = $res[1]['title'];
-    $Content2 = explode('@#$%',$res[1]['content']);
-    // print_r($Content2);die;
-    $Title2_1 = $Content2[0];
-    $Content2_1 = explode('@#$', $Content2[1]);
-    $page2 = $res[1]['page'];
-    // print_r($content2_1);die;
+    $Content2 = explode('@#$',$res[1]['content']);
+    $page2 = $res[1]['page'];    // print_r($content2_1);die;
 
     // 键值为2的是分项进展总结的第二条
     $Title3 = $res[2]['title'];
@@ -65,24 +66,29 @@ foreach ($res as $key => $value) {
     // 键值为5的是分项进展总结的第五条
     $Title6 = $res[5]['title'];
     $Content6 = explode('@#$%',$res[5]['content']);
-    // print_r($Content6);die;
+    // print_r($Content3);die;
     $Title6_1 = $Content6[0];
-    $content6_1 = $Content6[1];
+    $Content6_1 = explode('@#$', $Content6[1]);
     $page6 = $res[5]['page'];
+    // print_r($Content6_1);die;
 
-
-    // 键值为6的是团队情况
+    // 键值为6的是分项总结
     $Title7 = $res[6]['title'];
-    $Content7 = explode('@#$',$res[6]['content']);
+    $Content7 = explode('@#$%',$res[6]['content']);
+    // print_r($Content3);die;
+    $Title7_1 = $Content7[0];
+    $Content7_1 = explode('@#$', $Content7[1]);
     $page7 = $res[6]['page'];
+    // print_r($Content7_1);die;
 
-
-    // 键值为7的是分项进展总结的第八条
-    // $Title8 = $res[7]['title'];
+    // 键值为7的是团队情况
+    $Title8 = $res[7]['title'];
+    $Content8 = explode('@#$',$res[7]['content']);
+    $page8 = $res[7]['page'];
 
 
 }
-
+// print_r($res);die;
 ?>
 <!DOCTYPE html>
 <html>
@@ -170,11 +176,11 @@ foreach ($res as $key => $value) {
 
 </head>
 <body onmousewheel="return false;">
-    <div class="container">
+        <div class="container">
         <!--首页-->
         <div class="page page0 cur" id="page0">
             <!--<button type="button" onclick="GetInitInfo()">获取基本信息</button>-->
-             <img src="http://i2137.com/php/images/edit.jpg" style="float: right;width: 10%;height: 10%;margin:0 auto;">
+            <img src="http://i2137.com/php/images/edit.jpg" style="float: right;width: 10%;height: 10%;margin:0 auto;">
         </div>
         <div class="page page1 group" id="page1">
             <div class="title title1">
@@ -200,28 +206,31 @@ foreach ($res as $key => $value) {
         </div>
         <div class="page page1 group" id="page2">
             <div class="title title1">
-                <h3>工作总结</h3>
+                <h3><?=$Title2; ?></h3>
             </div>
             <div class="info">
                 <div class="part" style="padding-left: 0.5em;padding-right: 0.5em;">
                     <ul class="small">
-                        <li>3）投资数据库方面，经过与投资部进行了深入探讨，确定了投资标的一期产品原型初步版本。开始对投资机构、行业报告和行业动态等信息采集进行调研，下周确定研发计划、资源配备以及实现优先级等；</li>
-                        <li>4）其他方面工作，选定了云禅道企业版做为研发项目管理工具，已开始试用。人员方面，本周我们的首席数据科学家魏文斌到位，经验丰富，迅速介入和推进了EC项目的进行，按计划下周一13号入职一产品经理，还有一位北大才子待定，部门人才和技术储备进一步得到加强。</li>
+                        <?php  for ($i=0; $i < count($Content2) ; $i++) {  ?>
+                        
+                            <li><?=$Content2[$i]; ?></li>
+                        
+                        <?php  } ?>
                     </ul>
                 </div>
             </div>
         </div>
         <div class="page page2 group" id="page3">
             <div class="title title2">
-                <h3><?=$Title2;?></h3>
+                <h3><?=$Title3;?></h3>
             </div>
             <div class="info">
                 <div class="part">
-                   <h4 id="title"><?=$Title2_1;?></h4>
+                   <h4 id="title"><?=$Title3_1;?></h4>
                     <ul class="small">
-                        <?php  for ($i=0; $i < count($Content2_1) ; $i++) {  ?>
+                        <?php  for ($i=0; $i < count($Content3_1) ; $i++) {  ?>
                         
-                            <li><?=$Content2_1[$i]; ?></li>
+                            <li><?=$Content3_1[$i]; ?></li>
                         
                         <?php  } ?>
                        <!--  <li>1）完成了基于小样本的“营销线索精准推荐系统”的V0.1版本，跑通了爬数据->数据预处理->特征工程->机器学习建模->推荐结果的流程，准确性待进一步验证；</li>
@@ -233,29 +242,34 @@ foreach ($res as $key => $value) {
         </div>
         <div class="page page2 group" id="page4">
             <div class="title title2">
-                <h3><?=$Title3;?></h3>
+                <h3><?=$Title4;?></h3>
             </div>
             <div class="info">
                 <div class="part">
-                    <h4 id="title"><?=$Title3_1?></h4>
+                    <h4 id="title"><?=$Title4_1?></h4>
                     <ul class="small">
-                        <li>4）确定了投资标的一期产品原型初步版本，和投资部进行了深入探讨，收集；了宝贵意见对投资标的需求进行了补充，开始对投资机构、行业报告和行业动态等信息采集进行调研；</li>
-                        <li>5）预研数据可视化软件，试用并对营销线索、投资标的公司、招聘信息、投融资数据进行统计分析和图表生成验证。</li>
+                        <?php  for ($i=0; $i < count($Content4_1) ; $i++) {  ?>
+                        
+                            <li><?=$Content4_1[$i]; ?></li>
+                        
+                        <?php  } ?>
+                        <!-- <li>4）确定了投资标的一期产品原型初步版本，和投资部进行了深入探讨，收集；了宝贵意见对投资标的需求进行了补充，开始对投资机构、行业报告和行业动态等信息采集进行调研；</li>
+                        <li>5）预研数据可视化软件，试用并对营销线索、投资标的公司、招聘信息、投融资数据进行统计分析和图表生成验证。</li> -->
                     </ul>
                 </div>
             </div>
         </div>
         <div class="page page2 group" id="page5">
             <div class="title title2">
-                <h3>分项进展总结</h3>
+                <h3><?=$Title5 ?></h3>
             </div>
             <div class="info">
                 <div class="part">
-                    <h4 id="title"><?=$Title3_1?></h4>
+                    <h4 id="title"><?=$Title5_1?></h4>
                     <ul class="small">
-                        <?php  for ($i=0; $i < count($Content3_1) ; $i++) {  ?>
+                        <?php  for ($i=0; $i < count($Content5_1) ; $i++) {  ?>
                         
-                            <li><?=$Content3_1[$i]; ?></li>
+                            <li><?=$Content5_1[$i]; ?></li>
                         
                         <?php  } ?>
                         <!-- <li>1）按EC提供的10万企业名单，对工商数据、招聘数据、企业成员、股东、备案、商标、新闻信息进行采集。10万企业共抓取到72520个，完全匹配53293个，其中有3万家有招聘信息；</li>
@@ -268,15 +282,15 @@ foreach ($res as $key => $value) {
         </div>
         <div class="page page2 group" id="page6">
             <div class="title title2">
-                <h3><?= $Title4;?></h3>
+                <h3><?= $Title6;?></h3>
             </div>
             <div class="info">
                 <div class="part">
-                    <h4 id="title"><?=$Title4_1?></h4>
+                    <h4 id="title"><?=$Title6_1?></h4>
                     <ul class="small">
-                        <?php  for ($i=0; $i < count($Content4_1) ; $i++) {  ?>
+                        <?php  for ($i=0; $i < count($Content6_1) ; $i++) {  ?>
                         
-                            <li><?=$Content4_1[$i]; ?></li>
+                            <li><?=$Content6_1[$i]; ?></li>
                         
                         <?php  } ?>
                         <!-- <li>重点进行营销信息检索平台的初版功能的服务研发和接口联调工作：</li>
@@ -291,15 +305,15 @@ foreach ($res as $key => $value) {
         </div>
         <div class="page page2 group" id="page7">
             <div class="title title2">
-                <h3><?=$Title5?></h3>
+                <h3><?=$Title7?></h3>
             </div>
             <div class="info">
                 <div class="part">
-                    <h4 id="title"><?=$Title5_1?></h4>
+                    <h4 id="title"><?=$Title7_1?></h4>
                     <ul class="small">
-                        <?php  for ($i=0; $i < count($Content5_1) ; $i++) {  ?>
+                        <?php  for ($i=0; $i < count($Content7_1) ; $i++) {  ?>
                         
-                            <li><?=$Content5_1[$i]; ?></li>
+                            <li><?=$Content7_1[$i]; ?></li>
                         
                         <?php  } ?>
                        <!--  <li>1）完成营销线索平台线索检索与推送、营销数据统计、通用提示面板、数据展示面板静态页面及交互效果开发；</li>
@@ -311,13 +325,13 @@ foreach ($res as $key => $value) {
         </div>
         <div class="page page3 group" id="page8">
             <div class="title title3">
-               <h3><?=$Title7?></h3>
+               <h3><?=$Title8?></h3>
             </div>
             <div class="table">
                 <ul class="small">
-                    <?php  for ($i=0; $i < count($Content7) ; $i++) {  ?>
+                    <?php  for ($i=0; $i < count($Content8) ; $i++) {  ?>
                         
-                            <li><?=$Content7[$i]; ?></li>
+                            <li><?=$Content8[$i]; ?></li>
                         
                     <?php  } ?>
                     <!-- <li>目前在职:<span>13</span>人</li>
@@ -339,6 +353,9 @@ foreach ($res as $key => $value) {
             <p class="img-info">第二阶段计划进展</p>
         </div>
     </div>
+    <script src="js/jquery.touchSwipe.min.js"></script>
+    <script src="js/page/index-9.js"></script>
+    <script src="js/page/index-9-echars-config.js"></script>
     <script src="js/jquery.touchSwipe.min.js"></script>
     <script src="js/page/index-9.js"></script>
     <script src="js/page/index-9-echars-config.js"></script>

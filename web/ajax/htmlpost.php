@@ -116,7 +116,7 @@ $WHERE6 = "relevance_id='".$infoid."' AND page=6";
 $WHERE7 = "relevance_id='".$infoid."' AND page=7";
 
 
-$sql0 = "UPDATE essential_information SET weekly_newspaper_date='".$arr['page0']."WHERE ".$WHERE0;
+$sql0 = "UPDATE essential_information SET weekly_newspaper_date='".$arr['page0']."' WHERE ".$WHERE0;
 $sql1 = "UPDATE content SET title='".$arr['pageT1']."' , content='".$result['pageC1']."' WHERE ".$WHERE1;
 $sql2 = "UPDATE content SET title='".$arr['pageT2']."' , content='".$result['pageC2']."' WHERE ".$WHERE2;
 $sql3 = "UPDATE content SET title='".$arr['pageT3']."' , content='".$result['pageC3']."' WHERE ".$WHERE3;
@@ -133,15 +133,10 @@ $res4 = $mydabase->actionsql($sql4);
 $res5 = $mydabase->actionsql($sql5);
 $res6 = $mydabase->actionsql($sql6);
 $res7 = $mydabase->actionsql($sql7);
-if($res0&$res1&$res2&$res3&$res4&$res5&$res6&$res7){
 	
-	exit(json_encode(array("code"=>200,"msg"=>"修改成功")));
+exit(json_encode(array("code"=>200,"msg"=>"修改成功")));
 
-}else{
 
-	exit(json_encode(array("code"=>500,"msg"=>"修改失败")));
-
-}
 
 
 

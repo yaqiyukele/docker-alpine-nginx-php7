@@ -10,8 +10,7 @@ $mydabase=new DB("172.26.249.246","md","maida6868","zhoubao");
 // 查询出最后一条的id
 $sql1 = "SELECT * FROM essential_information WHERE weekly_newspaper_ctime=(SELECT MAX(weekly_newspaper_ctime) FROM essential_information)";
 $result1=$mydabase->mysql_query_rest($sql1);
-// print_r($result1);die;
-// $_GET['essen_id']=12;
+
 // 往主表中添加数据
 $sql2 = "SELECT * FROM essential_information WHERE essen_id=".$_GET['essen_id'];
 $result2 = $mydabase->mysql_query_rest($sql2);

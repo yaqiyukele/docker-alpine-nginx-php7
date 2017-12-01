@@ -8,8 +8,14 @@ include("./include/pdo.class.php");
 
 $mydabase=new DB("172.26.249.246","md","maida6868","zhoubao");
 // $mydabase=new DB("127.0.0.1","root","root","zhoubao");
-$sql = "SELECT * FROM essential_information WHERE weekly_newspaper_ctime=(SELECT MAX(weekly_newspaper_ctime) FROM essential_information WHERE weekly_newspaper_type=1)";
-$result=$mydabase->mysql_query_rest($sql);
+
+if (empty($_GET)) {
+   $sql = "SELECT * FROM essential_information WHERE weekly_newspaper_ctime=(SELECT MAX(weekly_newspaper_ctime) FROM essential_information WHERE weekly_newspaper_type=2)";
+   $result=$mydabase->mysql_query_rest($sql);
+}else{
+    $sql = "SELECT * FROM essential_information WHERE essen_id=".$_GET['essen_id'];
+    $result=$mydabase->mysql_query_rest($sql);
+}
 // print_r($result);die;
 $sql = "SELECT * FROM content WHERE relevance_id=".$result['essen_id'];
 $res=$mydabase->mysql_query_fetchAll($sql);
