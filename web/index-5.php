@@ -864,9 +864,9 @@ function toas(){
     </script>
     <script>var um = UM.getEditor('myEditor');</script>
     </div>
-    <div class="bottombar" style="width:98.2%;text-align:center;position:fixed;left:0px;bottom:0px;height:60px;line-height:60px;z-index:99999">
+    <div class="bottombar" style="width:98.2%;text-align:center;position:absolute;left:0px;bottom:0px;height:60px;line-height:60px;z-index:99999">
     
-    <div style="max-width:680px;margin:0 auto;background:#FF9000;color:#fff;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <div style="max-width:680px;margin:0 auto;background:#FF9000;color:#fff;">
     <a href="javascript:;" id="savenews" style="border:2px solid #fff;color:#fff;padding:5px 20px;border-radius:5px;"onclick="ok8spost()">保存文章</a>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <a  id="closeeditbtn" style="border:2px solid #fff;color:#fff;padding:5px 20px;border-radius:5px;" onclick="javascript:window.location.href='index-5-show.php?essen_id=<?php echo $result['essen_id']?>'">退出编辑</a>
