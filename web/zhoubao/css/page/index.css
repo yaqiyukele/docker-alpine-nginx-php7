@@ -15,12 +15,12 @@ html, body{
 }
 .containers .page{
     height: 100%;
-    background: url("../../images/page-bg.jpg");
+    background: url("../../images/bg-page.jpg");
     -webkit-background-size: 100% 100%;
     background-size: 100% 100%;
 }
 .containers .page.page-home{
-    background: url("../../images/page-home.jpg");
+    background: url("../../images/home-page.jpg");
     -webkit-background-size: 100% 100%;
     background-size: 100% 100%;
 }
