@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>麦达数字技术部工作周报</title>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=yes">
+
+    <script src="js/flexible_css.js"></script>
+    <script src="js/flexible.js"></script>
+
+    <link rel="stylesheet" href="css/normalize.min.css">
+    <link rel="stylesheet" href="css/page/index.css">
+
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/echarts.min.js"></script>
+    <script src="js/echarts-map-china.min.js"></script>
+</head>
+<body>
+    <div class="containers">
+        <div class="page page-home">
+            <!--首页-->
+        </div>
+        <div class="page">
+            <div class="title title-1">
+                <h3>整&nbsp;体&nbsp;总&nbsp;结</h3>
+            </div>
+            <div class="list-border">
+                <p></p>
+                <ul>
+                    <li>1）EC营销线索算法模型，本周重点是对第一次迭代模型进行验证和分析，并对特征工程进行优化。下周对企业简介、经营范围等信息进行文本分层特征挖掘，并用来完成模型优化，完成第二次建模迭代；</li>
+                    <li>2）投资数据库方面，由于人力资源问题，初版应用产品的研发工作稍往后延，目前先推进数据模型设计，数据采集、清洗、积累等工作；</li>
+                    <li>3）爬虫系统本周完成EC系统客户信息采集、IT桔子网站数据动态采集、以及营销线索采集优化等工作，centos系统下浏览器渲染方案调研和试验完成；</li>
+                    <li>4）营销线索平台发布后，按收集反馈的意见进行用户搜索体验提升相关方面分析，并完成了检索和布局部分调整迭代。完成了平台移动版的初版开发，后续重点进行数据统计和分析方面的优化和迭代工作；</li>
+                </ul>
+            </div>
+        </div>
+        <div class="page">
+            <div class="title title-2">
+                <h3>分项进展总结</h3>
+            </div>
+            <div class="list-border">
+                <p>营销DB</p>
+                <ul>
+                    <li>1）EC营销线索算法模型，为了提高预测精度，本周重点在更新和新增特征工程，为下周新模型打基础；</li>
+                    <li>2）完成了人工智能&机器学习新技术及相关行业应用研报；</li>
+                    <li>3）模型算法训练方面，使用随机森林、逻辑回归，发现准确度可达60%，但召回率较低仅有13%；</li>
+                    <li>4）和高明沟通后，对特征进行筛选和分箱处理，然后再进行随机森林和逻辑回归算法训练，结果并没得到改善。后续计划归一化、标准化数据，使用单一行业进行建模再看看效果；</li>
+                </ul>
+            </div>
+        </div>
+        <div class="page">
+            <div class="title title-2">
+                <h3>分项进展总结</h3>
+            </div>
+            <div class="list-border">
+                <p>标的DB</p>
+                <ul>
+                    <li>1）继续对标的数据库已爬取数据进行分析，并进行数据建模，包括公司信息、信息变更记录、竞争对手信息、投融资信息、投资机构、公司新闻、公司产品、公司注册信息、公司股东信息等；</li>
+                    <li>2）继续标的数据维度属性整理，相关属性维度包括公司类型、公司阶段、投资领域、投资机构类型、投融资轮次等，创建维度元数据模型；</li>
+                </ul>
+            </div>
+        </div>
+        <div class="page">
+            <div class="title title-2">
+                <h3>分项进展总结</h3>
+            </div>
+            <div class="list-border">
+                <p>爬虫系统</p>
+                <ul>
+                    <li>1）EC系统客户信息采集上线， 每日动态采集前一天销售联系过的客户和动态信息；</li>
+                    <li>2）IT桔子国内上市公司、国外创业公司和国外上市公司增量数据采集上线；</li>
+                    <li>3）营销线索数据源方面，赶集网增加公司信息页解析规则，多模板支持，调整后每日线索从100个左右增加至1000个；</li>
+                    <li>4）centos系统下浏览器渲染方案调研，采用puppeteer(node.js) + chrome headless方案，实现了ec系统的登录，下一步计划从中提取出cookie信息供后续的服务使用；</li>
+                </ul>
+            </div>
+        </div>
+        <div class="page">
+            <div class="title title-2">
+                <h3>分项进展总结</h3>
+            </div>
+            <div class="list-border">
+                <p>服务中心</p>
+                <ul>
+                    <li>重点进行EC营销系统后台项目相关数据逻辑和功能服务实现工作，已完成如下：</li>
+                    <li>1）用户角色、菜单功能，及对应的缓存功能处理；</li>
+                    <li>2）编写Jpa复杂条件查询工具类；</li>
+                    <li>3）修改推送成功历史、失败历史功能；</li>
+                    <li>4）添加sql执行监控，慢查询监控以及整体sql执行切面；</li>
+                </ul>
+                <p>前端应用</p>
+                <ul>
+                    <li>1）营销线索平台移动版-统计功能完善；</li>
+                    <li>2）营销线索平台-顶部及左侧菜单布局调整100%、推送历史记录功能开发100%；</li>
+                </ul>
+            </div>
+        </div>
+        <div class="page">
+            <div class="title title-3">
+                <h3>线索池数据分布</h3>
+            </div>
+            <div class="charts" style="height: 8rem;">
+                <div class="chart-title-font">线索分布热点</div>
+                <div class="chart" id="chart-0" style="width: 9.6rem;height: 7.5rem;"></div>
+            </div>
+            <div class="tables">
+                <div class="table-title">11月至今销售数据统计</div>
+                <table cellpadding="0" cellspacing="0" border="0">
+                    <tr>
+                        <td>分类</td><td>线索量</td><td>接通量</td><td>接通率</td>
+                    </tr>
+                    <tr>
+                        <td>其他渠道</td><td>22872</td><td>12935</td><td>56.55%</td>
+                    </tr>
+                    <tr>
+                        <td>技术渠道</td><td>5515</td><td>3757</td><td>68.12%</td>
+                    </tr>
+                    <tr>
+                        <td>合计</td><td>28387</td><td>16692</td><td>58.80%</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="page">
+            <div class="title title-4">
+                <h3>团队人员情况</h3>
+            </div>
+            <div class="list">
+                <ul>
+                    <li><span class="list-icon"></span><p>目前在职：<span>14</span>人</p></li>
+                    <li><span class="list-icon"></span><p>计划入职：无</p></li>
+                    <li><span class="list-icon"></span><p>本周面试：<span>3</span>人</p></li>
+                    <li><span class="list-icon"></span><p>人员缺口：产品经理、数据分析、JAVA开发、测试</p></li>
+                </ul>
+            </div>
+        </div>
+        <div class="page">
+            <div class="title title-5">
+                <h3>总体阶段进展</h3>
+            </div>
+            <div class="progress"></div>
+            <div class="charts">
+                <div class="chart-title"></div>
+                <div class="chart" id="chart-total" style="width: 9.6rem;height: 6.9rem;"></div>
+            </div>
+        </div>
+        <div class="page">
+            <div class="title title-6">
+                <h3>关键子项目进展</h3>
+            </div>
+            <div class="images">
+                <p><span class="icon"></span>EC数据和模型合作项目</p>
+                <img src="temp/1.jpg">
+            </div>
+            <div class="images">
+                <p><span class="icon"></span>标的数据库项目</p>
+                <img src="temp/2.jpg">
+            </div>
+        </div>
+        <div class="page">
+            <div class="title title-6">
+                <h3>关键子项目进展</h3>
+            </div>
+            <div class="images">
+                <p><span class="icon"></span>爬虫系统-研发</p>
+                <img src="temp/3.jpg">
+            </div>
+            <div class="images">
+                <p><span class="icon"></span>营销线索源拓展</p>
+                <img src="temp/4.jpg">
+            </div>
+            <div class="images">
+                <p><span class="icon"></span>EC销售动态信息采集</p>
+                <img src="temp/5.jpg">
+            </div>
+            <div class="images">
+                <p><span class="icon"></span>标的IT桔子数据采集</p>
+                <img src="temp/6.jpg">
+            </div>
+        </div>
+        <div class="page">
+            <div class="title title-6">
+                <h3>关键子项目进展</h3>
+            </div>
+            <div class="images">
+                <p><span class="icon"></span>前端应用第二阶段迭代计划</p>
+                <img src="temp/7.jpg">
+            </div>
+        </div>
+    </div>
+    <!--script-->
+    <script src="js/islider.min.js"></script>
+    <script src="js/page/index.js"></script>
+    <!--script-weixin-->
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script src="js/wx/sha1.js"></script>
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script src="js/wx/sha1.js"></script>
+
+    <script type="text/javascript">
+    $.ajax({
+            type: 'POST',
+            url:'http://i2137.com/php/zhoubao/sign.php',
+            data:{
+                 'url': window.location.href.split('#')[0]
+            },
+            dataType: 'json',
+            success: function(data){ 
+                // 获取信息成功
+                console.log(data)
+                 wx.config({
+                    debug: false,
+                    appId: data.result.appId,
+                    timestamp: data.result.timestamp,
+                    nonceStr: data.result.nonceStr,
+                    signature: data.result.signature,
+                    jsApiList: [
+                        // 所有要调用的 API 都要加到这个列表中
+                        'checkJsApi',
+                        'onMenuShareTimeline',
+                        'onMenuShareAppMessage',
+                        'onMenuShareQQ'
+                    ]
+                });
+
+            window.share_config = {
+                     "share": {
+                        "imgUrl": "http://i2137.com/php/progress-2.png",//分享图，默认当相对路径处理，所以使用绝对路径的的话，“http://”协议  前缀必须在。
+                        "desc" : "麦达数字技术部2017年11月第三周工作周报",//摘要,如果分享到朋友圈的话，不显示摘要。
+                        "title" : '麦达数字技术部工作周报',//分享卡片标题
+                        "link": window.location.href,//分享出去后的链接，这里可以将链接设置为另一个页面。
+                        "success":function(){//分享成功后的回调函数
+                            alert('已分享');
+                        },
+                        'cancel': function () { 
+                            // 用户取消分享后执行的回调函数
+                            alerat('已取消');
+                        }
+                    }
+                };  
+                    wx.ready(function () {
+                        wx.onMenuShareAppMessage(share_config.share);//分享给好友
+                        wx.onMenuShareTimeline(share_config.share);//分享到朋友圈
+                        wx.onMenuShareQQ(share_config.share);//分享给手机QQ
+                });
+                wx.error(function(res){
+                    // config信息验证失败会执行error函数，如签名过期导致验证失败，
+                    // 具体错误信息可以打开config的debug模式查看，也可以在返回的res参数中查看，
+                    //对于SPA可以在这里更新签名。
+                    alert("好像出错了！！");
+                    alert("errorMSG:"+res);
+                    // console.log(res);                    
+                });
+
+                
+            },
+            error: function(xhr){
+                alert("请求失败，请联系管理员")
+               // console.log(xhr);
+            }
+        });
+</script>
+</body>
+</html>
