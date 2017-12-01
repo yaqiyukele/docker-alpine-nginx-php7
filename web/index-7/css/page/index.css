@@ -1,0 +1,239 @@
+@charset "utf-8";
+
+body, ul, dl, dd, dt, ol, li, p, h1, h2, h3, h4, h5, h6, textarea, form, select, fieldset, table, td, div, input {
+    margin:0;
+    padding:0;
+    -webkit-text-size-adjust: none;
+}
+h1, h2, h3, h4, h5, h6{
+    font-size:12px;
+    font-weight:normal;
+}
+body>div{
+    margin:0 auto;
+}
+img {
+    border:0;
+}
+body {
+    color: #333;
+    text-align:
+    center;
+    font: 12px "微软雅黑";
+}
+ul, ol, li {
+    list-style-type:none;
+    vertical-align:0;
+}
+a {
+    outline-style:none;
+    color:#535353;
+    text-decoration:none;
+}
+a:hover {
+    color: #D40000;
+    text-decoration: none;
+}
+.clear{
+    height:0;
+    overflow:hidden;
+    clear:both;
+}
+a {
+    color: inherit;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: none;
+}
+a:focus {
+    text-decoration: none;
+}
+.horizental-item {
+    float: left;
+}
+html {
+    height: 100%;
+}
+body {
+    height: 100%;
+}
+.container{
+    margin: 0 auto;
+    padding: 0;
+}
+#page0{
+    background: transparent url(../../images/page-1.jpg);
+    -moz-background-size:100% 100%;
+    background-size:100% 100%;
+}
+#page1,#page2,#page3,#page4,#page5,#page6{
+    background: transparent url(../../images/page-2.jpg);
+    -moz-background-size:100% 100%;
+    background-size:100% 100%;
+}
+.group .title{
+    width: 80%;
+    height: 10%;
+    -moz-background-size:100% 100%;
+    background-size:100% 100%;
+    margin: 0 auto;
+}
+.title1{
+    background: transparent url(../../images/title-1.png);
+}
+.title2{
+    background: transparent url(../../images/title-2.png);
+}
+.title3{
+    background: transparent url(../../images/title-3.png);
+}
+.title4{
+    background: transparent url(../../images/title-4.png);
+}
+.title5{
+    background: transparent url(../../images/title-5.png);
+}
+.group .title h3{
+    font-size: 2em;
+    font-weight: 600;
+    color: #f0f0f0;
+    line-height: 2.2;
+    text-align: center;
+    letter-spacing: 0.1em;
+    margin-left: 1.2em;
+}
+.group .table{
+    width: 95%;
+    margin: 0 auto;
+    color: #f0f0f0;
+}
+.group .table table{
+    width: 100%;
+    margin-top: 1em;
+}
+.group .table tr td{
+    width: 20%;
+    line-height: 2.2em;
+    text-align: center;
+    border:1px solid rgba(225,225,225,.3);
+}
+.group .table tr td:last-child{
+    width: 34%;
+}
+.group .table table thead td{
+    background-color: rgba(225,225,225,.3);
+}
+.group .table ul{
+    width: 80%;
+    height: 80%;
+    margin: 2em auto 0;
+}
+.group .table ul li{
+    list-style-type: none;
+    height: 2.5em;
+    color: #f0f0f0;
+    font-size: 1.3em;
+    letter-spacing: 2px;
+    background: url("../../images/star.png") no-repeat;
+    padding-left: 32px;
+}
+.group .table ul li span{
+    color: #f6722a;
+}
+.group .image{
+    width: 100%;
+    height: 100%;
+    margin-top: 1em;
+    margin-bottom: 5em;
+    text-align: center;
+}
+.group .image img{
+    width: 90%;
+    height: 24%;
+    margin: 0.4em 0;
+    box-shadow: 0 0 0 3px rgba(225,225,225,.3);
+}
+.group .image p{
+    color: #f6722a;
+    text-align: center;
+}
+.group .info{
+    width: 90%;
+    height: auto;
+    margin: 1em auto 0;
+    color: #f0f0f0;
+    font-size: 1.1em;
+    line-height: 1.5;
+}
+.group .info p{
+    color: #f6722a;
+    font-size: 1.2em;
+    font-weight: 500;
+
+    width: 100%;
+    height: 2em;
+    background-color: rgba(255,255,255,.3);
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    margin-bottom: 0.5em;
+    padding-left: 0.5em;
+    line-height: 2;
+    cursor: pointer;
+}
+.group .info p .more{
+    float: right;
+    padding-right: 1em;
+    color: #f0f0f0;
+    font-size: 0.8em;
+    line-height: 2.5;
+
+    display: block;
+    width: 16px;
+    height: 16px;
+    background: url("../../images/down.png") no-repeat;
+
+    position: relative;
+    top: 0.8em;
+    right: 1em;
+
+}
+.group .info ul{
+    margin-left: 0;
+    padding-left: 0;
+}
+.group .info ul li{
+    list-style-type: none;
+}
+.group .con-info{
+    width: 90%;
+    color: #f0f0f0;
+    font-size: 1em;
+    text-align: left;
+    margin: 1em auto 0;
+}
+.group .con-info span{
+    color: #f6722a;
+    font-size: 1.2em;
+    font-weight: 500;
+    margin-left: 0.1em;
+    margin-right: 0.1em;
+}
+.group .img-info{
+    color: #f6722a;
+    text-align: center;
+}
+.group .my-progress{
+    width: 90%;
+    margin: 1em auto 0;
+}
+.group .my-progress img{
+    width: 100%;
+}
+.group .charts{
+    width: 90%;
+    height: 45%;
+    margin: 1em auto 0;
+    background-color: rgba(225, 225, 225, .3);
+}
