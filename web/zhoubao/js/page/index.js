@@ -3,40 +3,41 @@ new iSlider({
     item:'.page',
     lastLocate:false,
     playClass:'play',
+    fixPage: true,
     onslide:function (index) {
         if(index==6){
             var values=[
-                {"name":"北京","value": 27764},
-                {"name":"天津","value": 1969},
-                {"name":"河北","value": 1476},
+                {"name":"北京","value": 25848},
+                {"name":"天津","value": 1780},
+                {"name":"河北","value": 1475},
                 {"name":"山西","value": 474},
                 {"name":"内蒙古","value": 169},
                 {"name":"辽宁","value": 918},
                 {"name":"吉林","value": 352},
-                {"name":"黑龙江","value": 536},
-                {"name":"上海","value": 4485},
-                {"name":"江苏","value": 2405},
+                {"name":"黑龙江","value": 535},
+                {"name":"上海","value": 4484},
+                {"name":"江苏","value": 2404},
                 {"name":"浙江","value": 2074},
                 {"name":"安徽","value": 888},
                 {"name":"福建","value": 834},
                 {"name":"江西","value": 582},
-                {"name":"山东","value": 2321},
-                {"name":"河南","value": 1677},
-                {"name":"湖北","value": 1033},
+                {"name":"山东","value": 2320},
+                {"name":"河南","value": 1676},
+                {"name":"湖北","value": 1032},
                 {"name":"湖南","value": 771},
-                {"name":"广东","value": 10478},
+                {"name":"广东","value": 10476},
                 {"name":"广西","value": 224},
-                {"name":"海南","value": 91},
-                {"name":"重庆","value": 637},
-                {"name":"四川","value": 1329},
-                {"name":"贵州","value": 146},
-                {"name":"云南","value": 198},
-                {"name":"西藏","value": 139},
-                {"name":"陕西","value": 563},
-                {"name":"甘肃","value": 246},
+                {"name":"海南","value": 104},
+                {"name":"重庆","value": 729},
+                {"name":"四川","value": 1465},
+                {"name":"贵州","value": 167},
+                {"name":"云南","value": 239},
+                {"name":"西藏","value": 146},
+                {"name":"陕西","value": 626},
+                {"name":"甘肃","value": 282},
                 {"name":"青海","value": 42},
-                {"name":"宁夏","value": 105},
-                {"name":"新疆","value": 94}
+                {"name":"宁夏","value": 115},
+                {"name":"新疆","value": 111}
             ]
             var geoCoordMap={
                 "北京":[116.46,39.92],
@@ -151,7 +152,7 @@ new iSlider({
             var myChart_0=new echarts.init(document.getElementById("chart-0"));
             myChart_0.setOption(option_0);
         }
-        if(index==8){
+        if(index==9){
             /*整体阶段进展*/
             var option_total = {
                 color: ['#d3fffe'],
@@ -224,7 +225,7 @@ new iSlider({
                         name:'执行进度',
                         type:'bar',
                         barWidth: '30%',
-                        data:[30,20,10,30,12,0]
+                        data:[45,40,10,30,35,12]
                     }
                 ]
             };
