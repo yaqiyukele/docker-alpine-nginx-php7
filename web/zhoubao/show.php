@@ -176,7 +176,7 @@ foreach ($res as $key => $value) {
                 <h3>成&nbsp;果&nbsp;展&nbsp;示</h3>
             </div>
             <div class="images-0">
-                <img src="temp/show.png" width="100%" height="50%">
+                <img src="temp/show.png">
             </div>
         </div>
         <div class="page" id="page6">
@@ -191,16 +191,16 @@ foreach ($res as $key => $value) {
                 <div class="table-title"></div>
                 <table cellpadding="0" cellspacing="0" border="0">
                     <tr>
-                        <td></td><td>线索量</td>
+                        <td>城市</td><td>线索量</td>
                     </tr>
                     <tr>
-                        <td>北京</td><td>27764</td>
+                        <td>北京</td><td>25848</td>
                     </tr>
                     <tr>
-                        <td>天津</td><td>1969</td>
+                        <td>天津</td><td>1780</td>
                     </tr>
                     <tr>
-                        <td>上海</td><td>4485</td>
+                        <td>上海</td><td>4484</td>
                     </tr>
                 </table>
             </div>
@@ -297,20 +297,24 @@ foreach ($res as $key => $value) {
                 <p><span class="icon"></span>4000万企业数据采集</p>
                 <img src="temp/2-2.jpg" name="imgs">
             </div>
-        </div>
-        <div class="page" id="page11">
-            <div class="title title-7">
-                <h3>关键子项目进展</h3>
-            </div>
-            <!-- <div class="images">
-                <p><span class="icon"></span>标的IT桔子数据采集</p>
-                <img src="temp/4.jpg" name="imgs">
-            </div> -->
             <div class="images">
                 <p><span class="icon"></span>营销线索平台迭代</p>
                 <img src="temp/3-3.jpg" name="imgs">
             </div>
         </div>
+        <!-- <div class="page" id="page11">
+            <div class="title title-7">
+                <h3>关键子项目进展</h3>
+            </div>
+            <div class="images">
+                <p><span class="icon"></span>标的IT桔子数据采集</p>
+                <img src="temp/4.jpg" name="imgs">
+            </div>
+            <div class="images">
+                <p><span class="icon"></span>营销线索平台迭代</p>
+                <img src="temp/3-3.jpg" name="imgs">
+            </div>
+        </div> -->
     </div>
     <!--script-->
     <script src="js/islider.min.js"></script>

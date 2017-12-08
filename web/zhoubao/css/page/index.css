@@ -241,9 +241,8 @@ html, body{
 }*/
 
 .containers .page .images-0{
-    width: 9.746667rem;
-    /*height: 24rem;*/
-    margin: 0.25rem auto 0;
+    width: 8.746667rem;
+    margin: 1rem auto 0;
 }
 .containers .page .images-0 img{
     width: 100%;
