@@ -56,14 +56,6 @@ foreach ($res as $key => $value) {
     $Content4_1 = explode('@#$', $Content4[1]);
     $page4 = $res[3]['page'];
     // print_r($Content4_1);die;
-
-    // 键值为5的是分项进展总结的第五条
-    $Title5 = $res[4]['title'];
-    $Content5 = explode('@#$%',$res[4]['content']);
-    // print_r($Content6);die;
-    $Title5_1 = $Content5[0];
-    $page5 = $res[4]['page'];
-
 }
 // print_r($res);die;
 ?>

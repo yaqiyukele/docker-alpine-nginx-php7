@@ -10,7 +10,7 @@ $mydabase=new DB("172.26.249.246","md","maida6868","zhoubao");
 // $mydabase=new DB("127.0.0.1","root","root","zhoubao");
 
 if (empty($_GET)) {
-   $sql = "SELECT * FROM essential_information WHERE weekly_newspaper_ctime=(SELECT MAX(weekly_newspaper_ctime) FROM  essential_information WHERE weekly_newspaper_type=3)";
+   $sql = "SELECT * FROM essential_information WHERE weekly_newspaper_ctime=(SELECT MAX(weekly_newspaper_ctime) FROM  essential_information WHERE weekly_newspaper_type=1)";
    $result=$mydabase->mysql_query_rest($sql);
 }else{
     $sql = "SELECT * FROM essential_information WHERE essen_id=".$_GET['essen_id'];
@@ -67,14 +67,6 @@ foreach ($res as $key => $value) {
     $Content5_1 = explode('@#$', $Content5[1]);
     $page5 = $res[4]['page'];
     // print_r($content2_1);die;
-
-
-    // 键值为5的是分项进展总结的第五条
-    $Title6 = $res[5]['title'];
-    $Content6 = explode('@#$%',$res[5]['content']);
-    // print_r($Content6);die;
-    $Title6_1 = $Content6[0];
-    $page6 = $res[5]['page'];
 
 }
 // print_r($res);die;
@@ -412,7 +404,7 @@ function ok8spost() {
                 pageT2:$("#page2  div[class='title title-2']").text().replace(/\s/g, ""),//第二页的标题
                 pageT3:$("#page3  div[class='title title-2']").text().replace(/\s/g, ""),//第三页的标题
                 pageT4:$("#page4  div[class='title title-2']").text().replace(/\s/g, ""),//第四页的标题
-                pageT5:$("#page8  div[class='title title-6']").text().replace(/\s/g, ""),//第四页的标题
+                // pageT5:$("#page8  div[class='title title-6']").text().replace(/\s/g, ""),//第四页的标题
 
 
 
@@ -425,7 +417,7 @@ function ok8spost() {
                 pageC2:$("#page2 ul[class='small']").text().trim(),//正文第二页的内容
                 pageC3:$("#page3 ul[class='small']").text().trim(),//正文第三页的内容
                 pageC4:$("#page4 ul[class='small']").text().trim(),//正文第四页的内容
-                pageC5:$("#page8 ul[class='small']").text().trim(),//正文第五页的内容                
+                // pageC5:$("#page8 ul[class='small']").text().trim(),//正文第五页的内容                
 
                 q_infoid:<?php echo $result['essen_id'] ?> //文章的id
 
