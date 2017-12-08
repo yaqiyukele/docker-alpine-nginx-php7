@@ -80,7 +80,7 @@ foreach ($res as $key => $value) {
 </head>
 <body>
     <div class="containers">
-        <div class="page page-home">   
+        <div class="page page-home" id="page0">   
             <img src="http://i2137.com/php/zhoubao/images/edit.jpg" style="float: right;width: 10%;height: 10%;margin:0 auto;">        
             <!--首页-->
             <!--<button type="button" onclick="GetInitInfo()">获取基本信息</button>-->
@@ -383,6 +383,11 @@ foreach ($res as $key => $value) {
                    // console.log(xhr);
                 }
             });
+    </script>
+    <script type="text/javascript">
+        $("#page0 img").bind("click",function(){
+           window.location.href="index.php?essen_id=<?php echo $result['essen_id'];?>";
+        })
     </script>
 </body>
 </html>
