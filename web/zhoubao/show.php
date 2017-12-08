@@ -6,8 +6,8 @@ session_start();
 include("./include/common.inc.php");
 include("./include/pdo.class.php");
 
-// $mydabase=new DB("172.26.249.246","md","maida6868","zhoubao");
-$mydabase=new DB("127.0.0.1","root","root","zhoubao");
+$mydabase=new DB("172.26.249.246","md","maida6868","zhoubao");
+// $mydabase=new DB("127.0.0.1","root","root","zhoubao");
 
 if (empty($_GET)) {
    $sql = "SELECT * FROM essential_information WHERE weekly_newspaper_ctime=(SELECT MAX(weekly_newspaper_ctime) FROM  essential_information WHERE weekly_newspaper_type=1)";
@@ -184,7 +184,7 @@ foreach ($res as $key => $value) {
                 <h3>成&nbsp;果&nbsp;展&nbsp;示</h3>
             </div>
             <div class="images-0">
-                <img src="temp/0.png" width="100%" height="50%">
+                <img src="temp/show.png" width="100%" height="50%">
             </div>
         </div>
         <div class="page" id="page6">

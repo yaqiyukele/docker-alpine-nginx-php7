@@ -242,7 +242,7 @@ html, body{
 
 .containers .page .images-0{
     width: 9.746667rem;
-    height: 24rem;
+    /*height: 24rem;*/
     margin: 0.25rem auto 0;
 }
 .containers .page .images-0 img{
