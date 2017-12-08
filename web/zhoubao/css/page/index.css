@@ -112,7 +112,7 @@ html, body{
     letter-spacing: 2px;
 }
 .containers .page .list-border ul{
-    padding: 0.25rem;
+    padding: 0.15rem 0.25rem;
 }
 .containers .page .list-border ul li{
     margin-bottom: 0.15rem;
@@ -187,7 +187,7 @@ html, body{
 }
 .containers .page .images{
     width: 9.746667rem;
-    margin: 0.25rem auto 0;
+    margin: 0.15rem auto 0;
 }
 .containers .page .images p{
     color: #d3fffe;
