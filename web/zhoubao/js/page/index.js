@@ -152,7 +152,7 @@ new iSlider({
             var myChart_0=new echarts.init(document.getElementById("chart-0"));
             myChart_0.setOption(option_0);
         }
-        if(index==9){
+        if(index==8){
             /*整体阶段进展*/
             var option_total = {
                 color: ['#d3fffe'],
