@@ -12,10 +12,10 @@ if (isset($_GET['code'])){
 	if ($row['openid']) {
 	  // 入库操作(连接数据库)
 	  $mydabase=new DB("172.26.249.246","md","maida6868","zhoubao");
-	  $sql = "INSERT INTO users (wx_openid,operation,nickname,headimgurl) VALUES (".$res['openid'].",".$res['operation'].",".$res['nickname'].",".$res['headimgurl'].")";
-	  $res = $mydabase->actionsql($sql);
-	  if ($res) {
-	  	echo $res."1";
+	  $sql = "INSERT INTO users (wx_openid,operation,nickname,headimgurl) VALUES (".$row['openid'].",".$row['operation'].",".$row['nickname'].",".$row['headimgurl'].")";
+	  $result = $mydabase->actionsql($sql);
+	  if ($result) {
+	  	echo $result."1";
 	  }else{
 	  	echo 0;
 	  }
