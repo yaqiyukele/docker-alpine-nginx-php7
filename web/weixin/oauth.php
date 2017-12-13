@@ -6,7 +6,8 @@ $weixin=new class_weixin_adv($appid, $secret);
 if (isset($_GET['code'])){
 	$url="https://api.weixin.qq.com/sns/oauth2/access_token?appid=appid&secret=secret&code=".$_GET['code']."&grant_type=authorization_code";
 	$res = $weixin->https_request($url);
-	$res=(json_decode($res, true));
+	print_r($res);
+	$res=json_decode($res, true);
 	$row=$weixin->get_user_info($res['openid']);
 	print_r($row);die;
 	if ($row['openid']) {
