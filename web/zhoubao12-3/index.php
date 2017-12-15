@@ -15,6 +15,7 @@ if (empty($_GET)) {
     $result=$mydabase->mysql_query_rest($sql);
 }
 
+
 // print_r($result);die;
 $sql = "SELECT * FROM content WHERE relevance_id=".$result['essen_id'];
 $res=$mydabase->mysql_query_fetchAll($sql);
@@ -78,7 +79,7 @@ foreach ($res as $key => $value) {
 
     <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
     <script src="js/flexible_css.js"></script>
-    
+
     <script src="js/flexible.js"></script>
     <link rel="stylesheet" href="css/normalize.min.css">
     <link rel="stylesheet" href="css/page/index.css">
