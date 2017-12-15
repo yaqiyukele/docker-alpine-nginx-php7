@@ -90,7 +90,7 @@ foreach ($res as $key => $value) {
             <div class="title"><?=$Title1; ?></div>
             <div class="list-border">
                 <p></p>
-                <ul>
+                <ul class="part">
                     <?php for ($i=0; $i <count($Content1) ; $i++) { ?>
                         <li><?=$Content1[$i];?></li>
                     <?php } ?>
@@ -104,8 +104,8 @@ foreach ($res as $key => $value) {
         <div class="page" id="page2">
             <div class="title"><?=$Title2;?></div>
             <div class="list-border">
-                <h4><?=$Title2_1;?></h4>
-                <ul>
+                <h4 id='title'><?=$Title2_1;?></h4>
+                <ul class="small">
                     <?php for ($i=0; $i <count($Content2_1) ; $i++) { ?>
                         <li><?=$Content2_1[$i] ?></li>
                     <?php } ?>
@@ -123,8 +123,8 @@ foreach ($res as $key => $value) {
         <div class="page" id="page3">
             <div class="title"><?=$Title3;?></div>
             <div class="list-border">
-                <h4><?=$Title3_1;?></h4>
-                <ul>
+                <h4 id='title'><?=$Title3_1;?></h4>
+                <ul class="small">
                     <?php for ($i=0; $i <count($Content3_1) ; $i++) { ?>
                         <li><?=$Content3_1[$i] ?></li>
                     <?php } ?>
@@ -142,8 +142,8 @@ foreach ($res as $key => $value) {
         <div class="page" id="page4">
             <div class="title"><?=$Title4;?></div>
             <div class="list-border">
-                <h4><?=$Title4_1;?></h4>
-                <ul>
+                <h4 id='title'><?=$Title4_1;?></h4>
+                <ul class="small">
                     <?php for ($i=0; $i <count($Content4_1) ; $i++) { ?>
                         <li><?=$Content4_1[$i] ?></li>
                     <?php } ?>
@@ -303,10 +303,10 @@ function ok8spost() {
         var strs= new Array(); //定义一数组 
 
         var data = {
-                pageT1:$("#page1  div[class='title title-1']").text().replace(/\s/g, ""),//第一页的标题
-                pageT2:$("#page2  div[class='title title-2']").text().replace(/\s/g, ""),//第二页的标题
-                pageT3:$("#page3  div[class='title title-2']").text().replace(/\s/g, ""),//第三页的标题
-                pageT4:$("#page4  div[class='title title-2']").text().replace(/\s/g, ""),//第四页的标题
+                pageT1:$("#page1  div[class='title']").text().replace(/\s/g, ""),//第一页的标题
+                pageT2:$("#page2  div[class='title']").text().replace(/\s/g, ""),//第二页的标题
+                pageT3:$("#page3  div[class='title']").text().replace(/\s/g, ""),//第三页的标题
+                pageT4:$("#page4  div[class='title']").text().replace(/\s/g, ""),//第四页的标题
                 // pageT5:$("#page8  div[class='title title-6']").text().replace(/\s/g, ""),//第四页的标题
 
 
