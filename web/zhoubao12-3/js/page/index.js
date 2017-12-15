@@ -4,7 +4,7 @@ new iSlider({
     lastLocate:false,
     playClass:'play',
     onslide:function (index) {
-        if(index==6){
+       /* if(index==6){
             var values=[
                 {"name":"北京","value": 27764},
                 {"name":"天津","value": 1969},
@@ -150,7 +150,7 @@ new iSlider({
             };
             var myChart_0=new echarts.init(document.getElementById("chart-0"));
             myChart_0.setOption(option_0);
-        }
+        }*/
         if(index==6){
             /*整体阶段进展*/
             var option_total = {
