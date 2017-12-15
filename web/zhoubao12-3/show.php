@@ -159,7 +159,7 @@ foreach ($res as $key => $value) {
                 </ul>
             </div>
         </div>
-        <div class="page" id="page5">
+        <!-- <div class="page" id="page5">
             <div class="title">成果展示</div>
             <div class="list-images">
                 <img src="temp/0.png">
@@ -188,8 +188,8 @@ foreach ($res as $key => $value) {
                     </tr>
                 </table>
             </div>
-        </div>
-        <div class="page" id="page7">
+        </div> -->
+        <div class="page" id="page5">
             <div class="title">团队人员情况</div>
             <div class="list">
                 <ul>
@@ -200,7 +200,7 @@ foreach ($res as $key => $value) {
                 </ul>
             </div>
         </div>
-        <div class="page" id="page8">
+        <div class="page" id="page6">
             <div class="title">总体阶段进展</div>
             <div class="progress"></div>
             <div class="charts" id="bar-1">
@@ -208,7 +208,7 @@ foreach ($res as $key => $value) {
                 <div class="chart" id="chart-total" style="width: 9.6rem;height: 6.9rem;"></div>
             </div>
         </div>
-        <div class="page" id="page9">
+        <div class="page" id="page7">
             <div class="title">关键子项目进展</div>
             <div class="images">
                 <p><span class="icon"></span>EC数据和模型合作项目</p>
@@ -261,7 +261,7 @@ foreach ($res as $key => $value) {
                 window.share_config = {
                         "share": {
                             "imgUrl" : "http://i2137.com/php/zhoubao12-3/images/share.jpg",//分享图，默认当相对路径处理，所以使用绝对路径的的话，“http://”协议  前缀必须在。
-                            "desc" : "麦达数字技术部2017年12月第三周工作周报",//摘要,如果分享到朋友圈的话，不显示摘要。
+                            "desc" : "麦达数字技术部2017年12月第二周工作周报",//摘要,如果分享到朋友圈的话，不显示摘要。
                             "title" : '麦达数字技术部工作周报',//分享卡片标题
                             "link": window.location.href,//分享出去后的链接，这里可以将链接设置为另一个页面。
                             "success":function(){//分享成功后的回调函数
@@ -298,7 +298,7 @@ foreach ($res as $key => $value) {
     <script type="text/javascript">        
         $("#page0 img").bind("click",function(){
            // window.location.href="https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx80c487097b512789&redirect_uri=http://i2137.com/php/zhoubao12-3/oauth.php&response_type=code&scope=snsapi_userinfo&state=1#wechat_redirect";
-           window.location.href="http://i2137.com/php/zhoubao12-3/index.php?essen_id=<?php echo $result['essen_id'];?>";
+           window.location.href="index.php?essen_id=<?php echo $result['essen_id'];?>";
         })
     </script>
 </body>
