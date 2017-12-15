@@ -215,7 +215,7 @@ foreach ($res as $key => $value) {
                 <img src="temp/1.jpg">
             </div>
             <div class="images">
-                <p><span class="icon"></span>4000万企业数据采集，目前等待设备资源到位</p>
+                <p><span class="icon"></span>4000万企业数据采集，等待设备资源到位</p>
                 <img src="temp/2.jpg">
             </div>
             <div class="images">
