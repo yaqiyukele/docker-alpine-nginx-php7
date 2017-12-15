@@ -224,7 +224,7 @@ new iSlider({
                         name:'执行进度',
                         type:'bar',
                         barWidth: '30%',
-                        data:[30,20,10,30,12,0]
+                        data:[45,40,10,37,19,0]
                     }
                 ]
             };

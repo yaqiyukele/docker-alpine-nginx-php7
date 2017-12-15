@@ -4,8 +4,8 @@ define('IN_QY',true);
 include("./include/common.inc.php");
 include("./include/pdo.class.php");
 
-$mydabase=new DB("172.26.249.246","md","maida6868","zhoubao");
-// $mydabase=new DB("127.0.0.1","root","root","zhoubao");
+// $mydabase=new DB("172.26.249.246","md","maida6868","zhoubao");
+$mydabase=new DB("127.0.0.1","root","root","zhoubao");
 
 if (empty($_GET['essen_id'])) {
    $sql = "SELECT * FROM essential_information WHERE weekly_newspaper_ctime=(SELECT MAX(weekly_newspaper_ctime) FROM  essential_information WHERE weekly_newspaper_type=1)";
@@ -195,8 +195,8 @@ foreach ($res as $key => $value) {
                 <ul>
                     <li><span class="list-icon"></span><p>目前在职：<span>14</span>人</p></li>
                     <li><span class="list-icon"></span><p>计划入职：无</p></li>
-                    <li><span class="list-icon"></span><p>本周面试：<span>5</span>人</p></li>
-                    <li><span class="list-icon"></span><p>人员缺口：产品经理、数据分析、JAVA开发、测试</p></li>
+                    <li><span class="list-icon"></span><p>计划离职：<span>1</span>人</p></li>
+                    <li><span class="list-icon"></span><p>人员缺口：NLP、数据分析、产品经理、JAVA开发、测试</p></li>
                 </ul>
             </div>
         </div>
@@ -215,12 +215,12 @@ foreach ($res as $key => $value) {
                 <img src="temp/1.jpg">
             </div>
             <div class="images">
-                <p><span class="icon"></span>爬虫系统-研发</p>
-                <img src="temp/1.jpg">
+                <p><span class="icon"></span>4000万企业数据采集，目前等待设备资源到位</p>
+                <img src="temp/2.jpg">
             </div>
             <div class="images">
-                <p><span class="icon"></span>4000万企业数据采集</p>
-                <img src="temp/1.jpg">
+                <p><span class="icon"></span>营销线索平台迭代</p>
+                <img src="temp/3.jpg">
             </div>
         </div>
     </div>
