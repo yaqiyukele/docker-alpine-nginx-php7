@@ -75,6 +75,7 @@ foreach ($res as $key => $value) {
     <meta charset="UTF-8">
     <title>麦达数字技术部工作周报</title>
     <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    
     <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
     <script src="js/flexible_css.js"></script>
     <script src="js/flexible.js"></script>
