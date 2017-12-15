@@ -336,7 +336,7 @@ function ok8spost() {
                   $("#savenews").attr({ disabled: "disabled" });
                 },
                 success: function(msg){
-                    console.log(msg);
+                    // console.log(msg);
                     window.location.href='show.php?essen_id=<?php echo $result['essen_id']; ?>';
                    /*if (msg.code=200) {
             
