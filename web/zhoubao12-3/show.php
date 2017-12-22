@@ -27,7 +27,12 @@ foreach ($res as $key => $value) {
     $Title1 = $res[0]['title'];
     $Content1 = explode('@#$',$res[0]['content']);
     $page1 = $res[0]['page'];
-    // print_r($Content1);die;
+    
+
+  /*  $Title1 = $res[1]['title'];
+    $Content1 = $res[1]['content'];
+    $page1 = $res[1]['page'];*/
+    // print_r($Content0);die;
 
     // 键值为1的是分项进展总结的第一条
     $Title2 = $res[1]['title'];
@@ -36,7 +41,7 @@ foreach ($res as $key => $value) {
     $Title2_1 = $Content2[0];
     $Content2_1 = explode('@#$', $Content2[1]);
     $page2 = $res[1]['page'];
-    // print_r($content2_1);die;
+    // print_r($Content2_1);die;
 
     // 键值为2的是分项进展总结的第二条
     $Title3 = $res[2]['title'];
@@ -45,17 +50,17 @@ foreach ($res as $key => $value) {
     $Title3_1 = $Content3[0];
     $Content3_1 = explode('@#$', $Content3[1]);
     $page3 = $res[2]['page'];
-    // print_r($content2_1);die;
+    // print_r($Content3_1);die;
 
 
     // 键值为3的是分项进展总结的第三条
     $Title4 = $res[3]['title'];
     $Content4 = explode('@#$%', $res[3]['content']);
-    // print_r($Content3);die;
+    // print_r($Content4);die;
     $Title4_1 = $Content4[0];
     $Content4_1 = explode('@#$', $Content4[1]);
     $page4 = $res[3]['page'];
-    // print_r($content2_1);die;
+    // print_r($Content4_1);die;
 }
 // print_r($res);die;
 
@@ -99,6 +104,75 @@ foreach ($res as $key => $value) {
                     <li>3）爬虫系统OCR电话号码图片识别、简单验证码识别功能研发进展顺利，后续重点是进行图片样本的训练积累。4000万企业数据采集工程已经开始准备，初步数据源确认，研发布隆过滤器、深度爬虫器研发进展50%；</li>
                     <li>4）营销线索平台本周完成主体布局调整、销售个人相关等功能的迭代和发布，目前正在重点进行数据统计和分析功能，优先移动版开发实现。</li> -->
                 </ul>
+            </div>
+        </div>
+        <div class="page" id="page1">
+            <div class="title">
+                <div class="title-content">
+                    <span class="title-1"></span>
+                    <h3>工作总结</h3>
+                    <p class="title-line"></p>
+                </div>
+            </div>
+            <div class="list-border-1">
+                <!-- <p></p>
+                <ul class="part">
+                    <li><?=$Content1;?></li>                    
+                </ul> -->
+                <div class="tables">
+                        <table cellpadding="0" cellspacing="0" border="0">
+                            <tr><td colspan="5" style="font-size: 15px;">12月份截至目前营销线索分析</td></tr>
+                            <tr style="background-color: rgba(255, 255, 255, .2);">  
+                                <td>科目</td><td>技术</td><td>市场</td><td>其他</td><td>合计</td>
+                            </tr>
+                            <tr>
+                                <td>线索动态总量</td><td>6595</td><td>419</td><td>13546</td><td>20560</td>
+                            </tr>
+                            <tr>
+                                <td>总量占比</td><td>32.08%</td><td>2.04%</td><td>65.89%</td><td>100%</td>
+                            </tr>
+                            <tr>
+                                <td>放弃线索量</td><td>3703</td><td>187</td><td>6280</td><td>10170</td>
+                            </tr>
+                            <tr>
+                                <td>新增线索量</td><td>3110</td><td>37</td><td>2102</td><td>5249</td>
+                            </tr>
+                            <tr>
+                                <td>新增占比</td><td>59.25%</td><td>0.70%</td><td>40.05%</td><td>100%</td>
+                            </tr>
+                            <tr>
+                                <td>意向量</td><td>536</td><td>43</td><td>594</td><td>1173</td>
+                            </tr>
+                            <tr>
+                                <td>意向率</td><td>8.13%</td><td>10.26%</td><td>4.39%</td><td>5.71%</td>
+                            </tr><tr>
+                                <td>拨打电话量</td><td>4864</td><td>207</td><td>8218</td><td>13289</td>
+                            </tr>
+                            <tr>
+                                <td>接通量</td><td>3075</td><td>119</td><td>4630</td><td>7824</td>
+                            </tr>
+                            <tr>
+                                <td>接通率</td><td>63.22%</td><td>57.49%</td><td>56.34%</td><td>58.88%</td>
+                            </tr>
+                            <tr>
+                                <td>有效沟通量 （>30s）</td><td>1161</td><td>63</td><td>1434</td><td>2658</td>
+                            </tr>
+                            <tr>
+                                <td>30s有效沟通率</td><td>37.76%</td><td>52.94%</td><td>30.97%</td><td>33.97%</td>
+                            </tr><tr>
+                                <td>有效沟通量 （>60s）</td><td>465</td><td>42</td><td>673</td><td>1180</td>
+                            </tr>
+                            <tr>
+                                <td>60s有效沟通率</td><td>15.12%</td><td>35.29%</td><td>14.54%</td><td>15.08%</td>
+                            </tr>
+                            <tr>
+                                <td>有效沟通量（>120s）</td><td>187</td><td>23</td><td>290</td><td>500</td>
+                            </tr>
+                            <tr>
+                                <td>有效沟通量（>240s）</td><td>73</td><td>9</td><td>116</td><td>198</td>
+                            </tr>
+                        </table>
+                    </div>
             </div>
         </div>
         <div class="page" id="page2">
@@ -191,36 +265,6 @@ foreach ($res as $key => $value) {
         <div class="page" id="page6">
             <div class="title">
                 <div class="title-content">
-                    <span class="title-4"></span>
-                    <h3>线索池数据分布</h3>
-                    <p class="title-line"></p>
-                </div>
-            </div>
-            <div class="charts" style="height: 8rem;">
-                <div class="chart-title">线索分布热点</div>
-                <div class="chart" id="chart-0" style="width: 9.6rem;height: 7.5rem;"></div>
-            </div>
-            <div class="tables">
-                <div class="table-title"></div>
-                <table cellpadding="0" cellspacing="0" border="0">
-                    <tr>
-                        <td>城市</td><td>线索量</td>
-                    </tr>
-                    <tr>
-                        <td>北京</td><td>27764</td>
-                    </tr>
-                    <tr>
-                        <td>天津</td><td>1969</td>
-                    </tr>
-                    <tr>
-                        <td>上海</td><td>4485</td>
-                    </tr>
-                </table>
-            </div>
-        </div>
-        <div class="page" id="page7">
-            <div class="title">
-                <div class="title-content">
                     <span class="title-5"></span>
                     <h3>团队人员情况</h3>
                     <p class="title-line"></p>
@@ -228,14 +272,15 @@ foreach ($res as $key => $value) {
             </div>
             <div class="list">
                 <ul> 
-                    <li><span class="list-icon"></span><p>目前在职：<span>14</span>人</p></li>
+                    <li><span class="list-icon"></span><p>目前在职：<span>13</span>人</p></li>
                     <li><span class="list-icon"></span><p>计划入职：无</p></li>
-                    <li><span class="list-icon"></span><p>本周面试：<span>5</span>人</p></li>
-                    <li><span class="list-icon"></span><p>人员缺口：产品经理、数据分析、JAVA开发、测试</p></li>
+                    <li><span class="list-icon"></span><p>本周离职：<span>1</span>人</p></li>
+                    <li><span class="list-icon"></span><p>本周面试：<span>10</span>人</p></li>
+                    <li><span class="list-icon"></span><p>人员缺口：NLP、数据分析、产品经理、前端开发</p></li>
                 </ul>
             </div>
         </div>
-        <div class="page" id="page8">
+        <div class="page" id="page7">
             <div class="title">
                 <div class="title-content">
                     <span class="title-6"></span>
@@ -249,7 +294,7 @@ foreach ($res as $key => $value) {
                 <div class="chart" id="chart-total" style="width: 9.6rem;height: 6.8rem;"></div>
             </div>
         </div>
-        <div class="page" id="page9">
+        <div class="page" id="page8">
             <div class="title">
                 <div class="title-content">
                     <span class="title-7"></span>
@@ -263,11 +308,11 @@ foreach ($res as $key => $value) {
             </div>
             <div class="images">
                 <p><span class="icon"></span>爬虫系统-研发</p>
-                <img src="temp/1.jpg">
+                <img src="temp/2.jpg">
             </div>
             <div class="images">
                 <p><span class="icon"></span>4000万企业数据采集</p>
-                <img src="temp/1.jpg">
+                <img src="temp/3.jpg">
             </div>
         </div>
     </div>
