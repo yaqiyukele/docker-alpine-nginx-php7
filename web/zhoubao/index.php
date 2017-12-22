@@ -61,7 +61,7 @@ foreach ($res as $key => $value) {
 
     // 键值为4的是分项进展总结的第四条
     $Title5 = $res[4]['title'];
-    $Content5 = explode('@#$%',$res[4]['content']);
+    $Content5 = explode('@#$%', $res[4]['content']);
     // print_r($Content3);die;
     $Title5_1 = $Content5[0];
     $Content5_1 = explode('@#$', $Content5[1]);
