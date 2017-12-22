@@ -156,6 +156,12 @@ html, body{
     background-color: rgba(255, 255, 255, .1);
     text-align: center;
 }
+.containers .page .list-border img{
+    display: block;
+    width: 90%;
+    margin: 0 auto;
+    /*height: 100%;*/
+}
 .containers .page .list-images img{
     height: 100%;
 }
@@ -287,7 +293,7 @@ html, body{
     margin: 0 auto;
 }
 .containers .page .list-border table tr td{
-    width: 16%;
+    width: 15%;
     height: 0.6rem;
     text-align: center;
     border-right: 1px solid rgba(255, 255, 255, .2);
@@ -300,7 +306,7 @@ html, body{
 .containers .page .list-border table tr td:first-child{
     padding-left: 0.2rem;
     text-align: left;
-    width: 36%;
+    width: 40%;
 }
 .containers .page .list-border table tr td:last-child{
     border-right: 0;
