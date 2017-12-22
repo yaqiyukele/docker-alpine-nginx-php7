@@ -85,7 +85,7 @@ foreach ($res as $key => $value) {
     <div class="containers">
         <div class="page page-home" id="page0">
             <!--首页-->
-            <img src="http://i2137.com/php/zhoubao12-3/images/edit.jpg" style="float: right;width: 10%;height: 10%;margin:0 auto;">
+            <img src="http://i2137.com/php/zhoubao12-2/images/edit.jpg" style="float: right;width: 10%;height: 10%;margin:0 auto;">
         </div>
         <div class="page" id="page1">
             <div class="title"><?=$Title1; ?></div>
@@ -236,7 +236,7 @@ foreach ($res as $key => $value) {
     <script type="text/javascript">
         $.ajax({
                 type: 'POST',
-                url:'http://i2137.com/php/zhoubao12-3/sign.php',
+                url:'http://i2137.com/php/zhoubao12-2/sign.php',
                 data:{
                      'url': window.location.href.split('#')[0]
                 },
@@ -261,7 +261,7 @@ foreach ($res as $key => $value) {
 
                 window.share_config = {
                         "share": {
-                            "imgUrl" : "http://i2137.com/php/zhoubao12-3/images/share.jpg",//分享图，默认当相对路径处理，所以使用绝对路径的的话，“http://”协议  前缀必须在。
+                            "imgUrl" : "http://i2137.com/php/zhoubao12-2/images/share.jpg",//分享图，默认当相对路径处理，所以使用绝对路径的的话，“http://”协议  前缀必须在。
                             "desc" : "麦达数字技术部2017年12月第二周工作周报",//摘要,如果分享到朋友圈的话，不显示摘要。
                             "title" : '麦达数字技术部工作周报',//分享卡片标题
                             "link": window.location.href,//分享出去后的链接，这里可以将链接设置为另一个页面。
@@ -298,7 +298,7 @@ foreach ($res as $key => $value) {
     </script>
     <script type="text/javascript">        
         $("#page0 img").bind("click",function(){
-           // window.location.href="https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx80c487097b512789&redirect_uri=http://i2137.com/php/zhoubao12-3/oauth.php&response_type=code&scope=snsapi_userinfo&state=1#wechat_redirect";
+           // window.location.href="https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx80c487097b512789&redirect_uri=http://i2137.com/php/zhoubao12-2/oauth.php&response_type=code&scope=snsapi_userinfo&state=1#wechat_redirect";
            window.location.href="index.php?essen_id=<?php echo $result['essen_id'];?>";
         })
     </script>
