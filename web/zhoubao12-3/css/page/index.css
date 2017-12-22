@@ -5,7 +5,7 @@
 html, body{
     width: 100%;
     height: 100%;
-    s-color: #12171a;
+    color: #12171a;
 }
 .containers{
     width: 100%;
@@ -14,11 +14,11 @@ html, body{
     margin: 0 auto;
 }
 .containers .page{
-    /*margin-top: 1.706667rem;*/
     height: 100%;
     background: url("../../images/page.jpg");
     -webkit-background-size: 100% 100%;
     background-size: 100% 100%;
+    /*padding-top: 1.706667rem;*/
 }
 .containers .page.page-home{
     background: url("../../images/page-home.jpg");
@@ -260,16 +260,19 @@ html, body{
     border-left: 1px solid #ffffff;
 }
 .containers .page .tables table tr td{
-    width: 15%;
-    height: 0.45rem;
+    width: 17%;
+    height: 0.55rem;
     text-align: center;
     border-right: 1px solid #ffffff;
     border-bottom: 1px solid #ffffff;
+    padding:0.08rem 0;
 }
 .containers .page .tables table tr td:first-child{
-    width: 25%;
+    width: 32%;
+    text-align: left;
 }
 .containers .page .tables table tr:first-child td{
+    text-align: center;
     background-color: rgba(255, 255, 255, .2);
 }
 .containers .page .tables table td:first-child{
