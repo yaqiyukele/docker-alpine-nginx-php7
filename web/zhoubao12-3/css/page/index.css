@@ -125,6 +125,14 @@ html, body{
     font-size: 14px;
     line-height: 21px;
 }
+.containers .page .list-border-1{
+    width: 9.7rem;
+    height: 12.8rem;
+    margin: 0 auto;
+    color: #ffffff;
+    font-size: 14px;
+    line-height: 21px;
+}
 .containers .page .list-border h4{
     padding-top: 0.5rem;
     font-size: 18px;
@@ -234,30 +242,36 @@ html, body{
     width: 100%;
 }
 .containers .page .tables{
-    width: 9.746667rem;
+    width: 9.646667rem;
     margin: 0 auto;
 }
 .containers .page .tables .table-title{
     color: #ffffff;
-    font-size: 15px;
+    font-size: 18px;
     text-align: center;
-    line-height: 0.6rem;
+    line-height: 0.3rem;
     height: 0.6rem;
 }
 .containers .page .tables table{
     color: #ffffff;
-    font-size: 15px;
+    font-size: 12px;
     width: 100%;
     border-top: 1px solid #ffffff;
     border-left: 1px solid #ffffff;
 }
 .containers .page .tables table tr td{
-    width: 25%;
-    height: 0.85rem;
+    width: 15%;
+    height: 0.65rem;
     text-align: center;
     border-right: 1px solid #ffffff;
     border-bottom: 1px solid #ffffff;
 }
+.containers .page .tables table tr td:first-child{
+    width: 25%;
+}
 .containers .page .tables table tr:first-child td{
+    background-color: rgba(255, 255, 255, .2);
+}
+.containers .page .tables table td:first-child{
     background-color: rgba(255, 255, 255, .2);
 }
