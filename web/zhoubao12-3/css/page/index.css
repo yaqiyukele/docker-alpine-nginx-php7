@@ -254,14 +254,14 @@ html, body{
 }
 .containers .page .tables table{
     color: #ffffff;
-    font-size: 12px;
+    font-size: 10px;
     width: 100%;
     border-top: 1px solid #ffffff;
     border-left: 1px solid #ffffff;
 }
 .containers .page .tables table tr td{
     width: 15%;
-    height: 0.65rem;
+    height: 0.45rem;
     text-align: center;
     border-right: 1px solid #ffffff;
     border-bottom: 1px solid #ffffff;
