@@ -1,4 +1,4 @@
-<?php
+<?php 
 // error_reporting(0);
 define('IN_QY',true);
 include("./include/common.inc.php");
