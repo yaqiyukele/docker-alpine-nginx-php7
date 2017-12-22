@@ -1,5 +1,5 @@
 <?php 
-error_reporting(0);
+// error_reporting(0);
 define('IN_QY',true);
 session_start();
 include("./include/common.inc.php");
@@ -262,7 +262,7 @@ foreach ($res as $key => $value) {
         <div class="page" id="page7">
             <div class="title">
                 <div class="title-content">
-                    <span class="title-5"></span>
+                    <span class="title-4"></span>
                     <h3>团队人员情况</h3>
                     <p class="title-line"></p>
                 </div>
@@ -280,7 +280,7 @@ foreach ($res as $key => $value) {
         <div class="page" id="page8">
             <div class="title">
                 <div class="title-content">
-                    <span class="title-6"></span>
+                    <span class="title-5"></span>
                     <h3>总体阶段进展</h3>
                     <p class="title-line"></p>
                 </div>
@@ -294,7 +294,7 @@ foreach ($res as $key => $value) {
         <div class="page" id="page9">
             <div class="title">
                 <div class="title-content">
-                    <span class="title-7"></span>
+                    <span class="title-6"></span>
                     <h3>关键子项目进展</h3>
                     <p class="title-line"></p>
                 </div>
@@ -311,7 +311,7 @@ foreach ($res as $key => $value) {
         <div class="page" id="page10">
             <div class="title">
                 <div class="title-content">
-                    <span class="title-7"></span>
+                    <span class="title-6"></span>
                     <h3>关键子项目进展</h3>
                     <p class="title-line"></p>
                 </div>
@@ -395,7 +395,7 @@ foreach ($res as $key => $value) {
     </script>
     <script type="text/javascript">
         $("#page0 img").bind("click",function(){
-            alert(123)
+            // alert(123)
            window.location.href="index.php?essen_id=<?php echo $result['essen_id'];?>";
         })
     </script>
