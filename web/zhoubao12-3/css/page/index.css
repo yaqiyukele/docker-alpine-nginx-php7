@@ -278,3 +278,33 @@ html, body{
 .containers .page .tables table td:first-child{
     background-color: rgba(255, 255, 255, .2);
 }
+.containers .page .list-border table{
+    color: #ffffff;
+    font-size: 12px;
+    width: 97%;
+    border-top: 1px solid rgba(255, 255, 255, .2);
+    border-left:0;
+    margin: 0 auto;
+}
+.containers .page .list-border table tr td{
+    width: 16%;
+    height: 0.6rem;
+    text-align: center;
+    border-right: 1px solid rgba(255, 255, 255, .2);
+    border-bottom: 1px solid rgba(255, 255, 255, .2);
+}
+.containers .page .list-border table tr:first-child td{
+
+    background-color: rgba(255, 255, 255, .2);
+}
+.containers .page .list-border table tr td:first-child{
+    padding-left: 0.2rem;
+    text-align: left;
+    width: 36%;
+}
+.containers .page .list-border table tr td:last-child{
+    border-right: 0;
+}
+.containers .page .list-border table tr:last-child td{
+    border-bottom: 0;
+}

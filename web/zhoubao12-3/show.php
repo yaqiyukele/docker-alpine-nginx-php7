@@ -1,5 +1,5 @@
 <?php 
-// error_reporting(0);
+error_reporting(0);
 define('IN_QY',true);
 session_start();
 include("./include/common.inc.php");
@@ -23,42 +23,42 @@ $res=$mydabase->mysql_query_fetchAll($sql);
 // 循环处理数组
 foreach ($res as $key => $value) {
     // 键值为0的是正文第一页的内容
-    $Title1 = $res[0]['title'];
-    $Content1 = explode('@#$',$res[0]['content']);
-    $page1 = $res[0]['page'];
+    $Title0 = $res[0]['title'];
+    $Content0 = explode('@#$',$res[0]['content']);
+    $page0 = $res[0]['page'];
     
 
-  /*  $Title1 = $res[1]['title'];
+    $Title1 = $res[1]['title'];
     $Content1 = $res[1]['content'];
-    $page1 = $res[1]['page'];*/
-    // print_r($Content0);die;
+    $page1 = $res[1]['page'];
+    // print_r($Content1);die;
 
     // 键值为1的是分项进展总结的第一条
-    $Title2 = $res[1]['title'];
-    $Content2 = explode('@#$%', $res[1]['content']);
+    $Title2 = $res[2]['title'];
+    $Content2 = explode('@#$%', $res[2]['content']);
     // print_r($Content2);die; 
     $Title2_1 = $Content2[0];
     $Content2_1 = explode('@#$', $Content2[1]);
-    $page2 = $res[1]['page'];
+    $page2 = $res[2]['page'];
     // print_r($Content2_1);die;
 
     // 键值为2的是分项进展总结的第二条
-    $Title3 = $res[2]['title'];
-    $Content3 = explode('@#$%', $res[2]['content']);
+    $Title3 = $res[3]['title'];
+    $Content3 = explode('@#$%', $res[3]['content']);
     // print_r($Content3);die;
     $Title3_1 = $Content3[0];
     $Content3_1 = explode('@#$', $Content3[1]);
-    $page3 = $res[2]['page'];
+    $page3 = $res[3]['page'];
     // print_r($Content3_1);die;
 
 
     // 键值为3的是分项进展总结的第三条
-    $Title4 = $res[3]['title'];
-    $Content4 = explode('@#$%', $res[3]['content']);
+    $Title4 = $res[4]['title'];
+    $Content4 = explode('@#$%', $res[4]['content']);
     // print_r($Content4);die;
     $Title4_1 = $Content4[0];
     $Content4_1 = explode('@#$', $Content4[1]);
-    $page4 = $res[3]['page'];
+    $page4 = $res[4]['page'];
     // print_r($Content4_1);die;
 }
 // print_r($res);die;
@@ -88,15 +88,15 @@ foreach ($res as $key => $value) {
             <div class="title">
                 <div class="title-content">
                     <span class="title-1"></span>
-                    <h3><?=$Title1; ?></h3>
+                    <h3><?=$Title0; ?></h3>
                     <p class="title-line"></p>
                 </div>
             </div>
             <div class="list-border">
                 <p></p>
                 <ul class="part">
-                    <?php for ($i=0; $i <count($Content1) ; $i++) { ?>
-                        <li><?=$Content1[$i]; ?></li>
+                    <?php for ($i=0; $i <count($Content0) ; $i++) { ?>
+                        <li><?=$Content0[$i]; ?></li>
                     <?php } ?>
 <!--                     <li>1）EC营销线索算法模型，本周完成第二次模型迭代，经验证和分析较初版特征工程效果提升30%，并已完成模型算法API封装，正在进行内部试用对采集的EC线索进行评测。这版模型的文本特征太多，下周优化模型降维，开始第三次迭代优化；</li>
                     <li>2）投资数据库方面，由于人力资源问题，初版应用产品的研发工作先暂停，重点先推进企业数据仓库的数据采集、清洗和入库等工作，以3个月内积累4000万企业信息为目标；</li>
@@ -105,22 +105,20 @@ foreach ($res as $key => $value) {
                 </ul>
             </div>
         </div>
-        <div class="page" id="page1">
+        <div class="page" id="page2">
             <div class="title">
                 <div class="title-content">
                     <span class="title-1"></span>
-                    <h3>工作总结</h3>
+                    <h3><?=$Title1; ?></h3>
                     <p class="title-line"></p>
                 </div>
             </div>
-            <div class="list-border-1">
-                <!-- <p></p>
+            <div class="list-border">
                 <ul class="part">
                     <li><?=$Content1;?></li>                    
-                </ul> -->
-                <div class="tables">
+                </ul>
                         <table cellpadding="0" cellspacing="0" border="0">
-                            <tr><td colspan="5" style="font-size: 15px;">12月份截至目前营销线索分析</td></tr>
+                            <tr><td colspan="5" style="text-align: center;">12月份截至目前营销线索分析</td></tr>
                             <tr style="background-color: rgba(255, 255, 255, .2);">  
                                 <td>科目</td><td>技术</td><td>市场</td><td>其他</td><td>合计</td>
                             </tr>
@@ -171,10 +169,9 @@ foreach ($res as $key => $value) {
                                 <td>有效沟通量（>240s）</td><td>73</td><td>9</td><td>116</td><td>198</td>
                             </tr>
                         </table>
-                    </div>
             </div>
         </div>
-        <div class="page" id="page2">
+        <div class="page" id="page3">
             <div class="title">
                 <div class="title-content">
                     <span class="title-2"></span>
@@ -199,7 +196,7 @@ foreach ($res as $key => $value) {
                 </ul>
             </div>
         </div>
-        <div class="page" id="page3">
+        <div class="page" id="page4">
             <div class="title">
                 <div class="title-content">
                     <span class="title-2"></span>
@@ -224,7 +221,7 @@ foreach ($res as $key => $value) {
                 </ul>
             </div>
         </div>
-        <div class="page" id="page4">
+        <div class="page" id="page5">
             <div class="title">
                 <div class="title-content">
                     <span class="title-2"></span>
@@ -249,7 +246,7 @@ foreach ($res as $key => $value) {
                 </ul>
             </div>
         </div>
-        <div class="page" id="page5">
+        <div class="page" id="page6">
             <div class="title">
                 <div class="title-content">
                     <span class="title-3"></span>
@@ -261,7 +258,7 @@ foreach ($res as $key => $value) {
                 <img src="temp/0.png">
             </div>
         </div>
-        <div class="page" id="page6">
+        <div class="page" id="page7">
             <div class="title">
                 <div class="title-content">
                     <span class="title-5"></span>
@@ -279,7 +276,7 @@ foreach ($res as $key => $value) {
                 </ul>
             </div>
         </div>
-        <div class="page" id="page7">
+        <div class="page" id="page8">
             <div class="title">
                 <div class="title-content">
                     <span class="title-6"></span>
@@ -293,7 +290,7 @@ foreach ($res as $key => $value) {
                 <div class="chart" id="chart-total" style="width: 9.6rem;height: 6.8rem;"></div>
             </div>
         </div>
-        <div class="page" id="page8">
+        <div class="page" id="page9">
             <div class="title">
                 <div class="title-content">
                     <span class="title-7"></span>
@@ -306,11 +303,20 @@ foreach ($res as $key => $value) {
                 <img src="temp/1.jpg">
             </div>
             <div class="images">
-                <p><span class="icon"></span>爬虫系统-研发</p>
+                <p><span class="icon"></span>4000万企业数据采集</p>
                 <img src="temp/2.jpg">
             </div>
+        </div>
+        <div class="page" id="page10">
+            <div class="title">
+                <div class="title-content">
+                    <span class="title-7"></span>
+                    <h3>关键子项目进展</h3>
+                    <p class="title-line"></p>
+                </div>
+            </div>
             <div class="images">
-                <p><span class="icon"></span>4000万企业数据采集</p>
+                <p><span class="icon"></span>营销线索平台迭代</p>
                 <img src="temp/3.jpg">
             </div>
         </div>
@@ -388,6 +394,7 @@ foreach ($res as $key => $value) {
     </script>
     <script type="text/javascript">
         $("#page0 img").bind("click",function(){
+            alert(123)
            window.location.href="index.php?essen_id=<?php echo $result['essen_id'];?>";
         })
     </script>

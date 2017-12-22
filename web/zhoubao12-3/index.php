@@ -1,5 +1,5 @@
 <?php 
-// error_reporting(0);
+error_reporting(0);
 define('IN_QY',true);
 session_start();
 
@@ -24,38 +24,43 @@ $res=$mydabase->mysql_query_fetchAll($sql);
 // 循环处理数组
 foreach ($res as $key => $value) {
     // 键值为0的是正文第一页的内容
-    $Title1 = $res[0]['title'];
-    $Content1 = explode('@#$',$res[0]['content']);
-    $page1 = $res[0]['page'];
+    $Title0 = $res[0]['title'];
+    $Content0 = explode('@#$',$res[0]['content']);
+    $page0 = $res[0]['page'];
+    
+
+    $Title1 = $res[1]['title'];
+    $Content1 = $res[1]['content'];
+    $page1 = $res[1]['page'];
     // print_r($Content1);die;
 
     // 键值为1的是分项进展总结的第一条
-    $Title2 = $res[1]['title'];
-    $Content2 = explode('@#$%', $res[1]['content']);
+    $Title2 = $res[2]['title'];
+    $Content2 = explode('@#$%', $res[2]['content']);
     // print_r($Content2);die; 
     $Title2_1 = $Content2[0];
     $Content2_1 = explode('@#$', $Content2[1]);
-    $page2 = $res[1]['page'];
-    // print_r($content2_1);die;
+    $page2 = $res[2]['page'];
+    // print_r($Content2_1);die;
 
     // 键值为2的是分项进展总结的第二条
-    $Title3 = $res[2]['title'];
-    $Content3 = explode('@#$%', $res[2]['content']);
+    $Title3 = $res[3]['title'];
+    $Content3 = explode('@#$%', $res[3]['content']);
     // print_r($Content3);die;
     $Title3_1 = $Content3[0];
     $Content3_1 = explode('@#$', $Content3[1]);
-    $page3 = $res[2]['page'];
-    // print_r($content2_1);die;
+    $page3 = $res[3]['page'];
+    // print_r($Content3_1);die;
 
 
     // 键值为3的是分项进展总结的第三条
-    $Title4 = $res[3]['title'];
-    $Content4 = explode('@#$%', $res[3]['content']);
-    // print_r($Content3);die;
+    $Title4 = $res[4]['title'];
+    $Content4 = explode('@#$%', $res[4]['content']);
+    // print_r($Content4);die;
     $Title4_1 = $Content4[0];
     $Content4_1 = explode('@#$', $Content4[1]);
-    $page4 = $res[3]['page'];
-    // print_r($content2_1);die;
+    $page4 = $res[4]['page'];
+    // print_r($Content4_1);die;
 }
 // print_r($res);die;
 
@@ -75,7 +80,7 @@ foreach ($res as $key => $value) {
     <link rel="stylesheet" href="css/page/index.css">
 </head>
 <body>
-    <div class="containers" id="page0">
+   <div class="containers" id="page0">
         <div class="page page-home">
             <!--首页-->
         </div>
@@ -83,15 +88,15 @@ foreach ($res as $key => $value) {
             <div class="title">
                 <div class="title-content">
                     <span class="title-1"></span>
-                    <h3><?=$Title1; ?></h3>
+                    <h3><?=$Title0; ?></h3>
                     <p class="title-line"></p>
                 </div>
             </div>
             <div class="list-border">
                 <p></p>
                 <ul class="part">
-                    <?php for ($i=0; $i <count($Content1) ; $i++) { ?>
-                        <li><?=$Content1[$i]; ?></li>
+                    <?php for ($i=0; $i <count($Content0) ; $i++) { ?>
+                        <li><?=$Content0[$i]; ?></li>
                     <?php } ?>
 <!--                     <li>1）EC营销线索算法模型，本周完成第二次模型迭代，经验证和分析较初版特征工程效果提升30%，并已完成模型算法API封装，正在进行内部试用对采集的EC线索进行评测。这版模型的文本特征太多，下周优化模型降维，开始第三次迭代优化；</li>
                     <li>2）投资数据库方面，由于人力资源问题，初版应用产品的研发工作先暂停，重点先推进企业数据仓库的数据采集、清洗和入库等工作，以3个月内积累4000万企业信息为目标；</li>
@@ -101,6 +106,75 @@ foreach ($res as $key => $value) {
             </div>
         </div>
         <div class="page" id="page2">
+            <div class="title">
+                <div class="title-content">
+                    <span class="title-1"></span>
+                    <h3><?=$Title1; ?></h3>
+                    <p class="title-line"></p>
+                </div>
+            </div>
+            <div class="list-border-1">
+                <p></p>
+                <ul class="part">
+                    <li><?=$Content1;?></li>                    
+                </ul>
+                <div class="tables">
+                        <table cellpadding="0" cellspacing="0" border="0">
+                            <tr><td colspan="5" style="font-size: 15px;">12月份截至目前营销线索分析</td></tr>
+                            <tr style="background-color: rgba(255, 255, 255, .2);">  
+                                <td>科目</td><td>技术</td><td>市场</td><td>其他</td><td>合计</td>
+                            </tr>
+                            <tr>
+                                <td>线索动态总量</td><td>6595</td><td>419</td><td>13546</td><td>20560</td>
+                            </tr>
+                            <tr>
+                                <td>总量占比</td><td>32.08%</td><td>2.04%</td><td>65.89%</td><td>100%</td>
+                            </tr>
+                            <tr>
+                                <td>放弃线索量</td><td>3703</td><td>187</td><td>6280</td><td>10170</td>
+                            </tr>
+                            <tr>
+                                <td>新增线索量</td><td>3110</td><td>37</td><td>2102</td><td>5249</td>
+                            </tr>
+                            <tr>
+                                <td>新增占比</td><td>59.25%</td><td>0.70%</td><td>40.05%</td><td>100%</td>
+                            </tr>
+                            <tr>
+                                <td>意向量</td><td>536</td><td>43</td><td>594</td><td>1173</td>
+                            </tr>
+                            <tr>
+                                <td>意向率</td><td>8.13%</td><td>10.26%</td><td>4.39%</td><td>5.71%</td>
+                            </tr><tr>
+                                <td>拨打电话量</td><td>4864</td><td>207</td><td>8218</td><td>13289</td>
+                            </tr>
+                            <tr>
+                                <td>接通量</td><td>3075</td><td>119</td><td>4630</td><td>7824</td>
+                            </tr>
+                            <tr>
+                                <td>接通率</td><td>63.22%</td><td>57.49%</td><td>56.34%</td><td>58.88%</td>
+                            </tr>
+                            <tr>
+                                <td>有效沟通量 （>30s）</td><td>1161</td><td>63</td><td>1434</td><td>2658</td>
+                            </tr>
+                            <tr>
+                                <td>30s有效沟通率</td><td>37.76%</td><td>52.94%</td><td>30.97%</td><td>33.97%</td>
+                            </tr><tr>
+                                <td>有效沟通量 （>60s）</td><td>465</td><td>42</td><td>673</td><td>1180</td>
+                            </tr>
+                            <tr>
+                                <td>60s有效沟通率</td><td>15.12%</td><td>35.29%</td><td>14.54%</td><td>15.08%</td>
+                            </tr>
+                            <tr>
+                                <td>有效沟通量（>120s）</td><td>187</td><td>23</td><td>290</td><td>500</td>
+                            </tr>
+                            <tr>
+                                <td>有效沟通量（>240s）</td><td>73</td><td>9</td><td>116</td><td>198</td>
+                            </tr>
+                        </table>
+                    </div>
+            </div>
+        </div>
+        <div class="page" id="page3">
             <div class="title">
                 <div class="title-content">
                     <span class="title-2"></span>
@@ -125,7 +199,7 @@ foreach ($res as $key => $value) {
                 </ul>
             </div>
         </div>
-        <div class="page" id="page3">
+        <div class="page" id="page4">
             <div class="title">
                 <div class="title-content">
                     <span class="title-2"></span>
@@ -150,7 +224,7 @@ foreach ($res as $key => $value) {
                 </ul>
             </div>
         </div>
-        <div class="page" id="page4">
+        <div class="page" id="page5">
             <div class="title">
                 <div class="title-content">
                     <span class="title-2"></span>
@@ -286,21 +360,24 @@ function ok8spost() {
         var strs= new Array(); //定义一数组 
 
         var data = {
+
                 pageT1:$("#page1  div[class='title']").text().replace(/\s/g, ""),//第一页的标题
                 pageT2:$("#page2  div[class='title']").text().replace(/\s/g, ""),//第二页的标题
                 pageT3:$("#page3  div[class='title']").text().replace(/\s/g, ""),//第三页的标题
                 pageT4:$("#page4  div[class='title']").text().replace(/\s/g, ""),//第四页的标题
+                pageT5:$("#page5  div[class='title']").text().replace(/\s/g, ""),//第四页的标题
 
 
-                pageST2:$("#page2 h4[id='title']").text().trim(),//正文第二页的小标题内容
-                pageST3:$("#page3 h4[id='title']").text().trim(),//正文第三页的小标题内容
-                pageST4:$("#page4 h4[id='title']").text().trim(),//正文第四页的小标题内容
+                pageST3:$("#page3 h4[id='title']").text().trim(),//正文第二页的小标题内容
+                pageST4:$("#page4 h4[id='title']").text().trim(),//正文第三页的小标题内容
+                pageST5:$("#page5 h4[id='title']").text().trim(),//正文第四页的小标题内容
 
                 
                 pageC1:$("#page1 ul[class='part']").text().trim(),//正文第一页的内容
-                pageC2:$("#page2 ul[class='small']").text().trim(),//正文第二页的内容
-                pageC3:$("#page3 ul[class='small']").text().trim(),//正文第三页的内容
-                pageC4:$("#page4 ul[class='small']").text().trim(),//正文第四页的内容
+                pageC2:$("#page2 ul[class='part']").text().trim(),//正文第一页的内容
+                pageC3:$("#page3 ul[class='small']").text().trim(),//正文第二页的内容
+                pageC4:$("#page4 ul[class='small']").text().trim(),//正文第三页的内容
+                pageC5:$("#page5 ul[class='small']").text().trim(),//正文第四页的内容
                 // pageC5:$("#page8 ul[class='small']").text().trim(),//正文第五页的内容                
 
                 q_infoid:<?php echo $result['essen_id'] ?> //文章的id
@@ -318,13 +395,7 @@ function ok8spost() {
                 },
                 success: function(msg){
                     console.log(msg);
-                    window.location.href='show.php?essen_id=<?php echo $result['essen_id']; ?>';
-                    // window.location.href='show.php?essen_id=13;?>';
-                   /*if (msg.code=200) {
-            
-                   }else{
-                        alert('修改失败');
-                   }*/
+                    window.location.href='show.php?';
                 }
             });
 }
