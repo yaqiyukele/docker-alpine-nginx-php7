@@ -156,6 +156,12 @@ html, body{
     background-color: rgba(255, 255, 255, .1);
     text-align: center;
 }
+.containers .page .list-border img{
+    display: block;
+    width: 90%;
+    margin: 0 auto;
+    /*height: 100%;*/
+}
 .containers .page .list-images img{
     height: 100%;
 }

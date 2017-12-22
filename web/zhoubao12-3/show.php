@@ -117,7 +117,8 @@ foreach ($res as $key => $value) {
                 <ul class="part">
                     <li><?=$Content1;?></li>                    
                 </ul>
-                        <table cellpadding="0" cellspacing="0" border="0">
+                <img src="temp/4.png">
+                        <!--<table cellpadding="0" cellspacing="0" border="0">
                             <tr><td colspan="5" style="text-align: center;">12月份截至目前营销线索分析</td></tr>
                             <tr style="background-color: rgba(255, 255, 255, .2);">  
                                 <td>科目</td><td>技术</td><td>市场</td><td>其他</td><td>合计</td>
@@ -168,7 +169,7 @@ foreach ($res as $key => $value) {
                             <tr>
                                 <td>有效沟通量（>240s）</td><td>73</td><td>9</td><td>116</td><td>198</td>
                             </tr>
-                        </table>
+                        </table>-->
             </div>
         </div>
         <div class="page" id="page3">
