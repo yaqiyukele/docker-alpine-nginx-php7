@@ -395,7 +395,7 @@ function ok8spost() {
                 },
                 success: function(msg){
                     console.log(msg);
-                    window.location.href='show.php?essen_id=<?php echo $essen_id; ?>';
+                    window.location.href='show.php?essen_id=<?php echo $result['essen_id']; ?>';
                 }
             });
 }
