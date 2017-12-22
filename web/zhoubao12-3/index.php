@@ -9,7 +9,7 @@ include("./include/pdo.class.php");
 $mydabase=new DB("172.26.249.246","md","maida6868","zhoubao");
 // $mydabase=new DB("127.0.0.1","root","root","zhoubao");
 
- if (empty($_GET)) {
+ if (empty($_GET['essen_id'])) {
    $sql = "SELECT * FROM essential_information WHERE weekly_newspaper_ctime=(SELECT MAX(weekly_newspaper_ctime) FROM  essential_information WHERE weekly_newspaper_type=1)";
    $result=$mydabase->mysql_query_rest($sql);
 }else{
@@ -80,8 +80,9 @@ foreach ($res as $key => $value) {
     <link rel="stylesheet" href="css/page/index.css">
 </head>
 <body>
-   <div class="containers" id="page0">
+    <div class="containers" id="page0">
         <div class="page page-home">
+            <img src="http://i2137.com/php/zhoubao12-3/images/edit.jpg" style="float: right;width: 10%;height: 10%;margin:0 auto;">
             <!--首页-->
         </div>
         <div class="page" id="page1">
@@ -113,14 +114,13 @@ foreach ($res as $key => $value) {
                     <p class="title-line"></p>
                 </div>
             </div>
-            <div class="list-border-1">
-                <p></p>
+            <div class="list-border">
                 <ul class="part">
                     <li><?=$Content1;?></li>                    
                 </ul>
-                <div class="tables">
-                        <table cellpadding="0" cellspacing="0" border="0">
-                            <tr><td colspan="5" style="font-size: 15px;">12月份截至目前营销线索分析</td></tr>
+                <img src="temp/4.png">
+                        <!--<table cellpadding="0" cellspacing="0" border="0">
+                            <tr><td colspan="5" style="text-align: center;">12月份截至目前营销线索分析</td></tr>
                             <tr style="background-color: rgba(255, 255, 255, .2);">  
                                 <td>科目</td><td>技术</td><td>市场</td><td>其他</td><td>合计</td>
                             </tr>
@@ -170,8 +170,7 @@ foreach ($res as $key => $value) {
                             <tr>
                                 <td>有效沟通量（>240s）</td><td>73</td><td>9</td><td>116</td><td>198</td>
                             </tr>
-                        </table>
-                    </div>
+                        </table>-->
             </div>
         </div>
         <div class="page" id="page3">
