@@ -9,7 +9,7 @@ include("./include/pdo.class.php");
 $mydabase=new DB("172.26.249.246","md","maida6868","zhoubao");
 // $mydabase=new DB("127.0.0.1","root","root","zhoubao");
 
-if (empty($_GET)) {
+if (empty($_GET['essen_id'])) {
    $sql = "SELECT * FROM essential_information WHERE weekly_newspaper_ctime=(SELECT MAX(weekly_newspaper_ctime) FROM  essential_information WHERE weekly_newspaper_type=1)";
    $result=$mydabase->mysql_query_rest($sql);
 }else{
