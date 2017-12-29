@@ -264,5 +264,6 @@ html, body{
 .containers .page .list-border img{
     display: block;
     width: 92%;
+    height: 80%;
     margin: 0 auto;
 }
