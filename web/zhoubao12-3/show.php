@@ -2,6 +2,7 @@
 // error_reporting(0);
 define('IN_QY',true);
 session_start();
+
 include("./include/common.inc.php");
 include("./include/pdo.class.php");
 
