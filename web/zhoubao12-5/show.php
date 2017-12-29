@@ -222,10 +222,75 @@ foreach ($res as $key => $value) {
     <script src="js/echarts.min.js"></script>
     <script src="js/echarts-map-china.min.js"></script>
     <script src="js/page/index.js"></script>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script type="text/javascript">
+        $.ajax({
+                type: 'POST',
+                url:'http://i2137.com/php/zhoubao12-5/sign.php',
+                data:{
+                     'url': window.location.href.split('#')[0]
+                },
+                dataType: 'json',
+                success: function(data){ 
+                    // 获取信息成功
+                    console.log(data)
+                     wx.config({
+                        debug: false,
+                        appId: data.result.appId,
+                        timestamp: data.result.timestamp,
+                        nonceStr: data.result.nonceStr,
+                        signature: data.result.signature,
+                        jsApiList: [
+                            // 所有要调用的 API 都要加到这个列表中
+                            'checkJsApi',
+                            'onMenuShareTimeline',
+                            'onMenuShareAppMessage',
+                            'onMenuShareQQ'
+                        ]
+                    });
+
+                window.share_config = {
+                        "share": {
+                            "imgUrl": "http://i2137.com/php/zhoubao12-5/images/share.jpg",//分享图，默认当相对路径处理，所以使用绝对路径的的话，“http://”协议  前缀必须在。
+                            "desc" : "麦达数字技术部2017年12月第四周工作周报",//摘要,如果分享到朋友圈的话，不显示摘要。
+                            "title" : '麦达数字技术部工作周报',//分享卡片标题
+                            "link": window.location.href,//分享出去后的链接，这里可以将链接设置为另一个页面。
+                            "success":function(){//分享成功后的回调函数
+                                // alert('已分享');
+                            },
+                            'cancel': function () { 
+                                // 用户取消分享后执行的回调函数
+                                // alerat('已取消');
+                            }
+                        }
+                    };  
+                    wx.ready(function () {
+                            wx.onMenuShareAppMessage(share_config.share);//分享给好友
+                            wx.onMenuShareTimeline(share_config.share);//分享到朋友圈
+                            wx.onMenuShareQQ(share_config.share);//分享给手机QQ
+                    });
+                    wx.error(function(res){
+                        // config信息验证失败会执行error函数，如签名过期导致验证失败，
+                        // 具体错误信息可以打开config的debug模式查看，也可以在返回的res参数中查看，
+                        //对于SPA可以在这里更新签名。
+                        // alert("好像出错了！！");
+                        // alert("errorMSG:"+res);
+                        // console.log(res);                    
+                    });
+
+                    
+                },
+                error: function(xhr){
+                    alert("请求失败，请联系管理员")
+                   // console.log(xhr);
+                }
+            });
+    </script>
     <script type="text/javascript">
         $("#page0 img").bind("click",function(){
            window.location.href="index.php?essen_id=<?php echo $result['essen_id'];?>";
         })
     </script>
+
 </body>
 </html>
