@@ -178,7 +178,7 @@ foreach ($res as $key => $value) {
                     <ul>
                         <li><span class="list-icon"></span><p>目前在职：<span>14</span>人</p></li>
                         <li><span class="list-icon"></span><p>计划入职：无</p></li>
-                        <li><span class="list-icon"></span><p>本周面试：<span>13</span>人</p></li>
+                        <li><span class="list-icon"></span><p>本周面试：<span>15</span>人</p></li>
                         <li><span class="list-icon"></span><p>人员缺口：算法和数据、爬虫采集、前端开发</p></li>
                     </ul>
                 </div>
@@ -251,7 +251,7 @@ foreach ($res as $key => $value) {
 
                 window.share_config = {
                         "share": {
-                            "imgUrl": "http://i2137.com/php/zhoubao12-5/images/share.jpg",//分享图，默认当相对路径处理，所以使用绝对路径的的话，“http://”协议  前缀必须在。
+                            "imgUrl": "http://i2137.com/php/zhoubao12-5/images/share.png",//分享图，默认当相对路径处理，所以使用绝对路径的的话，“http://”协议  前缀必须在。
                             "desc" : "麦达数字技术部2017年12月第四周工作周报",//摘要,如果分享到朋友圈的话，不显示摘要。
                             "title" : '麦达数字技术部工作周报',//分享卡片标题
                             "link": window.location.href,//分享出去后的链接，这里可以将链接设置为另一个页面。
