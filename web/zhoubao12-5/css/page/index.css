@@ -261,3 +261,8 @@ html, body{
     color: #ffffff;
     background-color: #ce2303;
 }
+.containers .page .list-border img{
+    display: block;
+    width: 92%;
+    margin: 0 auto;
+}
