@@ -151,7 +151,7 @@ new iSlider({
             var myChart_0=new echarts.init(document.getElementById("chart-0"));
             myChart_0.setOption(option_0);
         }
-        if(index==8){
+        if(index==7){
             /*整体阶段进展*/
             var option_total = {
                 color: ['#ce2303'],
@@ -224,7 +224,7 @@ new iSlider({
                         name:'执行进度',
                         type:'bar',
                         barWidth: '30%',
-                        data:[49,42,10,50,30,0]
+                        data:[50,45,10,60,35,0]
                     }
                 ]
             };

@@ -178,7 +178,7 @@ foreach ($res as $key => $value) {
                     <ul>
                         <li><span class="list-icon"></span><p>目前在职：<span>14</span>人</p></li>
                         <li><span class="list-icon"></span><p>计划入职：无</p></li>
-                        <li><span class="list-icon"></span><p>本周面试：<span>5</span>人</p></li>
+                        <li><span class="list-icon"></span><p>本周面试：<span>13</span>人</p></li>
                         <li><span class="list-icon"></span><p>人员缺口：产品经理、数据分析、JAVA开发、测试</p></li>
                     </ul>
                 </div>
@@ -204,15 +204,22 @@ foreach ($res as $key => $value) {
             </div>
             <div class="images">
                 <p><span class="icon"></span>EC数据和模型合作项目</p>
-                <img src="temp/1.jpg">
-            </div>
-            <div class="images">
-                <p><span class="icon"></span>爬虫系统-研发</p>
-                <img src="temp/1.jpg">
+                <img src="temp/1.png">
             </div>
             <div class="images">
                 <p><span class="icon"></span>4000万企业数据采集</p>
-                <img src="temp/1.jpg">
+                <img src="temp/2.png">
+            </div>
+        </div>
+        <div class="page" id="page9">
+            <div class="title">
+                <div class="title-content">
+                    <span class="title-5"></span><h3>关键子项目进展</h3><p class="title-line"></p>
+                </div>
+            </div>
+            <div class="images">
+                <p><span class="icon"></span>营销线索平台迭代</p>
+                <img src="temp/3.png">
             </div>
         </div>
     </div>
