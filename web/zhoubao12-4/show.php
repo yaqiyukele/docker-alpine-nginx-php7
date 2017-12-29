@@ -79,7 +79,7 @@ foreach ($res as $key => $value) {
     <div class="containers">
         <div class="page page-home" id="page0">
             <!--首页-->
-            <img src="http://i2137.com/php/zhoubao12-4/images/edit.jpg" style="float: right;width: 10%;height: 10%;margin:0 auto;">
+            <img src="http://i2137.com/php/zhoubao12-5/images/edit.jpg" style="float: right;width: 10%;height: 10%;margin:0 auto;">
         </div>
         <div class="page" id="page1">
             <div class="title">
@@ -216,7 +216,7 @@ foreach ($res as $key => $value) {
         <div class="page" id="page6">
             <div class="title">
                 <div class="title-content">
-                    <span class="title-5"></span><h3>团队人员情况</h3><p class="title-line"></p>
+                    <span class="title-4"></span><h3>团队人员情况</h3><p class="title-line"></p>
                 </div>
             </div>
             <div class="list-borders">
@@ -233,7 +233,7 @@ foreach ($res as $key => $value) {
         <div class="page" id="page7">
             <div class="title">
                 <div class="title-content">
-                    <span class="title-6"></span><h3>总体阶段进展</h3><p class="title-line"></p>
+                    <span class="title-5"></span><h3>总体阶段进展</h3><p class="title-line"></p>
                 </div>
             </div>
             <div class="progress"></div>
@@ -245,7 +245,7 @@ foreach ($res as $key => $value) {
         <div class="page" id="page8">
             <div class="title">
                 <div class="title-content">
-                    <span class="title-7"></span><h3>关键子项目进展</h3><p class="title-line"></p>
+                    <span class="title-6"></span><h3>关键子项目进展</h3><p class="title-line"></p>
                 </div>
             </div>
             <div class="images">
