@@ -52,8 +52,8 @@ $result['pageC5']  = $arr['pageST5']."@#$%".$pageC5_str;
 $infoid=$_POST['q_infoid'];
 // print_r($result);die;
 
-// $mydabase=new DB("172.26.249.246","md","maida6868","zhoubao");
-$mydabase=new DB("127.0.0.1","root","root","zhoubao");
+$mydabase=new DB("172.26.249.246","md","maida6868","zhoubao");
+// $mydabase=new DB("127.0.0.1","root","root","zhoubao");
 
 $WHERE1 = "relevance_id='".$infoid."' AND page=1";
 $WHERE2 = "relevance_id='".$infoid."' AND page=2";
