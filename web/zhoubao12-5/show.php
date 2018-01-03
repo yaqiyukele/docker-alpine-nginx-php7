@@ -16,7 +16,6 @@ $mydabase=new DB("172.26.249.246","md","maida6868","zhoubao");
     $sql = "SELECT * FROM essential_information WHERE essen_id=".$_GET['essen_id'];
     $result=$mydabase->mysql_query_rest($sql);
 }
-
 // print_r($result);die;
 $sql = "SELECT * FROM content WHERE relevance_id=".$result['essen_id'];
 $res=$mydabase->mysql_query_fetchAll($sql);
@@ -26,7 +25,7 @@ foreach ($res as $key => $value) {
     // 键值为0的是正文第一页的内容
     $Title0 = $res[0]['title'];
     $Content0 = explode('@#$',$res[0]['content']);
-    $page0 = $res[0]['page'];
+    $page0 = $res[0]['page']; 
     
 
     $Title1 = $res[1]['title'];
