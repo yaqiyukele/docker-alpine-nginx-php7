@@ -147,7 +147,7 @@ foreach ($res as $key => $value) {
                 </ul>
             </div>
         </div>
-        <div class="page" id="page6">
+        <!--<div class="page" id="page6">
             <div class="title">
                 <div class="title-content">
                     成果展示
@@ -157,7 +157,7 @@ foreach ($res as $key => $value) {
                 <img src="temp/0.png">
             </div>
         </div>
-        <div class="page" id="page7">
+         <div class="page" id="page7">
             <div class="title">
                 <div class="title-content">
                     线索池数据分布
@@ -184,8 +184,8 @@ foreach ($res as $key => $value) {
                     </tr>
                 </table>
             </div>
-        </div>
-        <div class="page" id="page8">
+        </div> -->
+        <div class="page" id="page6">
             <div class="title">
                 <div class="title-content">
                     团队人员情况
@@ -200,7 +200,7 @@ foreach ($res as $key => $value) {
                 </ul>
             </div>
         </div>
-        <div class="page" id="page9">
+        <div class="page" id="page7">
             <div class="title">
                 <div class="title-content">
                     总体阶段进展
@@ -212,7 +212,7 @@ foreach ($res as $key => $value) {
                 <div class="chart" id="chart-total" style="width: 9.6rem;height: 6.6rem;"></div>
             </div>
         </div>
-        <div class="page" id="page10">
+        <div class="page" id="page8">
             <div class="title">
                 <div class="title-content">
                     关键子项目进展
