@@ -105,6 +105,7 @@ foreach ($res as $key => $value) {
                 <ul class="part">
                     <li><?=$Content1;?></li>                    
                 </ul>
+                <img src="temp/0.png">
             </div>
         </div>
         <div class="page" id="page3">
