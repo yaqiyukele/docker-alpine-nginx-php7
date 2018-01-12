@@ -82,7 +82,7 @@ foreach ($res as $key => $value) {
     <div class="containers">
         <div class="page page-home" id="page0">
             <!--首页-->
-            <img src="http://i2137.com/php/zhoubao12-4/images/edit.jpg" style="float: right;width: 10%;height: 10%;margin:0 auto;">
+            <!-- <img src="http://i2137.com/php/zhoubao12-4/images/edit.jpg" style="float: right;width: 10%;height: 10%;margin:0 auto;"> -->
         </div>
         <div class="page" id="page1">
             <div class="title">
@@ -148,7 +148,7 @@ foreach ($res as $key => $value) {
                 </ul>
             </div>
         </div>
-        <div class="page" id="page5">
+        <!-- <div class="page" id="page5">
             <div class="title">
                 <div class="title-content">
                     团队人员情况
@@ -193,7 +193,7 @@ foreach ($res as $key => $value) {
                 <p><span class="icon"></span>4000万企业数据采集</p>
                 <img src="temp/1.jpg">
             </div>
-        </div>
+        </div> -->
     </div>
     <!--script-->
     <script src="js/jquery-1.11.3.min.js"></script>
@@ -214,7 +214,7 @@ function ok8spost() {
                 pageT2:$("#page2  div[class='title']").text().replace(/\s/g, ""),//第二页的标题
                 pageT3:$("#page3  div[class='title']").text().replace(/\s/g, ""),//第三页的标题
                 pageT4:$("#page4  div[class='title']").text().replace(/\s/g, ""),//第四页的标题
-                pageT5:$("#page5  div[class='title']").text().replace(/\s/g, ""),//第四页的标题
+                // pageT5:$("#page5  div[class='title']").text().replace(/\s/g, ""),//第四页的标题
 
 
                 pageST2:$("#page2 h4[id='title']").text().trim(),//正文第二页的小标题内容
