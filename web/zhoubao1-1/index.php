@@ -107,12 +107,12 @@ foreach ($res as $key => $value) {
                 </ul>
                 <img src="temp/0.png">
             </div>
-        </div>
+        </div> 
         <div class="page" id="page3">
             <div class="title">
                 <div class="title-content"><?=$Title2;?></div>
             </div>
-            <div class="list-border">
+            <div class="list-border"> 
                 <h4 id="title"><?=$Title2_1;?></h4>
                 <ul class="small">
                     <?php for ($i=0; $i <count($Content2_1) ; $i++) { ?>
