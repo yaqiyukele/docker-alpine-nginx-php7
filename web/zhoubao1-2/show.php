@@ -6,8 +6,8 @@ session_start();
 include("./include/common.inc.php");
 include("./include/pdo.class.php");
 
-$mydabase=new DB("172.26.249.246","md","maida6868","zhoubao");
-// $mydabase=new DB("127.0.0.1","root","root","zhoubao");
+// $mydabase=new DB("172.26.249.246","md","maida6868","zhoubao");
+$mydabase=new DB("127.0.0.1","root","root","zhoubao");
 
  if (empty($_GET['essen_id'])) {
    $sql = "SELECT * FROM essential_information WHERE weekly_newspaper_ctime=(SELECT MAX(weekly_newspaper_ctime) FROM  essential_information WHERE weekly_newspaper_type=1)";
@@ -151,19 +151,31 @@ foreach ($res as $key => $value) {
         <div class="page" id="page5">
             <div class="title">
                 <div class="title-content">
+                    <span class="title-3"></span>
+                    <h3>成果展示</h3>
+                    <p class="title-line"></p>
+                </div>
+            </div>
+            <div class="list-images">
+                <img src="temp/0.jpg">
+            </div>
+        </div>
+        <div class="page" id="page6">
+            <div class="title">
+                <div class="title-content">
                     团队人员情况
                 </div>
             </div>
             <div class="list">
                 <ul>
                     <li><p>目前在职：13人</p></li>
-                    <li><p>计划入职：无</p></li>
-                    <li><p>本周面试：5人</p></li>
-                    <li><p>人员缺口：产品经理、数据分析、JAVA开发、测试</p></li>
+                    <li><p>计划入职：1人</p></li>
+                    <li><p>本周面试：10人</p></li>
+                    <li><p>人员缺口：算法和数据、爬虫采集、前端开发</p></li>
                 </ul>
             </div>
         </div>
-        <div class="page" id="page6">
+        <div class="page" id="page7">
             <div class="title">
                 <div class="title-content">
                     总体阶段进展
@@ -175,7 +187,7 @@ foreach ($res as $key => $value) {
                 <div class="chart" id="chart-total" style="width: 9.6rem;height: 6.6rem;"></div>
             </div>
         </div>
-        <div class="page" id="page7">
+        <div class="page" id="page8">
             <div class="title">
                 <div class="title-content">
                     关键子项目进展
@@ -183,15 +195,11 @@ foreach ($res as $key => $value) {
             </div>
             <div class="images">
                 <p><span class="icon"></span>EC数据和模型合作项目</p>
-                <img src="temp/1.jpg">
+                <img src="temp/1.png">
             </div>
             <div class="images">
-                <p><span class="icon"></span>爬虫系统-研发</p>
-                <img src="temp/1.jpg">
-            </div>
-            <div class="images">
-                <p><span class="icon"></span>4000万企业数据采集</p>
-                <img src="temp/1.jpg">
+                <p><span class="icon"></span>营销线索平台迭代</p>
+                <img src="temp/2.png">
             </div>
         </div>
     </div>

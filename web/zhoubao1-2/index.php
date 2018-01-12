@@ -6,8 +6,8 @@ session_start();
 include("./include/common.inc.php");
 include("./include/pdo.class.php");
 
-$mydabase=new DB("172.26.249.246","md","maida6868","zhoubao");
-// $mydabase=new DB("127.0.0.1","root","root","zhoubao");
+// $mydabase=new DB("172.26.249.246","md","maida6868","zhoubao");
+$mydabase=new DB("127.0.0.1","root","root","zhoubao");
 
  if (empty($_GET['essen_id'])) {
    $sql = "SELECT * FROM essential_information WHERE weekly_newspaper_ctime=(SELECT MAX(weekly_newspaper_ctime) FROM  essential_information WHERE weekly_newspaper_type=1)";
@@ -214,7 +214,7 @@ function ok8spost() {
                 pageT2:$("#page2  div[class='title']").text().replace(/\s/g, ""),//第二页的标题
                 pageT3:$("#page3  div[class='title']").text().replace(/\s/g, ""),//第三页的标题
                 pageT4:$("#page4  div[class='title']").text().replace(/\s/g, ""),//第四页的标题
-                pageT5:$("#page5  div[class='title']").text().replace(/\s/g, ""),//第四页的标题
+                // pageT5:$("#page5  div[class='title']").text().replace(/\s/g, ""),//第四页的标题
 
 
                 pageST2:$("#page2 h4[id='title']").text().trim(),//正文第二页的小标题内容

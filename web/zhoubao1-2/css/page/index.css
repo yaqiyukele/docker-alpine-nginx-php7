@@ -81,7 +81,8 @@ html, body{
     text-align: center;
 }
 .containers .page .list-images img{
-    height: 100%;
+    /*height: 100%;*/
+    width: 96%;
 }
 .containers .page .list{
     width: 9.173333rem;
