@@ -85,7 +85,7 @@ foreach ($res as $key => $value) {
             </div>
             <div class="list-border">
                 <p></p>
-                <ul class="small">
+                <ul class="part">
                   <?php for ($i=0; $i <count($Content0); $i++) { ?>
                     <li><?=$Content0[$i]; ?></li>      
                   <?php } ?>
@@ -153,7 +153,7 @@ function ok8spost() {
         var strs= new Array(); //定义一数组 
 
         var data = {
-                 pageT1:$("#page1  div[class='title']").text().replace(/\s/g, ""),//第一页的标题
+                pageT1:$("#page1  div[class='title']").text().replace(/\s/g, ""),//第一页的标题
                 pageT2:$("#page2  div[class='title']").text().replace(/\s/g, ""),//第二页的标题
                 pageT3:$("#page3  div[class='title']").text().replace(/\s/g, ""),//第三页的标题
                 pageT4:$("#page4  div[class='title']").text().replace(/\s/g, ""),//第四页的标题
