@@ -80,7 +80,7 @@ foreach ($res as $key => $value) {
 </head>
 <body>
     <div class="containers">
-        <div class="page page-home">
+        <div class="page page-home" id="page0">
             <img src="http://i2137.com/php/zhoubao1-3/images/edit.jpg" style="float: right;width: 10%;height: 10%;margin:0 auto;">
             <!--首页-->
         </div>
@@ -147,60 +147,22 @@ foreach ($res as $key => $value) {
         <div class="page" id="page5">
             <div class="title">
                 <div class="title-content">
-                    <span class="title-3"></span><h3>成果展示</h3><p class="title-line"></p>
-                </div>
-            </div>
-            <div class="list-images">
-                <img src="temp/0.png">
-            </div>
-        </div>
-        <div class="page" id="page6">
-            <div class="title">
-                <div class="title-content">
-                    <span class="title-4"></span><h3>线索池数据分布</h3><p class="title-line"></p>
-                </div>
-            </div>
-            <div class="charts" style="height: 8rem;">
-                <div class="chart-title">线索分布热点</div>
-                <div class="chart" id="chart-0" style="width: 9.6rem;height: 7.5rem;"></div>
-            </div>
-            <div class="tables">
-                <div class="table-title"></div>
-                <table cellpadding="0" cellspacing="0" border="0">
-                    <tr>
-                        <td>城市</td><td>线索量</td>
-                    </tr>
-                    <tr>
-                        <td>北京</td><td>27764</td>
-                    </tr>
-                    <tr>
-                        <td>天津</td><td>1969</td>
-                    </tr>
-                    <tr>
-                        <td>上海</td><td>4485</td>
-                    </tr>
-                </table>
-            </div>
-        </div>
-        <div class="page" id="page7">
-            <div class="title">
-                <div class="title-content">
-                    <span class="title-5"></span><h3>团队人员情况</h3><p class="title-line"></p>
+                    <span class="title-3"></span><h3>团队人员情况</h3><p class="title-line"></p>
                 </div>
             </div>
             <div class="list">
                 <ul>
                     <li><span class="list-icon"></span><p>目前在职：<span>14</span>人</p></li>
-                    <li><span class="list-icon"></span><p>计划入职：无</p></li>
-                    <li><span class="list-icon"></span><p>本周面试：<span>5</span>人</p></li>
-                    <li><span class="list-icon"></span><p>人员缺口：产品经理、数据分析、JAVA开发、测试</p></li>
+                    <li><span class="list-icon"></span><p>本周入职：1人</p></li>
+                    <li><span class="list-icon"></span><p>本周面试：<span>10</span>人</p></li>
+                    <li><span class="list-icon"></span><p>人员缺口：算法和数据、爬虫采集、前端开发</p></li>
                 </ul>
             </div>
         </div>
-        <div class="page" id="page8">
+        <div class="page" id="page6">
             <div class="title">
                 <div class="title-content">
-                    <span class="title-6"></span><h3>总体阶段进展</h3><p class="title-line"></p>
+                    <span class="title-4"></span><h3>总体阶段进展</h3><p class="title-line"></p>
                 </div>
             </div>
             <div class="progress"></div>
@@ -209,23 +171,19 @@ foreach ($res as $key => $value) {
                 <div class="chart" id="chart-total" style="width: 9.6rem;height: 6.8rem;"></div>
             </div>
         </div>
-        <div class="page" id="page9">
+        <div class="page" id="page7">
             <div class="title">
                 <div class="title-content">
-                    <span class="title-7"></span><h3>关键子项目进展</h3><p class="title-line"></p>
+                    <span class="title-5"></span><h3>关键子项目进展</h3><p class="title-line"></p>
                 </div>
             </div>
             <div class="images">
                 <p><span class="icon"></span>EC数据和模型合作项目</p>
-                <img src="temp/1.jpg">
+                <img src="temp/1.png">
             </div>
             <div class="images">
-                <p><span class="icon"></span>爬虫系统-研发</p>
-                <img src="temp/1.jpg">
-            </div>
-            <div class="images">
-                <p><span class="icon"></span>4000万企业数据采集</p>
-                <img src="temp/1.jpg">
+                <p><span class="icon"></span>营销线索平台迭代</p>
+                <img src="temp/2.png">
             </div>
         </div>
     </div>
@@ -301,6 +259,7 @@ foreach ($res as $key => $value) {
     </script>
     <script type="text/javascript">
         $("#page0 img").bind("click",function(){
+            // alert(123);
            window.location.href="index.php?essen_id=<?php echo $result['essen_id'];?>";
         })
     </script>
