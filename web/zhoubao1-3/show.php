@@ -153,7 +153,7 @@ foreach ($res as $key => $value) {
             <div class="list">
                 <ul>
                     <li><span class="list-icon"></span><p>目前在职：<span>14</span>人</p></li>
-                    <li><span class="list-icon"></span><p>本周入职：1人</p></li>
+                    <li><span class="list-icon"></span><p>本周入职：<span>1</span>人</p></li>
                     <li><span class="list-icon"></span><p>本周面试：<span>10</span>人</p></li>
                     <li><span class="list-icon"></span><p>人员缺口：算法和数据、爬虫采集、前端开发</p></li>
                 </ul>
