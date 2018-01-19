@@ -81,45 +81,70 @@ foreach ($res as $key => $value) {
 <body>
     <div class="containers">
         <div class="page page-home">
+            <img src="http://i2137.com/php/zhoubao1-3/images/edit.jpg" style="float: right;width: 10%;height: 10%;margin:0 auto;">
             <!--首页-->
         </div>
-        <div class="page">
+        <div class="page" id="page1">
             <div class="title">
                 <div class="title-content">
-                    <span class="title-1"></span><h3>整体总结</h3><p class="title-line"></p>
+                    <span class="title-1"></span><h3><?=$Title0; ?></h3><p class="title-line"></p>
                 </div>
             </div>
             <div class="list-border">
                 <p></p>
-                <ul>
-                    <li>1）EC营销线索算法模型，本周完成第二次模型迭代，经验证和分析较初版特征工程效果提升30%，并已完成模型算法API封装，正在进行内部试用对采集的EC线索进行评测。这版模型的文本特征太多，下周优化模型降维，开始第三次迭代优化；</li>
-                    <li>2）投资数据库方面，由于人力资源问题，初版应用产品的研发工作先暂停，重点先推进企业数据仓库的数据采集、清洗和入库等工作，以3个月内积累4000万企业信息为目标；</li>
-                    <li>3）爬虫系统OCR电话号码图片识别、简单验证码识别功能研发进展顺利，后续重点是进行图片样本的训练积累。4000万企业数据采集工程已经开始准备，初步数据源确认，研发布隆过滤器、深度爬虫器研发进展50%；</li>
-                    <li>4）营销线索平台本周完成主体布局调整、销售个人相关等功能的迭代和发布，目前正在重点进行数据统计和分析功能，优先移动版开发实现。</li>
+                <ul class="small">
+                  <?php for ($i=0; $i <count($Content0); $i++) { ?>
+                    <li><?=$Content0[$i]; ?></li>      
+                  <?php } ?>
                 </ul>
             </div>
         </div>
-        <div class="page">
+        <div class="page" id="page2">
             <div class="title">
                 <div class="title-content">
-                    <span class="title-2"></span><h3>分项进展总结</h3><p class="title-line"></p>
+                    <span class="title-2"></span><h3><?=$Title2; ?></h3><p class="title-line"></p>
                 </div>
             </div>
             <div class="list-border">
-                <p>服务和前端应用</p>
-                <ul>
-                    <li>1）EC营销系统后台项目相关数据逻辑和功能服务实现工作，已完成如下：</li>
-                    <li>&nbsp;&nbsp;&nbsp;&nbsp;a）数据钻取功能，按省、市、行业分布钻取；</li>
-                    <li>&nbsp;&nbsp;&nbsp;&nbsp;b）历史推送记录里沟通状态数据补充；</li>
-                    <li>&nbsp;&nbsp;&nbsp;&nbsp;c）通话历史功能加入平台推送的总沟通量、有效沟通量等字段；</li>
-                    <li>&nbsp;&nbsp;&nbsp;&nbsp;d）根据公司地址从百度、高德获取经纬度功能，并根据经纬度查询附近公司功能（50%）；</li>
-                    <li>2）EC销售数据统计分析，区分平台推送和其他渠道线索，统计动态线索量、拨打线索量、接通数量、拨打次数、有效沟通量、意向线索量、成单量等维度数据进行分析；</li>
-                    <li>3）营销线索平台功能迭代：主体布局调整、整合相关功能并测试、发布；</li>
-                    <li>4）营销线索平台移动端线索数据统计功能开发进行中。</li>
+                <h4 id="title"><?=$Title2_1; ?></h4>
+                <ul class="small">
+                  <?php for ($i=0; $i <count($Content2_1); $i++) { ?>
+                    <li><?=$Content2_1[$i]; ?></li>      
+                  <?php } ?>
                 </ul>
             </div>
         </div>
-        <div class="page">
+        <div class="page" id="page3">
+            <div class="title">
+                <div class="title-content">
+                    <span class="title-2"></span><h3><?=$Title3; ?></h3><p class="title-line"></p>
+                </div>
+            </div>
+            <div class="list-border">
+                <h4 id="title"><?=$Title3_1; ?></h4>
+                <ul class="small">
+                  <?php for ($i=0; $i <count($Content3_1); $i++) { ?>
+                    <li><?=$Content3_1[$i]; ?></li>      
+                  <?php } ?>
+                </ul>
+            </div>
+        </div>
+        <div class="page" id="page4">
+            <div class="title">
+                <div class="title-content">
+                    <span class="title-2"></span><h3><?=$Title4; ?></h3><p class="title-line"></p>
+                </div>
+            </div>
+            <div class="list-border">
+                <h4 id="title"><?=$Title4_1; ?></h4>
+                <ul class="small">
+                  <?php for ($i=0; $i <count($Content4_1); $i++) { ?>
+                    <li><?=$Content4_1[$i]; ?></li>      
+                  <?php } ?>
+                </ul>
+            </div>
+        </div>
+        <div class="page" id="page5">
             <div class="title">
                 <div class="title-content">
                     <span class="title-3"></span><h3>成果展示</h3><p class="title-line"></p>
@@ -129,7 +154,7 @@ foreach ($res as $key => $value) {
                 <img src="temp/0.png">
             </div>
         </div>
-        <div class="page">
+        <div class="page" id="page6">
             <div class="title">
                 <div class="title-content">
                     <span class="title-4"></span><h3>线索池数据分布</h3><p class="title-line"></p>
@@ -157,7 +182,7 @@ foreach ($res as $key => $value) {
                 </table>
             </div>
         </div>
-        <div class="page">
+        <div class="page" id="page7">
             <div class="title">
                 <div class="title-content">
                     <span class="title-5"></span><h3>团队人员情况</h3><p class="title-line"></p>
@@ -172,7 +197,7 @@ foreach ($res as $key => $value) {
                 </ul>
             </div>
         </div>
-        <div class="page">
+        <div class="page" id="page8">
             <div class="title">
                 <div class="title-content">
                     <span class="title-6"></span><h3>总体阶段进展</h3><p class="title-line"></p>
@@ -184,7 +209,7 @@ foreach ($res as $key => $value) {
                 <div class="chart" id="chart-total" style="width: 9.6rem;height: 6.8rem;"></div>
             </div>
         </div>
-        <div class="page">
+        <div class="page" id="page9">
             <div class="title">
                 <div class="title-content">
                     <span class="title-7"></span><h3>关键子项目进展</h3><p class="title-line"></p>
@@ -210,5 +235,74 @@ foreach ($res as $key => $value) {
     <script src="js/echarts.min.js"></script>
     <script src="js/echarts-map-china.min.js"></script>
     <script src="js/page/index.js"></script>
+        <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script type="text/javascript">
+        $.ajax({
+                type: 'POST',
+                url:'http://i2137.com/php/zhoubao1-3/sign.php',
+                data:{
+                     'url': window.location.href.split('#')[0]
+                },
+                dataType: 'json',
+                success: function(data){ 
+                    // 获取信息成功
+                    console.log(data)
+                     wx.config({
+                        debug: false,
+                        appId: data.result.appId,
+                        timestamp: data.result.timestamp,
+                        nonceStr: data.result.nonceStr,
+                        signature: data.result.signature,
+                        jsApiList: [
+                            // 所有要调用的 API 都要加到这个列表中
+                            'checkJsApi',
+                            'onMenuShareTimeline',
+                            'onMenuShareAppMessage',
+                            'onMenuShareQQ'
+                        ]
+                    });
+
+                window.share_config = {
+                        "share": {
+                            "imgUrl": "http://i2137.com/php/zhoubao1-3/images/share.jpg",//分享图，默认当相对路径处理，所以使用绝对路径的的话，“http://”协议  前缀必须在。
+                            "desc" : "麦达数字技术部2018年1月第三工作周报",//摘要,如果分享到朋友圈的话，不显示摘要。
+                            "title" : '麦达数字技术部工作周报',//分享卡片标题
+                            "link": window.location.href,//分享出去后的链接，这里可以将链接设置为另一个页面。
+                            "success":function(){//分享成功后的回调函数
+                                // alert('已分享');
+                            },
+                            'cancel': function () { 
+                                // 用户取消分享后执行的回调函数
+                                // alerat('已取消');
+                            }
+                        }
+                    };  
+                    wx.ready(function () {
+                            wx.onMenuShareAppMessage(share_config.share);//分享给好友
+                            wx.onMenuShareTimeline(share_config.share);//分享到朋友圈
+                            wx.onMenuShareQQ(share_config.share);//分享给手机QQ
+                    });
+                    wx.error(function(res){
+                        // config信息验证失败会执行error函数，如签名过期导致验证失败，
+                        // 具体错误信息可以打开config的debug模式查看，也可以在返回的res参数中查看，
+                        //对于SPA可以在这里更新签名。
+                        // alert("好像出错了！！");
+                        // alert("errorMSG:"+res);
+                        // console.log(res);                    
+                    });
+
+                    
+                },
+                error: function(xhr){
+                    alert("请求失败，请联系管理员")
+                   // console.log(xhr);
+                }
+            });
+    </script>
+    <script type="text/javascript">
+        $("#page0 img").bind("click",function(){
+           window.location.href="index.php?essen_id=<?php echo $result['essen_id'];?>";
+        })
+    </script>
 </body>
 </html>
