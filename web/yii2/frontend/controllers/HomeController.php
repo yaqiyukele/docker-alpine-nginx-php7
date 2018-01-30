@@ -22,7 +22,7 @@ class HomeController extends Controller
 
 		$client_id = "1106673362";
 		// $redirect_uri = "http://i2137.com/php/";
-		$redirect_uri = "http://i2137.com/php/yii/frontend/web/index.php?r=home/home";
+		$redirect_uri = "http://i2137.com/php?r=home/home";
 
 		$url = "https://developers.e.qq.com/oauth/authorize?client_id=".$client_id."&redirect_uri=".$redirect_uri."&state=maida";
 		// echo $url;die;
