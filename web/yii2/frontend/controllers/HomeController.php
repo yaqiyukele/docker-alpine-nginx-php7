@@ -31,10 +31,10 @@ class HomeController extends Controller
 	}
 
 	public function actionHome(){
+        $authorization_code = Yii::$app->request->get('authorization_code');
 
         $client_id = "1106673362";
         $client_secret = "k0m0gbJZj46nEFVU";
-        $authorization_code = $_GET['authorization_code'];
         $redirect_uri = "http://i2137.com/php/home/home";
 
         $url = "https://api.e.qq.com/oauth/token&client_id=".$client_id."&client_secret=".$client_secret."&grant_type=authorization_code&authorization_code=".$authorization_code."&redirect_uri=".$redirect_uri;
