@@ -21,7 +21,6 @@ class HomeController extends Controller
 		$timestamp = time();
 
 		$client_id = "1106673362";
-		// $redirect_uri = "http://i2137.com/php/";
 		$redirect_uri = "http://i2137.com/php/home/home";
 
 		$url = "https://developers.e.qq.com/oauth/authorize?client_id=".$client_id."&redirect_uri=".$redirect_uri."&state=maida";
@@ -32,8 +31,16 @@ class HomeController extends Controller
 	}
 
 	public function actionHome(){
-		$_GET['authorization_code'] = $result;
-		echo $result;die;
+
+        $client_id = "1106673362";
+        $client_secret = "k0m0gbJZj46nEFVU";
+        $authorization_code = $_GET['authorization_code'];
+        $redirect_uri = "http://i2137.com/php/home/home";
+
+        $url = "https://api.e.qq.com/oauth/token&client_id=".$client_id."&client_secret=".$client_secret."&grant_type=authorization_code&authorization_code=".$authorization_code."&redirect_uri=".$redirect_uri;
+
+        $result = $this->curl_request($url);
+        print_r($result);die;
 	}
 
 
