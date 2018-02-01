@@ -76,7 +76,7 @@ foreach ($res as $key => $value) {
     <div class="containers">
         <div class="page page-home" id="page0">
             <!--首页-->
-            <img src="http://i2137.com/php/zhoubao12-4/images/edit.jpg" style="float: right;width: 10%;height: 10%;margin:0 auto;">
+            <img src="http://i2137.com/zhoubao1-6/images/edit.png" style="float: right;margin:0 auto;">
         </div>
         <div class="page" id="page1">
             <div class="title"><?=$Title0;?></div>
@@ -128,7 +128,7 @@ foreach ($res as $key => $value) {
                 <ul>
                     <li><span class="list-icon"></span><p>目前在职：<span>14</span>人</p></li>
                     <li><span class="list-icon"></span><p>计划入职：无</p></li>
-                    <li><span class="list-icon"></span><p>本周面试：<span>5</span>人</p></li>
+                    <li><span class="list-icon"></span><p>本周面试：<span>1</span>人</p></li>
                     <li><span class="list-icon"></span><p>人员缺口：产品经理、数据分析、JAVA开发、测试</p></li>
                 </ul>
             </div>
