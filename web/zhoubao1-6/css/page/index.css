@@ -15,11 +15,10 @@ html, body{
 }
 .containers .page{
     /*margin-top: 1.706667rem;*/
-    /*height: 100%;*/
+    height: 100%;
     background: url("../../images/page.jpg");
     -webkit-background-size: 100% 100%;
     background-size: 100% 100%;
-    padding: 1px;
 }
 .containers .page.page-home{
     background: url("../../images/page-home.jpg");
@@ -28,16 +27,16 @@ html, body{
 }
 .containers .page .title{
     width: 8.146667rem;
-    height: 0.906667rem;
+    height: 1.2rem;
     padding-top: 0.5rem;
     background: url("../../images/title@2x.png");
     -webkit-background-size: 100% 100%;
     background-size: 100% 100%;
-    margin: 0.25rem auto 0.5rem;
+    margin: 0 auto 0.46rem;
     color: #ffffff;
     font-size: 22px;
     font-family: "Î¢ÈíÑÅºÚ";
-    line-height:0.44rem;
+    line-height:1.1rem;
     text-align: center;
 }
 .containers .page .list-border{
