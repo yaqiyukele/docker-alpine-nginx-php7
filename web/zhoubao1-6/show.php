@@ -76,7 +76,7 @@ foreach ($res as $key => $value) {
     <div class="containers">
         <div class="page page-home" id="page0">
             <!--首页-->
-            <img src="http://i2137.com/zhoubao1-6/images/edit.png" style="float: right;margin:0 auto;">
+            <img src="http://i2137.com/php/zhoubao1-6/images/edit.png" style="float: right;margin:0 auto;">
         </div>
         <div class="page" id="page1">
             <div class="title"><?=$Title0;?></div>
