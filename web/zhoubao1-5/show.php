@@ -6,8 +6,8 @@ session_start();
 include("./include/common.inc.php");
 include("./include/pdo.class.php");
 
-// $mydabase=new DB("172.26.249.246","md","maida6868","zhoubao");
-$mydabase=new DB("127.0.0.1","root","root","zhoubao");
+$mydabase=new DB("172.26.249.246","md","maida6868","zhoubao");
+// $mydabase=new DB("127.0.0.1","root","root","zhoubao");
 
  if (empty($_GET['essen_id'])) {
    $sql = "SELECT * FROM essential_information WHERE weekly_newspaper_ctime=(SELECT MAX(weekly_newspaper_ctime) FROM  essential_information WHERE weekly_newspaper_type=1)";
@@ -76,7 +76,7 @@ foreach ($res as $key => $value) {
     <div class="containers">
         <div class="page page-home" id="page0">
             <!--首页-->
-            <img src="http://i2137.com/php/zhoubao12-4/images/edit.jpg" style="float: right;width: 10%;height: 10%;margin:0 auto;">
+            <img src="http://i2137.com/php/zhoubao1-5/images/edit.jpg" style="float: right;width: 10%;height: 10%;margin:0 auto;">
         </div>
         <div class="page" id="page1">
             <div class="title">
@@ -222,7 +222,7 @@ foreach ($res as $key => $value) {
 
                 window.share_config = {
                         "share": {
-                            "imgUrl": "http://i2137.com/php/zhoubao1-4/images/share.png",//分享图，默认当相对路径处理，所以使用绝对路径的的话，“http://”协议  前缀必须在。
+                            "imgUrl": "http://i2137.com/php/zhoubao1-6/images/share.jpg",//分享图，默认当相对路径处理，所以使用绝对路径的的话，“http://”协议  前缀必须在。
                             "desc" : "麦达数字技术部2018年1月第四周工作周报",//摘要,如果分享到朋友圈的话，不显示摘要。
                             "title" : '麦达数字技术部工作周报',//分享卡片标题
                             "link": window.location.href,//分享出去后的链接，这里可以将链接设置为另一个页面。

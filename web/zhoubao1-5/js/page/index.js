@@ -4,8 +4,7 @@ new iSlider({
     lastLocate:false,
     playClass:'play',
     onslide:function (index) {
-      
-        if(index==6){
+      if(index==6){
             /*整体阶段进展*/
             var option_total = {
                 color: ['#d3fffe'],
