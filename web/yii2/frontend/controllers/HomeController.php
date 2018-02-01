@@ -21,7 +21,7 @@ class HomeController extends Controller
 		$timestamp = time();
 
 		$client_id = "1106673362";
-		$redirect_uri = "http://i2137.com/php/home/home";
+		$redirect_uri = "http://i2137.com/php/yii2/frontend/web/home/home";
 
 		$url = "https://developers.e.qq.com/oauth/authorize?client_id=".$client_id."&redirect_uri=".$redirect_uri."&state=maida";
 		// echo $url;die;
@@ -31,12 +31,12 @@ class HomeController extends Controller
 	}
 
 	public function actionHome(){
-        $authorization_code = Yii::$app->request->get('authorization_code')?Yii::$app->request->get('authorization_code') : '';
+        $authorization_code = Yii::$app->request->get('authorization_code')?Yii::$app->request->get('authorization_code') : '18f510a871436d6a8598f890dcfb652c';
 
         if(!empty($authorization_code)){
             $client_id = "1106673362";
             $client_secret = "k0m0gbJZj46nEFVU";
-            $redirect_uri = "http://i2137.com/php/home/home";
+            $redirect_uri = "http://i2137.com/php/yii2/frontend/web/home/home";
 
             $url = "https://api.e.qq.com/oauth/token&client_id=".$client_id."&client_secret=".$client_secret."&grant_type=authorization_code&authorization_code=".$authorization_code."&redirect_uri=".$redirect_uri;
 
