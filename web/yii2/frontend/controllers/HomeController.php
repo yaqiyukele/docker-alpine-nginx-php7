@@ -43,6 +43,12 @@ class HomeController extends Controller
         }
         
         
+<<<<<<< HEAD
+=======
+        $res = $this->get_to_file();
+        print_r($res); 
+        $authorization_code = $res[0];
+>>>>>>> 399cc4188ab8302d9421f7018a7f1f96ebe0d050
 
 
         if (!empty($res[0])) {
