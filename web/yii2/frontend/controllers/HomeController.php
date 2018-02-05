@@ -33,13 +33,14 @@ class HomeController extends Controller
 	public function actionHome(){
         /*$authorization_code = Yii::$app->request->get('authorization_code')?Yii::$app->request->get('authorization_code') : '';*/
         $authorization_code = Yii::$app->request->get('authorization_code');
-        if (!empty($authorization_code)) {
-            $file = 'test.txt';
-            $result = $this->put_to_file($file,$authorization_code);
-            
-            $res = $this->get_to_file();
-            $authorization_code = $res[0];
+        
+        $file = 'test.txt';
+        $result = $this->put_to_file($file,$authorization_code);
+        
+        $res = $this->get_to_file();
+        $authorization_code = $res[0];
 
+        if (!empty($authorization_code)) {
             $client_id = "1106673362";
             $client_secret = "k0m0gbJZj46nEFVU";
             $redirect_uri = "http://i2137.com/php/home/home";
@@ -50,8 +51,12 @@ class HomeController extends Controller
             print_r($result);die;
 
         }else{
-            echo "获取authorization_code有误";
+
+            echo "获取不到authorization_code";
+
         }
+
+            
 
 	}
 
