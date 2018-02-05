@@ -36,15 +36,40 @@ class HomeController extends Controller
         if (!empty($authorization_code)) {
             $file = 'test.txt';
             $result = $this->put_to_file($file,$authorization_code);
-            print_r($result);
+            
+            $res = $this->get_to_file();
+            $authorization_code = $res[0];
+
+            $client_id = "1106673362";
+            $client_secret = "k0m0gbJZj46nEFVU";
+            $redirect_uri = "http://i2137.com/php/home/home";
+
+            $url = "https://api.e.qq.com/oauth/token&client_id=".$client_id."&client_secret=".$client_secret."&grant_type=authorization_code&authorization_code=".$authorization_code."&redirect_uri=".$redirect_uri;
+
+            $result = $this->curl_request($url);
+            print_r($result);die;
 
         }else{
-            echo "获取不到authorization_code";
+            echo "获取authorization_code有误";
         }
 
-        /**/
-        
 	}
+
+    function get_to_file(){
+        $str = file_get_contents('test.txt');//将整个文件内容读入到一个字符串中
+        $str_encoding = mb_convert_encoding($str, 'UTF-8', 'UTF-8,GBK,GB2312,BIG5');//转换字符集（编码）
+        $arr = explode("\r\n", $str_encoding);//转换成数组
+
+        //去除值中的空格
+        foreach ($arr as &$row) {
+            $row = trim($row);
+        }
+
+        unset($row);
+        //得到后的数组
+        return $arr;
+    }
+    
 
     //写入文件
     function put_to_file($file, $content) {
