@@ -31,25 +31,31 @@ class HomeController extends Controller
 	}
 
 	public function actionHome(){
-        $authorization_code = Yii::$app->request->get('authorization_code')?Yii::$app->request->get('authorization_code') : '';
-        echo $authorization_code;
-        if(!empty($authorization_code)){
-            $client_id = "1106673362";
-            $client_secret = "k0m0gbJZj46nEFVU";
-            $redirect_uri = "http://i2137.com/php/home/home";
+        /*$authorization_code = Yii::$app->request->get('authorization_code')?Yii::$app->request->get('authorization_code') : '';*/
+        $authorization_code = Yii::$app->request->get('authorization_code');
+        if (!empty($authorization_code)) {
+            $file = 'test.txt';
+            $result = $this->put_to_file($file,$authorization_code);
+            print_r($result);
 
-            $url = "https://api.e.qq.com/oauth/token&client_id=".$client_id."&client_secret=".$client_secret."&grant_type=authorization_code&authorization_code=".$authorization_code."&redirect_uri=".$redirect_uri;
-
-            $result = $this->curl_request($url);
-            print_r($result);die;
         }else{
-
-            echo "接收不到authorization_code";
+            echo "获取不到authorization_code";
         }
+
+        /**/
         
 	}
 
-
+    //写入文件
+    function put_to_file($file, $content) {
+        $fopen = fopen($file, 'wb');
+        if (!$fopen) {
+            return false;
+        }
+        fwrite($fopen, $content);
+        fclose($fopen);
+        return true;
+    }
     
 
 
