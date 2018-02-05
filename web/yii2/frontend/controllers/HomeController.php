@@ -39,7 +39,7 @@ class HomeController extends Controller
         print_r($result);
         
         $res = $this->get_to_file();
-        print_r($res);
+        print_r($res); 
         $authorization_code = $res[0];
 
 
