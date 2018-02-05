@@ -33,12 +33,15 @@ class HomeController extends Controller
 	public function actionHome(){
         /*$authorization_code = Yii::$app->request->get('authorization_code')?Yii::$app->request->get('authorization_code') : '';*/
         $authorization_code = Yii::$app->request->get('authorization_code');
-        
+
         $file = 'test.txt';
         $result = $this->put_to_file($file,$authorization_code);
+        print_r($result);
         
         $res = $this->get_to_file();
+        print_r($res);
         $authorization_code = $res[0];
+
 
         if (!empty($authorization_code)) {
             $client_id = "1106673362";
