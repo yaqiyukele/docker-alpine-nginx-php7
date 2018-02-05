@@ -31,8 +31,8 @@ class HomeController extends Controller
 	}
 
 	public function actionHome(){
-        $authorization_code = Yii::$app->request->get('authorization_code')?Yii::$app->request->get('authorization_code') : '18f510a871436d6a8598f890dcfb652c';
-
+        $authorization_code = Yii::$app->request->get('authorization_code')?Yii::$app->request->get('authorization_code') : '';
+        echo $authorization_code;
         if(!empty($authorization_code)){
             $client_id = "1106673362";
             $client_secret = "k0m0gbJZj46nEFVU";
