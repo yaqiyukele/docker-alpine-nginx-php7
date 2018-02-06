@@ -36,29 +36,51 @@ class HomeController extends Controller
         if (!empty($authorization_code)) {
             $file = 'test.txt';
             $result = $this->put_to_file($file,$authorization_code);
-            print_r($result);
+            // print_r($result);
            
         }
 
         $res = $this->get_to_file();
-        print_r($res); 
+        // print_r($res); 
 
         if (!empty($res[0])) {
+
+            
             $client_id = "1106673362";
             $client_secret = "k0m0gbJZj46nEFVU";
             $redirect_uri = "http://i2137.com/php/home/home";
 
-            $url = "https://api.e.qq.com/oauth/token&client_id=".$client_id."&client_secret=".$client_secret."&grant_type=authorization_code&authorization_code=".$res[0]."&redirect_uri=".$redirect_uri;
+            
 
+            $url = "https://api.e.qq.com/oauth/token?client_id=".$client_id."&client_secret=".$client_secret."&grant_type=authorization_code&authorization_code=".$res[0]."&redirect_uri=".$redirect_uri;
+            // $url = 'https://api.e.qq.com/oauth/token?client_id=1106673362&client_secret=k0m0gbJZj46nEFVU&grant_type=authorization_code&authorization_code=14b31be54394ded9f0b9de71839fa185&redirect_uri=http://i2137.com/php/home/home';
+            // echo $url;die;
             $result = $this->curl_request($url);
-            print_r($result);die;
+            $res = json_decode($result,true);
+
+
+            $user = $res['data']['authorizer_info'];
+            $account_uin = $user['account_uin'];
+            $account_id = $user['account_id'];
+            $access_token = $res['data']['access_token'];
+            $access_token_expires_in = $res['data']['access_token_expires_in']+time();
+            $refresh_token = $res['data']['refresh_token'];
+            $refresh_token_expires_in = $res['data']['refresh_token_expires_in']+time();
+
+
+            $Sql = "INSERT INTO txad(account_uin,account_id,access_token,access_token_expires_in,refresh_token,refresh_token_expires_in) VALUES('$account_uin','$account_id','$access_token','$access_token_expires_in','$refresh_token','$refresh_token_expires_in')";
+
+            // 存储到数据库
+            Yii::$app->db->createCommand($Sql)->execute();
+
+            print_r($res);die;
 
         }else{
 
             echo "获取不到authorization_code";
 
         }
-	}
+    }
 
     function get_to_file(){
         $str = file_get_contents('test.txt');//将整个文件内容读入到一个字符串中
