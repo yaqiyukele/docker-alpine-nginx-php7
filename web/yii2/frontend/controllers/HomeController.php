@@ -197,6 +197,15 @@ class HomeController extends Controller
 	}
 
 
+    //取出环境变量
+    public function actionQu(){
+
+        var_dump($_ENV);
+        print_r($_ENV);
+
+    }
+
+
 
 
 }
