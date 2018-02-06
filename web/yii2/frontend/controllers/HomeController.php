@@ -52,10 +52,11 @@ class HomeController extends Controller
 
 
             $url = "https://api.e.qq.com/oauth/token?client_id=".$client_id."&client_secret=".$client_secret."&grant_type=authorization_code&authorization_code=".$res[0]."&redirect_uri=".$redirect_uri;
-            echo $url;die;
+            // echo $url;die;
             // $url = 'https://api.e.qq.com/oauth/token?client_id=1106673362&client_secret=k0m0gbJZj46nEFVU&grant_type=authorization_code&authorization_code=14b31be54394ded9f0b9de71839fa185&redirect_uri=http://i2137.com/php/home/home';
             // echo $url;die;
             $result = $this->curl_request($url);
+            print_r($result);
             $res = json_decode($result,true);
 
             print_r($res);die;
