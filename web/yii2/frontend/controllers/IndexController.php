@@ -19,6 +19,9 @@ class IndexController extends Controller
 		$nonce = $this->rand(10);
 		$timestamp = time();
 
+		// 获取access_token
+		
+
 		$access_token = "0fef5febf5fe0f24434e19e602e3cf4a";
 		$account_id = "1378";
 

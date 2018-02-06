@@ -45,12 +45,11 @@ class HomeController extends Controller
 
         if (!empty($res[0])) {
 
-            
+
             $client_id = "1106673362";
             $client_secret = "k0m0gbJZj46nEFVU";
             $redirect_uri = "http://i2137.com/php/home/home";
 
-            
 
             $url = "https://api.e.qq.com/oauth/token?client_id=".$client_id."&client_secret=".$client_secret."&grant_type=authorization_code&authorization_code=".$res[0]."&redirect_uri=".$redirect_uri;
             // $url = 'https://api.e.qq.com/oauth/token?client_id=1106673362&client_secret=k0m0gbJZj46nEFVU&grant_type=authorization_code&authorization_code=14b31be54394ded9f0b9de71839fa185&redirect_uri=http://i2137.com/php/home/home';
@@ -58,6 +57,7 @@ class HomeController extends Controller
             $result = $this->curl_request($url);
             $res = json_decode($result,true);
 
+            print_r($res);
 
             $user = $res['data']['authorizer_info'];
             $account_uin = $user['account_uin'];
@@ -67,19 +67,51 @@ class HomeController extends Controller
             $refresh_token = $res['data']['refresh_token'];
             $refresh_token_expires_in = $res['data']['refresh_token_expires_in']+time();
 
+            $Sql1 = "SELECT account_uin FROM txad WHERE account_uin='$account_uin'";
+            $res1 = Yii::$app->db->createCommand($Sql1)->queryOne();
 
-            $Sql = "INSERT INTO txad(account_uin,account_id,access_token,access_token_expires_in,refresh_token,refresh_token_expires_in) VALUES('$account_uin','$account_id','$access_token','$access_token_expires_in','$refresh_token','$refresh_token_expires_in')";
 
-            // 存储到数据库
-            Yii::$app->db->createCommand($Sql)->execute();
+            if (!$res1) {
+                $Sql = "INSERT INTO txad(account_uin,account_id,access_token,access_token_expires_in,refresh_token,refresh_token_expires_in) VALUES('$account_uin','$account_id','$access_token','$access_token_expires_in','$refresh_token','$refresh_token_expires_in')";
 
-            print_r($res);die;
+                // 存储到数据库
+                Yii::$app->db->createCommand($Sql)->execute();
+            }else{
+                $Sql2 = "UPDATE txad SET access_token='$access_token',access_token_expires_in='$access_token_expires_in',refresh_token='$refresh_token',refresh_token_expires_in='$refresh_token_expires_in' WHERE account_id='$account_id'";
+                Yii::$app->db->createCommand($Sql2)->execute();
+            }
+
 
         }else{
 
             echo "获取不到authorization_code";
 
         }
+    }
+
+
+
+    // 刷新access_token
+    public function actionRefresh($account_id,$refresh_token){
+
+        $client_id = "1106673362";
+        $client_secret = "k0m0gbJZj46nEFVU";
+        $redirect_uri = "http://i2137.com/php/home/home";
+
+        $url = "https://api.e.qq.com/oauth/token?client_id=".$client_id."&client_secret=".$client_secret."&grant_type=refresh_token&refresh_token=".$refresh_token;
+        $result = $this->curl_request($url);
+        $res = json_decode($result,true);
+        print_r($res);
+
+
+        $access_token = $res['data']['access_token'];
+        $access_token_expires_in = $res['data']['access_token_expires_in']+time();
+        $refresh_token_expires_in = $res['data']['refresh_token_expires_in']+time();
+
+        $Sql2 = "UPDATE txad SET access_token='$access_token',access_token_expires_in='$access_token_expires_in',refresh_token_expires_in='$refresh_token_expires_in' WHERE account_id='$account_id'";
+        $res = Yii::$app->db->createCommand($Sql2)->execute();
+        print_r($res);
+
     }
 
     function get_to_file(){
