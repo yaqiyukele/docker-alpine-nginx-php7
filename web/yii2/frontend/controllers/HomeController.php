@@ -57,9 +57,9 @@ class HomeController extends Controller
             $result = $this->curl_request($url);
             $res = json_decode($result,true);
 
-            print_r($res);
+            print_r($res);die;
 
-            $user = $res['data']['authorizer_info'];
+            /*$user = $res['data']['authorizer_info'];
             $account_uin = $user['account_uin'];
             $account_id = $user['account_id'];
             $access_token = $res['data']['access_token'];
@@ -79,7 +79,7 @@ class HomeController extends Controller
             }else{
                 $Sql2 = "UPDATE txad SET access_token='$access_token',access_token_expires_in='$access_token_expires_in',refresh_token='$refresh_token',refresh_token_expires_in='$refresh_token_expires_in' WHERE account_id='$account_id'";
                 Yii::$app->db->createCommand($Sql2)->execute();
-            }
+            }*/
 
 
         }else{
