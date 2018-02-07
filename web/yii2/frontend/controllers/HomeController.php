@@ -38,12 +38,12 @@ class HomeController extends Controller
             // 将code存到test.txt文件中
             $file = "test.txt";
             $result = $this->put_to_file($file,$authorization_code);
-
+            print_r($result);
         }
 
         // 取出来code
         $authorization_code_res = $this->get_to_file();
-
+        print_r($authorization_code_res);die;
         if (!empty($authorization_code_res)) {
 
             $client_id = "1106673362";
