@@ -54,12 +54,12 @@ class HomeController extends Controller
             $url = "https://api.e.qq.com/oauth/token?client_id=".$client_id."&client_secret=".$client_secret."&grant_type=authorization_code&authorization_code=".$res[0]."&redirect_uri=".$redirect_uri;
             // echo $url;die;
             // $url = 'https://api.e.qq.com/oauth/token?client_id=1106673362&client_secret=k0m0gbJZj46nEFVU&grant_type=authorization_code&authorization_code=14b31be54394ded9f0b9de71839fa185&redirect_uri=http://i2137.com/php/home/home';
-            // echo $url;die;
+            echo $url;die;
             $result = $this->curl_request($url);
             print_r($result);
             $res = json_decode($result,true);
 
-            print_r($res);die;
+            print_r($res);
 
             /*$user = $res['data']['authorizer_info'];
             $account_uin = $user['account_uin'];
@@ -91,6 +91,22 @@ class HomeController extends Controller
         }
     }
 
+    // 获取access_token
+    public function actionHuo(){
+
+            $client_id = "1106673362";
+            $client_secret = "k0m0gbJZj46nEFVU";
+            $redirect_uri = "http://i2137.com/php/home/home";
+            $authorization_code = "";
+
+            $url = "https://api.e.qq.com/oauth/token?client_id=".$client_id."&client_secret=".$client_secret."&grant_type=authorization_code&authorization_code=".$authorization_code."&redirect_uri=".$redirect_uri;
+            // echo $url;die;
+            // $url = 'https://api.e.qq.com/oauth/token?client_id=1106673362&client_secret=k0m0gbJZj46nEFVU&grant_type=authorization_code&authorization_code=14b31be54394ded9f0b9de71839fa185&redirect_uri=http://i2137.com/php/home/home';
+            $result = $this->curl_request($url);
+            print_r($result);
+
+
+    }
 
 
     // 刷新access_token
