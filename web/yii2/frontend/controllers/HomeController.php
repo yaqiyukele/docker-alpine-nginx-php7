@@ -43,7 +43,8 @@ class HomeController extends Controller
         }
 
         // 取出来code
-        $authorization_code_res = $this->get_to_file();
+        $files = "token.txt";
+        $authorization_code_res = $this->get_to_file($files);
         // print_r($authorization_code_res);die;
         if (!empty($authorization_code_res)) {
 
@@ -52,12 +53,14 @@ class HomeController extends Controller
             $redirect_uri = "http://i2137.com/php/home/home";
 
             $Url = "https://api.e.qq.com/oauth/token?client_id=".$client_id."&client_secret=".$client_secret."&grant_type=authorization_code&authorization_code=".$authorization_code_res."&redirect_uri=".$redirect_uri;
-            echo $Url;
             $res_result = file_get_contents($Url);
             $file = "token.txt";
             $result = $this->put_to_file($file,$res_result);
-            
-            print_r($res_result);die;
+            // 取出来code
+            $files = "token.txt";
+            $json = $this->get_to_file($files);
+            $result_res_one = json_decode($json,true);
+            print_r($result_res_one);die;
 
 
         }else{
@@ -151,8 +154,8 @@ class HomeController extends Controller
 
     }
 
-    function get_to_file(){
-        $str = file_get_contents('test.txt');//将整个文件内容读入到一个字符串中
+    function get_to_file($file){
+        $str = file_get_contents($file);//将整个文件内容读入到一个字符串中
         $str_encoding = mb_convert_encoding($str, 'UTF-8', 'UTF-8,GBK,GB2312,BIG5');//转换字符集（编码）
         return $str_encoding;
         /*$arr = explode("\r\n", $str_encoding);//转换成数组
