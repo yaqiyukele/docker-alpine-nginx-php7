@@ -41,16 +41,16 @@ class HomeController extends Controller
             $result = $this->put_to_file($file,$authorization_code);
             // print_r($result);
         }
+        $result = $this->token();
 
-        
     }
     // 取出code,获取access_token
-    public function actionToken(){
+    public function token(){
         // 取出来code
         $file = "test.txt";
         $authorization_code_res = $this->get_to_file($file);
-        // print_r($authorization_code_res);die;
-        var_dump($authorization_code_res);
+        
+        // var_dump($authorization_code_res);
         if (!empty($authorization_code_res)) {
 
             $client_id = "1106673362";
@@ -58,16 +58,17 @@ class HomeController extends Controller
             $redirect_uri = "http://i2137.com/php/home/home";
 
             $Url = "https://api.e.qq.com/oauth/token?client_id=".$client_id."&client_secret=".$client_secret."&grant_type=authorization_code&authorization_code=".$authorization_code_res."&redirect_uri=".$redirect_uri;
-            echo $Url;
+            // echo $Url;
             $res_result = file_get_contents($Url);
-            print_r($res_result);
-            $files = "token.txt";
-            $result = $this->put_to_file($files,$res_result);
-            // 取出来code
+            return $res_result;
+            // print_r($res_result);
             // $files = "token.txt";
-            $json = $this->get_to_file($files);
-            $result_res_one = json_decode($json,true);
-            print_r($result_res_one);die;
+            // $result = $this->put_to_file($files,$res_result);
+            // // 取出来code
+            // // $files = "token.txt";
+            // $json = $this->get_to_file($files);
+            // $result_res_one = json_decode($json,true);
+            // print_r($result_res_one);
 
 
         }else{
