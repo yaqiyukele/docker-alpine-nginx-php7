@@ -52,8 +52,8 @@ class HomeController extends Controller
             $redirect_uri = "http://i2137.com/php/home/home";
 
             $Url = "https://api.e.qq.com/oauth/token?client_id=".$client_id."&client_secret=".$client_secret."&grant_type=authorization_code&authorization_code=".$authorization_code_res."&redirect_uri=".$redirect_uri;
-            echo $Url;die;
-            $res_result = $this->curl_request($Url);
+            echo $Url;
+            $res_result = file_get_contents($Url);
             $file = "token.txt";
             $result = $this->put_to_file($file,$res_result);
             
