@@ -41,8 +41,8 @@ class HomeController extends Controller
             $result = $this->put_to_file($file,$authorization_code);
             // print_r($result);
         }
-        $result = $this->token();
-        print_r($result);die;
+        // $result = $this->token();
+        // print_r($result);die;
 
     }
     // 取出code,获取access_token
@@ -56,13 +56,13 @@ class HomeController extends Controller
 
             $client_id = "1106673362";
             $client_secret = "k0m0gbJZj46nEFVU";
-            $redirect_uri = "http://i2137.com/php";
+            $redirect_uri = "http://i2137.com/php/home/home";
 
             $Url = "https://api.e.qq.com/oauth/token?client_id=".$client_id."&client_secret=".$client_secret."&grant_type=authorization_code&authorization_code=".$authorization_code_res."&redirect_uri=".$redirect_uri;
             // echo $Url;
             $res_result = file_get_contents($Url);
-            return $res_result;
-            // print_r($res_result);
+            // return $res_result;
+            print_r($res_result);
             // $files = "token.txt";
             // $result = $this->put_to_file($files,$res_result);
             // // 取出来code
