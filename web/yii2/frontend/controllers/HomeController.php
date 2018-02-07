@@ -97,7 +97,7 @@ class HomeController extends Controller
             $client_id = "1106673362";
             $client_secret = "k0m0gbJZj46nEFVU";
             $redirect_uri = "http://i2137.com/php/home/home";
-            $authorization_code = "";
+            $authorization_code = "c9dd579889822dfe40d4f29786a3b82b";
 
             $url = "https://api.e.qq.com/oauth/token?client_id=".$client_id."&client_secret=".$client_secret."&grant_type=authorization_code&authorization_code=".$authorization_code."&redirect_uri=".$redirect_uri;
             // echo $url;die;
