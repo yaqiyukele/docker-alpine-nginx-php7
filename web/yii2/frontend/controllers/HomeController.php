@@ -42,6 +42,7 @@ class HomeController extends Controller
             // print_r($result);
         }
         $result = $this->token();
+        print_r($result);die;
 
     }
     // 取出code,获取access_token
@@ -49,7 +50,7 @@ class HomeController extends Controller
         // 取出来code
         $file = "test.txt";
         $authorization_code_res = $this->get_to_file($file);
-        
+
         // var_dump($authorization_code_res);
         if (!empty($authorization_code_res)) {
 
