@@ -46,6 +46,7 @@ class HomeController extends Controller
         $files = "token.txt";
         $authorization_code_res = $this->get_to_file($files);
         // print_r($authorization_code_res);die;
+        var_dump($authorization_code_res);
         if (!empty($authorization_code_res)) {
 
             $client_id = "1106673362";
