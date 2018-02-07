@@ -37,6 +37,7 @@ class HomeController extends Controller
 
             // 将code存到test.txt文件中
             $file = "test.txt";
+            echo $authorization_code."</br>";
             $result = $this->put_to_file($file,$authorization_code);
             // print_r($result);
         }
