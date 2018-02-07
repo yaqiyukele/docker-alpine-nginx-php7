@@ -44,7 +44,7 @@ class HomeController extends Controller
         // 取出来code
         $authorization_code_res = $this->get_to_file();
 
-        if (!empty($res)) {
+        if (!empty($authorization_code_res)) {
 
             $client_id = "1106673362";
             $client_secret = "k0m0gbJZj46nEFVU";
