@@ -165,7 +165,7 @@ class HomeController extends Controller
 
     //写入文件
     function put_to_file($file, $content) {
-        mkdir($file,0777,true);
+        // mkdir($file,777,true);
         $fopen = fopen($file, 'wb');
         if (!$fopen) {
             return false;
