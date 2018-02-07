@@ -30,20 +30,52 @@ class HomeController extends Controller
 
 	}
 
-	public function actionHome(){
+    public function actionHome(){
+        // 接收code
+        $authorization_code = Yii::$app->request->get('authorization_code');
+        if (!empty($authorization_code)) {
+
+            // 将code存到test.txt文件中
+            $file = "test.txt";
+            $result = $this->put_to_file($file,$authorization_code);
+
+        }
+
+        // 取出来code
+        $authorization_code_res = $this->get_to_file();
+
+        if (!empty($res)) {
+
+            $client_id = "1106673362";
+            $client_secret = "k0m0gbJZj46nEFVU";
+            $redirect_uri = "http://i2137.com/php/home/home";
+
+            $Url = "https://api.e.qq.com/oauth/token?client_id=".$client_id."&client_secret=".$client_secret."&grant_type=authorization_code&authorization_code=".$authorization_code_res."&redirect_uri=".$redirect_uri;
+            $res_result = $this->curl_request($Url);
+            print_r($res_result);
+
+
+        }else{
+            echo "取不出code";
+        }
+
+
+
+    }
+
+
+	/*public function actionHome(){
         // $authorization_code = Yii::$app->request->get('authorization_code')?Yii::$app->request->get('authorization_code') : '';
         $authorization_code = Yii::$app->request->get('authorization_code');
         if (!empty($authorization_code)) {
             $file = 'test.txt';
             $result = $this->put_to_file($file,$authorization_code);
-            // print_r($result);
            
         }
 
         $res = $this->get_to_file();
-        // print_r($res); 
 
-        if (!empty($res[0])) {
+        if (!empty($res)) {
 
 
             $client_id = "1106673362";
@@ -61,7 +93,7 @@ class HomeController extends Controller
 
             print_r($res);
 
-            /*$user = $res['data']['authorizer_info'];
+            $user = $res['data']['authorizer_info'];
             $account_uin = $user['account_uin'];
             $account_id = $user['account_id'];
             $access_token = $res['data']['access_token'];
@@ -81,7 +113,7 @@ class HomeController extends Controller
             }else{
                 $Sql2 = "UPDATE txad SET access_token='$access_token',access_token_expires_in='$access_token_expires_in',refresh_token='$refresh_token',refresh_token_expires_in='$refresh_token_expires_in' WHERE account_id='$account_id'";
                 Yii::$app->db->createCommand($Sql2)->execute();
-            }*/
+            }
 
 
         }else{
@@ -89,25 +121,7 @@ class HomeController extends Controller
             echo "获取不到authorization_code";
 
         }
-    }
-
-    // 获取access_token
-    public function actionHuo(){
-
-            $client_id = "1106673362";
-            $client_secret = "k0m0gbJZj46nEFVU";
-            $redirect_uri = "http://i2137.com/php/home/home";
-            $authorization_code = "c9dd579889822dfe40d4f29786a3b82b";
-
-            $url = "https://api.e.qq.com/oauth/token?client_id=".$client_id."&client_secret=".$client_secret."&grant_type=authorization_code&authorization_code=".$authorization_code."&redirect_uri=".$redirect_uri;
-            // echo $url;die;
-            // $url = 'https://api.e.qq.com/oauth/token?client_id=1106673362&client_secret=k0m0gbJZj46nEFVU&grant_type=authorization_code&authorization_code=14b31be54394ded9f0b9de71839fa185&redirect_uri=http://i2137.com/php/home/home';
-            $result = $this->curl_request($url);
-            print_r($result);
-
-
-    }
-
+    }*/
 
     // 刷新access_token
     public function actionRefresh($account_id,$refresh_token){
@@ -135,7 +149,8 @@ class HomeController extends Controller
     function get_to_file(){
         $str = file_get_contents('test.txt');//将整个文件内容读入到一个字符串中
         $str_encoding = mb_convert_encoding($str, 'UTF-8', 'UTF-8,GBK,GB2312,BIG5');//转换字符集（编码）
-        $arr = explode("\r\n", $str_encoding);//转换成数组
+        return $str_encoding;
+        /*$arr = explode("\r\n", $str_encoding);//转换成数组
 
         //去除值中的空格
         foreach ($arr as &$row) {
@@ -144,12 +159,13 @@ class HomeController extends Controller
 
         unset($row);
         //得到后的数组
-        return $arr;
+        return $arr;*/
     }
     
 
     //写入文件
     function put_to_file($file, $content) {
+        mkdir($file,0777,true);
         $fopen = fopen($file, 'wb');
         if (!$fopen) {
             return false;
@@ -216,12 +232,27 @@ class HomeController extends Controller
     //取出环境变量
     public function actionQu(){
 
-        var_dump($_ENV);
-        print_r($_ENV);
+       $result = getenv('REDIS_HOST');
+       print_r($result);
 
     }
 
+        // 获取access_token
+    public function actionHuo(){
 
+            $client_id = "1106673362";
+            $client_secret = "k0m0gbJZj46nEFVU";
+            $redirect_uri = "http://i2137.com/php/home/home";
+            $authorization_code = "c9dd579889822dfe40d4f29786a3b82b";
+
+            $url = "https://api.e.qq.com/oauth/token?client_id=".$client_id."&client_secret=".$client_secret."&grant_type=authorization_code&authorization_code=".$authorization_code."&redirect_uri=".$redirect_uri;
+            // echo $url;die;
+            // $url = 'https://api.e.qq.com/oauth/token?client_id=1106673362&client_secret=k0m0gbJZj46nEFVU&grant_type=authorization_code&authorization_code=14b31be54394ded9f0b9de71839fa185&redirect_uri=http://i2137.com/php/home/home';
+            $result = $this->curl_request($url);
+            print_r($result);
+
+
+    }
 
 
 }
