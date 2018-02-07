@@ -54,6 +54,7 @@ class HomeController extends Controller
             $res_result = $this->curl_request($Url);
             $file = "token.txt";
             $result = $this->put_to_file($file,$res_result);
+            
             print_r($res_result);die;
 
 
