@@ -37,13 +37,14 @@ class HomeController extends Controller
 
             // 将code存到test.txt文件中
             $file = "test.txt";
+            echo $authorization_code."</br>";
             $result = $this->put_to_file($file,$authorization_code);
-            print_r($result);
+            // print_r($result);
         }
 
         // 取出来code
         $authorization_code_res = $this->get_to_file();
-        print_r($authorization_code_res);die;
+        // print_r($authorization_code_res);die;
         if (!empty($authorization_code_res)) {
 
             $client_id = "1106673362";
@@ -51,6 +52,7 @@ class HomeController extends Controller
             $redirect_uri = "http://i2137.com/php/home/home";
 
             $Url = "https://api.e.qq.com/oauth/token?client_id=".$client_id."&client_secret=".$client_secret."&grant_type=authorization_code&authorization_code=".$authorization_code_res."&redirect_uri=".$redirect_uri;
+            echo $Url;die;
             $res_result = $this->curl_request($Url);
             $file = "token.txt";
             $result = $this->put_to_file($file,$res_result);
@@ -88,7 +90,7 @@ class HomeController extends Controller
 
             $url = "https://api.e.qq.com/oauth/token?client_id=".$client_id."&client_secret=".$client_secret."&grant_type=authorization_code&authorization_code=".$res[0]."&redirect_uri=".$redirect_uri;
             // echo $url;die;
-            // $url = 'https://api.e.qq.com/oauth/token?client_id=1106673362&client_secret=k0m0gbJZj46nEFVU&grant_type=authorization_code&authorization_code=14b31be54394ded9f0b9de71839fa185&redirect_uri=http://i2137.com/php/home/home';
+            // $url = 'https://api.e.qq.com/oauth/token?client_id=1106673362&client_secret=k0m0gbJZj46nEFVU&grant_type=authorization_code&authorization_code=2991b46d20724fa083b2f57950130df6&redirect_uri=http://i2137.com/php/home/home';
             echo $url;die;
             $result = $this->curl_request($url);
             print_r($result);
