@@ -43,8 +43,8 @@ class HomeController extends Controller
         }
 
         // 取出来code
-        $files = "token.txt";
-        $authorization_code_res = $this->get_to_file($files);
+        $file = "test.txt";
+        $authorization_code_res = $this->get_to_file($file);
         // print_r($authorization_code_res);die;
         var_dump($authorization_code_res);
         if (!empty($authorization_code_res)) {
