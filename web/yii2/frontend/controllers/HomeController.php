@@ -46,7 +46,7 @@ class HomeController extends Controller
 
     }
     // 取出code,获取access_token
-    public function actiontoken(){
+    public function actionToken(){
         // 取出来code
         $file = "test.txt";
         $authorization_code_res = $this->get_to_file($file);
