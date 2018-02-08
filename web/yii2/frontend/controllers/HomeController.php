@@ -262,7 +262,7 @@ class HomeController extends Controller
     // 连接redis
     public function actionRedis(){
 
-       $redis =  new \Redis();
+       $redis =  new \redis();
        $redis->connect('47.92.138.179', 21601);       
        $redis->auth("Mindata123"); 
        //检测是否连接成功
