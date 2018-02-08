@@ -245,8 +245,11 @@ class HomeController extends Controller
     //取出环境变量
     public function actionQu(){
 
-       $result = getenv('REDIS_HOST');
-       print_r($result);
+       $result = getenv('REDIS_HOST');       
+       print_r($result)."1";
+
+       $res = getenv('PATH');
+       print_r($res)."2";
 
     }
 
