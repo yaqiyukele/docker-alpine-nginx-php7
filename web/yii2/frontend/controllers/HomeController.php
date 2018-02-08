@@ -246,12 +246,19 @@ class HomeController extends Controller
     public function actionQu(){
 
        $result = getenv('REDIS_HOST');       
-       print_r($result)."1";
+       print_r($result);
+       echo "1啊";
 
        $res = getenv('PATH');
-       print_r($res)."2";
+       print_r($res);
+       echo "2呀";
 
     }
+    // 输出phpinfo
+    public function actionInfo(){
+        echo phpinfo();
+    }
+
 
         // 获取access_token
     public function actionHuo(){
