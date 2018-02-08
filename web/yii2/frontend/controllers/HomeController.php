@@ -259,6 +259,17 @@ class HomeController extends Controller
         echo phpinfo();
     }
 
+    // 连接redis
+    public function actionRedis(){
+
+       $redis =  new \Redis();
+       $redis->connect('127.0.0.1', 21601,'Mindata123');
+       //检测是否连接成功
+       echo "Server is running: " . $redis->ping();
+
+
+    }
+
 
         // 获取access_token
     public function actionHuo(){
